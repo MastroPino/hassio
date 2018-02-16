@@ -1,0 +1,12 @@
+- platform: apcupsd
+  resources:
+    - bcharge
+    - linev
+    - loadpct
+    - nominv
+#     - nompower
+    - numxfers
+#     - outputv
+    - status
+    - timeleft
+    - tonbatt

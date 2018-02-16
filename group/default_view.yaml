@@ -1,0 +1,18 @@
+# Sovrascrive la scheda di dafault
+default_view:
+  view: yes
+  icon: mdi:home-assistant
+  name: Casa
+  entities:
+    - device_tracker.ilendrius
+    - device_tracker.64bc0c807396
+    - group.family
+    - group.generale
+    - group.climate
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_humidity
+    - group.meteo
+    - media_player.lg_webos_smart_tv
+    - media_player.apple_tv
+    - updater.updater
+    - alarm_control_panel.home_alarm

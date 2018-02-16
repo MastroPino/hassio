@@ -1,0 +1,17 @@
+Batterie:
+  entities:
+    - sensor.ilendrius_battery_level
+    - sensor.ilendrius_pro_battery_level
+    - sensor.magic_cube
+    - sensor.sensore_ingresso
+    - sensor.sensore_dispensa
+    - sensor.sensore_movimento_garage
+    - sensor.bottone_comodino_andrea
+    - sensor.bottone_comodino_eleonora
+    - sensor.bottone_garage
+
+Batterie Home:
+  view: yes
+  name: Batterie
+  entities:
+    - group.batterie

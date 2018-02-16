@@ -1,0 +1,51 @@
+light.lampadario_1:
+  platform: hue
+  unique_id: 00:17:88:01:10:29:57:aa-0b
+light.abatjour_verde:
+  platform: hue
+  unique_id: 00:17:88:01:10:44:40:d2-0b
+light.lampadario:
+  platform: hue
+  unique_id: 00:17:88:01:02:6e:de:ca-0b
+light.fiore:
+  platform: hue
+  unique_id: 00:17:88:01:10:4b:bb:29-0b
+light.lampadario_2:
+  platform: hue
+  unique_id: 00:17:88:01:10:46:c2:b3-0b
+light.lampadario_3:
+  platform: hue
+  unique_id: 00:17:88:01:10:46:be:01-0b
+light.lampione:
+  platform: hue
+  unique_id: 00:17:88:01:10:2c:b3:d0-0b
+light.abatjour_bianca:
+  platform: hue
+  unique_id: 00:17:88:01:10:41:f0:dc-0b
+light.piantana:
+  platform: hue
+  unique_id: 00:17:88:01:10:26:b3:11-0b
+light.hue_go:
+  platform: hue
+  unique_id: 00:17:88:01:01:14:db:b4-0b
+light.lampadario_dispensa:
+  platform: hue
+  unique_id: 00:17:88:01:10:2b:01:3e-0b
+sensor.ilendrius_pro_battery_level:
+  platform: ios
+  unique_id: level_ilendrius_pro
+sensor.ilendrius_pro_battery_state:
+  platform: ios
+  unique_id: state_ilendrius_pro
+sensor.ilendrius_battery_level:
+  platform: ios
+  unique_id: level_ilendrius
+sensor.ilendrius_battery_state:
+  platform: ios
+  unique_id: state_ilendrius
+media_player.apple_tv:
+  platform: apple_tv
+  unique_id: f5bec2d3c85bceee10995c4bc372393f423c3c5b330ee1949937659d02e2f3ed
+remote.apple_tv:
+  platform: apple_tv
+  unique_id: f5bec2d3c85bceee10995c4bc372393f423c3c5b330ee1949937659d02e2f3ed

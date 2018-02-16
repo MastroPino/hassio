@@ -1,0 +1,6 @@
+Cucina:
+  entities:
+    - light.lampadario
+    - light.gateway_light_f0b429cbef3f
+    - sensor.illumination_f0b429cbef3f
+    - binary_sensor.door_window_sensor_158d000201980a

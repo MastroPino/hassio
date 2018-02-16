@@ -1,0 +1,5 @@
+#Switches:
+#  entities:
+#    - binary_sensor.switch_158d00012641b4
+#    - binary_sensor.switch_158d000128c08c
+#    - binary_sensor.switch_158d00013ecb24

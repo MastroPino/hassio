@@ -1,0 +1,5 @@
+Lampadario TV:
+  entities:
+    - light.lampadario_1
+    - light.lampadario_2
+    - light.lampadario_3

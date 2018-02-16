@@ -1,0 +1,13 @@
+Generale:
+  control: hidden
+  entities:
+    - group.ingresso
+    - group.sala_da_pranzo
+    - group.soggiorno
+    - group.cucina
+    - group.camera_da_letto
+    - group.balcone_interno
+    - group.dispensa
+    - group.bagno
+    - group.bagnetto
+    - group.garage

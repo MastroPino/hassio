@@ -1,0 +1,6 @@
+system_view: 
+  view: yes
+  name: Sistema
+  icon: mdi:auto-fix
+  entities: 
+  - group.all_automations

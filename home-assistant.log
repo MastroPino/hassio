@@ -1,0 +1,87 @@
+2018-02-15 20:33:58 WARNING (MainThread) [homeassistant.components.recorder] From version 0.64.0 the 'recorder' component will by default purge data older than 10 days. To keep data longer you must configure 'purge_keep_days' or 'purge_interval'.
+2018-02-15 20:34:04 ERROR (MainThread) [custom_components.alarm_control_panel.bwalarm] [ALARM] Settings file doesnt exist
+2018-02-15 20:34:16 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 84, in async_setup
+    SLOW_SETUP_MAX_WAIT, loop=hass.loop)
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/binary_sensor/netatmo.py", line 75, in setup_platform
+    if not data.get_camera_names():
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
+    self.update()
+  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 306, in wrapper
+    result = method(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 115, in update
+    self.camera_data = lnetatmo.CameraData(self.auth, size=100)
+  File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
+    self.default_camera = list(self.cameras[self.default_home].values())[0]
+IndexError: list index out of range
+2018-02-15 20:34:16 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 84, in async_setup
+    SLOW_SETUP_MAX_WAIT, loop=hass.loop)
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/camera/netatmo.py", line 42, in setup_platform
+    for camera_name in data.get_camera_names():
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
+    self.update()
+  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 306, in wrapper
+    result = method(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 115, in update
+    self.camera_data = lnetatmo.CameraData(self.auth, size=100)
+  File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
+    self.default_camera = list(self.cameras[self.default_home].values())[0]
+IndexError: list index out of range
+2018-02-15 20:34:29 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
+2018-02-15 20:35:13 WARNING (SyncWorker_16) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-02-15 20:37:45 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-02-15 20:37:45 ERROR (SyncWorker_11) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-15 20:37:45 ERROR (SyncWorker_11) [xiaomi_gateway] No data in response from hub None
+2018-02-15 20:47:34 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-02-15 20:47:34 ERROR (SyncWorker_8) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-15 20:47:34 ERROR (SyncWorker_8) [xiaomi_gateway] No data in response from hub None
+2018-02-15 22:05:00 ERROR (MainThread) [homeassistant.components.shell_command] Error running command: `bash '/config/shell_command/fix-gaposa.sh'`, return code: -11
+NoneType: None
+2018-02-15 22:15:52 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e5413e is taking over 10 seconds
+2018-02-15 22:15:52 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-15 22:15:52 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-02-16 02:50:07 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 02:50:07 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 02:50:07 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-02-16 03:05:05 ERROR (Recorder) [homeassistant.components.recorder.util] Error executing query: (sqlite3.OperationalError) database is locked [SQL: 'INSERT INTO events (event_type, event_data, origin, time_fired, created) VALUES (?, ?, ?, ?, ?)'] [parameters: ('logbook_entry', '{"name": "Sonoff http command", "message": "has been triggered", "domain": "automation", "entity_id": "automation.sonoff_http_command"}', 'LOCAL', '2018-02-16 02:05:00.153987', '2018-02-16 02:05:00.234909')] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-02-16 03:05:05 ERROR (Recorder) [homeassistant.components.recorder] Error in database connectivity: (sqlite3.OperationalError) database is locked [SQL: 'INSERT INTO events (event_type, event_data, origin, time_fired, created) VALUES (?, ?, ?, ?, ?)'] [parameters: ('logbook_entry', '{"name": "Sonoff http command", "message": "has been triggered", "domain": "automation", "entity_id": "automation.sonoff_http_command"}', 'LOCAL', '2018-02-16 02:05:00.153987', '2018-02-16 02:05:00.234909')] (Background on this error at: http://sqlalche.me/e/e3q8). (retrying in 3 seconds)
+2018-02-16 03:47:27 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 03:47:27 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 03:47:27 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
+2018-02-16 07:19:16 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 07:19:16 ERROR (SyncWorker_5) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 07:19:16 ERROR (SyncWorker_5) [xiaomi_gateway] No data in response from hub None
+2018-02-16 07:43:02 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 07:43:02 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 07:43:02 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None
+2018-02-16 10:24:43 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 10:24:43 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 10:24:43 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
+2018-02-16 11:05:07 ERROR (MainThread) [homeassistant.components.sensor.template] Could not render icon template Bottone Garage: UndefinedError: 'mappingproxy object' has no attribute 'battery_level'
+2018-02-16 12:08:33 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 12:08:33 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 12:08:33 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
+2018-02-16 12:38:33 WARNING (SyncWorker_0) [custom_components.alarm_control_panel.bwalarm] [ALARM] PANIC MODE ACTIVATED!!!
+2018-02-16 13:42:31 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 13:42:31 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 13:42:31 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
+2018-02-16 13:54:54 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001fd6296 is taking over 10 seconds
+2018-02-16 13:54:54 ERROR (SyncWorker_12) [xiaomi_gateway] Cannot connect to Gateway
+2018-02-16 13:54:54 ERROR (SyncWorker_12) [xiaomi_gateway] No data in response from hub None
+2018-02-16 14:05:00 ERROR (MainThread) [homeassistant.components.shell_command] Error running command: `bash '/config/shell_command/fix-gaposa.sh'`, return code: -11
+NoneType: None

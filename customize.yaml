@@ -1,0 +1,241 @@
+# device_tracker.hostone:
+#   friendly_name: Lendrius
+device_tracker.64bc0c807396:
+  friendly_name: Ele
+group.family:
+  order: 1
+sun.sun:
+  hidden: true
+sensor.moon:
+  hidden: true
+sensor.dark_sky_summary:
+  friendly_name: Meteo
+sensor.dark_sky_apparent_temperature:
+  friendly_name: Temperatura Percepita
+sensor.dark_sky_humidity:
+  friendly_name: "Umidit\xE0"
+  icon: mdi:water-percent
+sensor.dark_sky_temperature:
+  friendly_name: Temperatura
+  icon: mdi:temperature-celsius
+sensor.dark_sky_precip_intensity:
+  friendly_name: "Intensit\xE0 Precipitazioni"
+sensor.dark_sky_wind_speed:
+  friendly_name: "Velocit\xE0 vento"
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: Temperatura Massima
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: Temperatura Minima
+group.balcone_interno:
+  icon: mdi:cat
+  order: '2'
+group.cucina:
+  icon: mdi:pot-mix
+  order: '1'
+light.lampadario:
+  icon: mdi:ceiling-light
+light.fiore:
+  icon: mdi:image-filter-vintage
+light.abatjour_bianca:
+  icon: mdi:lamp
+light.abatjour_verde:
+  icon: mdi:lamp
+  
+# Cucina
+light.gateway_light_f0b429cbef3f:
+  friendly_name: Xiaomi Gateway
+  icon: mdi:google-circles-extended
+  homebridge_visible: true
+  homebridge_name: Xiaomi Gateway
+  homebridge_mfg: Xiaomi
+  homebridge_model: Aqara Gateway
+sensor.illumination_f0b429cbef3f:
+  friendly_name: Illuminazione
+binary_sensor.door_window_sensor_158d000201980a:
+  homebridge_visible: true
+  friendly_name: Finestra Cucina
+  
+# Sala da Pranzo
+group.sala_da_pranzo:
+  icon: mdi:silverware-variant
+group.lampadario_tv:
+  icon: mdi:ceiling-light
+sensor.humidity_158d00015b2df4:
+  friendly_name: "Umidit\xE0"
+  icon: mdi:water-percent
+  homebridge_visible: true
+#   homebridge_name: Sensore Umidità
+#   homebridge_battery_source: sensor.battery_humidity_158d00015b2df4
+#   homebridge_charging_source: sensor.humidity_158d00015b2df4_battery_status
+#   homebridge_mfg: Xiaomi
+#   homebridge_model: Humidity Sensor
+sensor.temperature_158d00015b2df4:
+  friendly_name: Temperatura
+  icon: mdi:temperature-celsius
+  homebridge_visible: true
+#   homebridge_name: Sensore Temperatura
+#   homebridge_battery_source: sensor.battery_temperature_158d00015b2df4
+#   homebridge_charging_source: sensor.temperature_158d00015b2df4_battery_status
+#   homebridge_mfg: Xiaomi
+#   homebridge_model: Temperature Sensor
+light.tepee:
+  friendly_name: Tepee
+  icon: mdi:tent
+  homebridge_visible: true
+  homebridge_switch_type: outlet
+binary_sensor.door_window_sensor_158d00013ed2c1:
+  friendly_name: Interruttore Sala da Pranzo
+  icon: mdi:lightbulb-on
+media_player.lg_webos_smart_tv:
+  homebridge_visible: true
+  homebridge_media_player_switch: on_off
+binary_sensor.motion_sensor_158d0001e5413e:
+  homebridge_visible: true
+  friendly_name: Movimento Sala da Pranzo
+sensor.illumination_158d0001e5413e: 
+  friendly_name: Illuminazione
+  
+group.soggiorno:
+  icon: mdi:sofa
+group.dispensa:
+  icon: mdi:food-variant
+
+# Dispenza
+light.lampadario_dispensa:
+  icon: mdi:hololens
+  friendly_name: Plafoniera 
+# light.yeelight_rgb_f0b429b82058:
+#   friendly_name: Lampadario Camerino
+#   icon: mdi:ceiling-light
+binary_sensor.door_window_sensor_158d00013fede0:
+  friendly_name: Porta Dispenza
+  homebridge_visible: true
+#   homebridge_name: Sensore Porta
+#   homebridge_battery_source: sensor.battery_door_window_sensor_158d00013fede0
+#   homebridge_charging_source: sensor.door_window_sensor_158d00013fede0_battery_status
+#   homebridge_mfg: Xiaomi
+#   homebridge_model: Door/Window Sensor
+binary_sensor.switch_158d00013f84db:
+  homebridge_visible: true
+  friendly_name: Bottone
+
+# Garage
+group.garage:
+  icon: mdi:garage
+switch.plug_158d00010ad640:
+  friendly_name: Neon
+  icon: mdi:white-balance-iridescent
+  homebridge_visible: false
+  homebridge_mfg: Xiaomi
+  homebridge_model: Plug Zigbee
+binary_sensor.switch_158d000128c08c:
+  homebridge_visible: true
+  friendly_name: Bottone
+binary_sensor.motion_sensor_158d00010f7fda:
+  friendly_name: Movimento Garage
+  homebridge_visible: true
+binary_sensor.door_window_sensor_158d0001fd6296:
+  friendly_name: Sensore Saracinesca
+switch.sonoff_garage_1:
+  friendly_name: Neon Interni
+  homebridge_visible: true
+  icon: mdi:white-balance-iridescent
+switch.sonoff_garage_2:
+  friendly_name: Neon Esterno
+  homebridge_visible: true
+  icon: mdi:white-balance-iridescent
+cover.saracinesca:
+  friendly_name: Saracinesca
+  homebridge_visible: true
+  homebridge_cover_type: garage_door
+  device_class: garage
+#   homebridge_name: Sensore Movimento
+#   homebridge_battery_source: sensor.battery_motion_sensor_158d00010f7fda
+#   homebridge_charging_source: sensor.motion_sensor_158d00010f7fda_battery_status
+#   homebridge_mfg: Xiaomi
+#   homebridge_model: Motion Sensor
+
+# Camera da letto
+group.camera_da_letto:
+  icon: mdi:hotel
+binary_sensor.cube_158d0001051007:
+  friendly_name: Magic Cube
+  icon: mdi:cube-outline
+binary_sensor.switch_158d00012641b4:
+  homebridge_visible: true
+  friendly_name: Bottone Andrea
+binary_sensor.switch_158d00013ecb24:
+  homebridge_visible: true
+  friendly_name: Bottone Eleonora
+light.comodino_ele:
+  friendly_name: Comodino Eleonora
+  icon: mdi:lamp
+  homebridge_visible: true
+light.comodino_andrea:
+  friendly_name: Comodino Andrea
+  icon: mdi:lamp
+  homebridge_visible: true
+  
+# Ingresso
+group.ingresso:
+  icon: mdi:login
+binary_sensor.door_window_sensor_158d000112031b:
+  friendly_name: Porta Ingresso
+  homebridge_visible: true
+#   homebridge_name: Sensore Ingresso
+#   homebridge_battery_source: sensor.battery_door_window_sensor_158d000112031b
+#   homebridge_charging_source: sensor.door_window_sensor_158d000112031b_battery_status
+binary_sensor.motion_sensor_158d0001e5764c:
+  homebridge_visible: true
+  friendly_name: Movimento Ingresso
+sensor.illumination_158d0001e5764c:
+  friendly_name: Illuminazione
+
+sensor.ilendrius_battery_state:
+  hidden: true
+sensor.ilendrius_pro_battery_state:
+  hidden: true
+
+group.all_automations:
+  hidden: false
+  friendly_name: Tutte le automazioni
+  order: 5
+sensor.cpu_load_total:
+  friendly_name: Carico CPU
+sensor.memory_usage_real:
+  friendly_name: Memoria Utilizzata
+sensor.network_up:
+  friendly_name: Upload
+sensor.status_smart_sda:
+  friendly_name: Status Smart Disco 1
+sensor.status_smart_sdb:
+  friendly_name: Status Smart Disco 2
+sensor.total_size_volume_1:
+  friendly_name: Spazio Totale
+sensor.used_space_volume_1:
+  friendly_name: Spazio Utilizzato
+sensor.volume_used_volume_1:
+  friendly_name: Occupato
+group.default_view:
+  order: 1
+group.stanze: 
+  order: 2
+group.network:
+  order: 3
+
+# Allarme
+alarm_control_panel.house:
+  homebridge_visible: true
+  
+# Bagno
+sensor.temperature_158d0001e549e0:
+  friendly_name: Temperatura
+  homebridge_visible: true
+sensor.humidity_158d0001e549e0:
+  friendly_name: Umidità
+  homebridge_visible: true
+
+# Bagnetto
+binary_sensor.door_window_sensor_158d0001b95bf4:
+  friendly_name: Sensore finestra a ribalta
+  homebridge_visible: true

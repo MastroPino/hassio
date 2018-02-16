@@ -1,0 +1,17 @@
+# - platform: yeelight
+#   automatic_add: true
+#   devices:
+#     192.168.0.153:
+#       name: Comodino Andrea
+# #      transition: 1000
+# #      use_music_mode: True
+# #      save_on_change: False
+# #      F0:B4:29:A8:19:13
+#     192.168.0.152:
+#       name: Comodino Eleonora
+#      transition: 1000
+#      use_music_mode: True
+#      save_on_change: False
+#      F0:B4:29:B7:41:8B
+#     192.168.0.151:
+#       name: Lampadario Dispensa

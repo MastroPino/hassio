@@ -1,0 +1,42 @@
+- platform: template
+  sensors:
+    magic_cube:
+      friendly_name: 'Magic Cube'
+      value_template: '{{ states.binary_sensor.cube_158d0001051007.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.cube_158d0001051007.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.cube_158d0001051007.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.cube_158d0001051007.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    sensore_ingresso:
+      friendly_name: 'Sensore Ingresso'
+      value_template: '{{ states.binary_sensor.door_window_sensor_158d000112031b.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.door_window_sensor_158d000112031b.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.door_window_sensor_158d000112031b.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.door_window_sensor_158d000112031b.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    sensore_dispensa:
+      friendly_name: 'Sensore Dispensa'
+      value_template: '{{ states.binary_sensor.door_window_sensor_158d00013fede0.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.door_window_sensor_158d00013fede0.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.door_window_sensor_158d00013fede0.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.door_window_sensor_158d00013fede0.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    sensore_movimento_garage:
+      friendly_name: 'Sensore Movimento Garage'
+      value_template: '{{ states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    bottone_comodino_andrea:
+      friendly_name: 'Bottone Comodino Andrea'
+      value_template: '{{ states.binary_sensor.switch_158d00012641b4.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.switch_158d00012641b4.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.switch_158d00012641b4.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.switch_158d00012641b4.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    bottone_comodino_eleonora:
+      friendly_name: 'Bottone Comodino Eleonora'
+      value_template: '{{ states.binary_sensor.switch_158d00013ecb24.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.switch_158d00013ecb24.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.switch_158d00013ecb24.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.switch_158d00013ecb24.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    bottone_garage:
+      friendly_name: 'Bottone Garage'
+      value_template: '{{ states.binary_sensor.switch_158d000128c08c.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.switch_158d000128c08c.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.switch_158d000128c08c.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.switch_158d000128c08c.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    interruttore_sala_da_pranzo:
+      friendly_name: 'Interruttore Sala da Pranzo'
+      value_template: '{{ states.binary_sensor.door_window_sensor_158d00013ed2c1.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.door_window_sensor_158d00013ed2c1.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.door_window_sensor_158d00013ed2c1.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.door_window_sensor_158d00013ed2c1.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"

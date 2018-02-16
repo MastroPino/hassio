@@ -1,0 +1,119 @@
+automation:
+ - id: lampadario_dispensa_brighten_on
+   alias: Lampadario dispensa brighten on
+   initial_state: 'on'
+   trigger:
+     - platform: event
+       event_type: click
+       event_data:
+         entity_id: binary_sensor.switch_158d00013f84db
+         click_type: long_click_press
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.lampadario_dispensa_dim
+       state: 'off'
+     - condition: state
+       entity_id: light.lampadario_dispensa
+       state: 'on'
+   action:
+     - service: script.turn_on
+       entity_id: script.brighten_lampadario_dispensa
+
+ - id: lampadario_dispensa_brighten_off
+   alias: Lampadario dispensa brighten off
+   initial_state: 'on'
+   trigger:
+     - platform: state
+       entity_id: binary_sensor.switch_158d00013f84db
+       from: 'on'
+       to: 'off'
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.lampadario_dispensa_dim
+       state: 'off'
+     - condition: state
+       entity_id: light.lampadario_dispensa
+       state: 'on'
+   action:
+     - service: input_boolean.turn_on
+       entity_id: input_boolean.lampadario_dispensa_dim
+      
+ - id: lampadario_dispensa_dim_on
+   alias: Lampadario dispensa dim on
+   initial_state: 'on'
+   trigger:
+     - platform: event
+       event_type: click
+       event_data:
+         entity_id: binary_sensor.switch_158d00013f84db
+         click_type: long_click_press
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.lampadario_dispensa_dim
+       state: 'on'
+     - condition: state
+       entity_id: light.lampadario_dispensa
+       state: 'on'
+   action:
+     - service: script.turn_on
+       entity_id: script.dim_lampadario_dispensa
+
+ - id: lampadario_dispensa_dim_off
+   alias: Lampadario dispensa dim off
+   initial_state: 'on'
+   trigger:
+     - platform: state
+       entity_id: binary_sensor.switch_158d00013f84db
+       from: 'on'
+       to: 'off'
+   condition:
+     condition: and
+     conditions:
+     - condition: state
+       entity_id: input_boolean.lampadario_dispensa_dim
+       state: 'on'
+     - condition: state
+       entity_id: light.lampadario_dispensa
+       state: 'on'
+   action:
+     - service: input_boolean.turn_off
+       entity_id: input_boolean.lampadario_dispensa_dim
+      
+script:
+  dim_lampadario_dispensa:
+    sequence:
+      - condition: state
+        entity_id: input_boolean.lampadario_dispensa_dim
+        state: 'on'
+      - service: light.turn_on
+        entity_id: light.lampadario_dispensa
+        data_template:
+          brightness: '{{states.light.lampadario_dispensa.attributes.brightness - 20}}'
+      - service: script.turn_off
+        entity_id: script.dim_lampadario_dispensa
+      - service: script.turn_on
+        entity_id: script.dim_lampadario_dispensa
+  brighten_lampadario_dispensa:
+    sequence:
+      - condition: state
+        entity_id: input_boolean.lampadario_dispensa_dim
+        state: 'off'
+      - service: light.turn_on
+        entity_id: light.lampadario_dispensa
+        data_template:
+          brightness: '{{states.light.lampadario_dispensa.attributes.brightness + 20}}'
+      - service: script.turn_off
+        entity_id: script.brighten_lampadario_dispensa
+      - service: script.turn_on
+        entity_id: script.brighten_lampadario_dispensa
+    
+input_boolean:
+  lampadario_dispensa_dim:
+    name: Lampadario dispensa Dim
+    initial: off

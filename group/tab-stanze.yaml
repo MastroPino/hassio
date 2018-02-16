@@ -1,0 +1,15 @@
+stanze:
+  name: Stanze
+  view: true
+  icon: mdi:door
+  entities:
+  - group.garage
+  - group.ingresso
+  - group.sala_da_pranzo
+  - group.soggiorno
+  - group.cucina
+  - group.camera_da_letto
+  - group.dispensa
+  - group.bagno
+  - group.bagnetto
+  - group.balcone_interno

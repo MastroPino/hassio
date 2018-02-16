@@ -1,0 +1,6 @@
+  attivagarage:
+    alias: "Apri-Chiudi"
+    sequence:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.sonoff_garage_4
