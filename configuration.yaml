@@ -320,4 +320,4 @@ cover:
           {% endif %}
           
 shell_command:
-  fix_sonoff_4: bash '/config/shell_command/fix-gaposa.sh'
+  fix_sonoff_4: 'sh /config/shell_command/fix-gaposa.sh'

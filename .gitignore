@@ -5,3 +5,4 @@
 secrets.yaml
 known_devices.yaml
 *.db
+www/faces/*
