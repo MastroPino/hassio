@@ -4,5 +4,10 @@
 !.gitignore
 secrets.yaml
 known_devices.yaml
+._*
 *.db
 www/faces/*
+.DS_Store
+homebridge/*
+__pycache__
+deps*
