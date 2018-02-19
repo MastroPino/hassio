@@ -13,6 +13,6 @@ default_view:
     - sensor.dark_sky_humidity
     - group.meteo
     - media_player.lg_webos_smart_tv
-    - media_player.apple_tv
+    - media_player.apple_tv_2
     - updater.updater
     - alarm_control_panel.home_alarm

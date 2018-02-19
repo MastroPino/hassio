@@ -3,3 +3,4 @@ bagno:
   entities:
     - sensor.temperature_158d0001e549e0
     - sensor.humidity_158d0001e549e0
+    - sensor.pressure_158d0001e549e0

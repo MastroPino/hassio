@@ -8,6 +8,7 @@ import enum
 import os
 import re
 import json
+import pytz
 import voluptuous as vol
 from   operator   import attrgetter
 
@@ -80,8 +81,10 @@ CONF_PERIMETER_MODE          = 'perimeter_mode'
 CONF_MQTT                    = 'mqtt'
 CONF_CLOCK                   = 'clock'
 CONF_WEATHER                 = 'weather'
-CONF_SETTINGS                = 'settings'
-CONF_HIDE_ALL_SENSORS        = 'hide_all_sensors'
+CONF_PERSISTENCE             = 'persistence'
+CONF_HIDE_SENSOR_GROUPS      = 'hide_sensor_groups'
+CONF_HIDE_CUSTOM_PANEL       = 'hide_custom_panel'
+CONF_HIDE_PASSCODE           = 'hide_passcode'
 CONF_HIDE_SIDEBAR            = 'hide_sidebar'
 
 #//-----------------------COLOURS------------------------------------
@@ -137,11 +140,13 @@ PLATFORM_SCHEMA = vol.Schema({
     vol.Optional(CONF_ARMED_HOME_COLOUR, default='black'): cv.string,     # Custom colour of armed home display
     #---------------------------OPTIONAL MODES---------------------------
     vol.Optional(CONF_PERIMETER_MODE, default=False):      cv.boolean,    # Enable perimeter mode?
-    vol.Optional(CONF_SETTINGS, default=False):            cv.boolean,    # Allow settings mode to become active and allow saving of settings config file
-    vol.Optional(CONF_CLOCK, default=False):               cv.boolean,    # DIsplay clock on panel
-    vol.Optional(CONF_WEATHER, default=False):             cv.boolean,    # DIsplay weather on panel
-    vol.Optional(CONF_HIDE_ALL_SENSORS, default=False):    cv.boolean,    # Show all sensors in group?
-    vol.Optional(CONF_HIDE_SIDEBAR, default=False):       cv.boolean,    # Show all sensors in group?
+    vol.Optional(CONF_PERSISTENCE, default=False):         cv.boolean,    # Enables persistence for alarm state
+    vol.Optional(CONF_CLOCK, default=False):               cv.boolean,    # Display clock on panel
+    vol.Optional(CONF_WEATHER, default=False):             cv.boolean,    # Display weather on panel
+    vol.Optional(CONF_HIDE_SENSOR_GROUPS, default=False):  cv.boolean,    # Show sensor groups?
+    vol.Optional(CONF_HIDE_CUSTOM_PANEL, default=True):    cv.boolean,    # Hides custom panel?
+    vol.Optional(CONF_HIDE_PASSCODE, default=True):        cv.boolean,    # Show passcode entry during disarm?
+    vol.Optional(CONF_HIDE_SIDEBAR, default=False):        cv.boolean,    # Show all sensors in group?
     #--------------------------PASSWORD ATTEMPTS--------------------------
     vol.Optional(CONF_PASSCODE_ATTEMPTS, default=-1):         vol.All(vol.Coerce(int), vol.Range(min=-1)),
     vol.Optional(CONF_PASSCODE_ATTEMPTS_TIMEOUT, default=-1): vol.All(vol.Coerce(int), vol.Range(min=-1)),
@@ -172,11 +177,11 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     hass.bus.async_listen(EVENT_TIME_CHANGED, alarm.passcode_timeout_listener)
     async_add_devices([alarm])
 
-    @callback
-    def alarm_settings_save(service, settings=None):
-        alarm._settings_save(settings)
+    # @callback
+    # def alarm_persistence_save(service, persistence=None):
+    #     alarm._persistence_save(persistence)
      
-    hass.services.async_register(DOMAIN, 'ALARM_SETTINGS_SAVE', alarm_settings_save)
+    # hass.services.async_register(DOMAIN, 'ALARM_persistence_SAVE', alarm_persistence_save)
     
     return True
    
@@ -223,9 +228,11 @@ class BWAlarm(alarm.AlarmControlPanel):
 
         #------------------------------------OPTIONAL MODES---------------------------------------
         self._perimeter_mode         = config[CONF_PERIMETER_MODE]
-        self._settings               = config[CONF_SETTINGS]
-        self._hide_all_sensors       = config[CONF_HIDE_ALL_SENSORS]
-        self._hide_sidebar          = config[CONF_HIDE_SIDEBAR]
+        self._persistence            = config[CONF_PERSISTENCE]
+        self._hide_sensor_groups     = config[CONF_HIDE_SENSOR_GROUPS]
+        self._hide_custom_panel      = config[CONF_HIDE_CUSTOM_PANEL]
+        self._hide_passcode          = config[CONF_HIDE_PASSCODE]
+        self._hide_sidebar           = config[CONF_HIDE_SIDEBAR]
         self._clock                  = config[CONF_CLOCK]
         self._weather                = config[CONF_WEATHER]
 
@@ -250,20 +257,28 @@ class BWAlarm(alarm.AlarmControlPanel):
         self._payload_arm_night      = config[CONF_PAYLOAD_ARM_NIGHT]
         self._override_code          = config[CONF_OVERRIDE_CODE]
 
-        #------------------------------------SETTINGS----------------------------------------------------
-        self._settings_list          = []
-        if (self._settings):
-           settings_path             = "alarm_settings"
+        #------------------------------------persistence----------------------------------------------------
+        self._persistence_list  = []
+        if (self._persistence):
+           persistence_path     = hass.config.path() #"alarm_persistence"
 
            # If path is relative, we assume relative to HASS config dir
-           if not os.path.isabs(settings_path):
-              settings_path          = hass.config.path(settings_path)
+          # if not os.path.isabs(persistence_path):
+          #    persistence_path          = hass.config.path("/")
+          # else:
+          #    persistence_path          = hass.config.path()
 
-           if not os.path.isdir(settings_path):
-              _LOGGER.error("[ALARM] Settings path %s does not exist.", settings_path)
+           if not os.path.isdir(persistence_path):
+              _LOGGER.error("[ALARM] Persistence path %s does not exist.", persistence_path)
            else:
-              self._settings_final_path = os.path.join(settings_path, "settings.json")
-              self.settings_load()
+              self._persistence_final_path = os.path.join(persistence_path, "alarm.json")
+              self.persistence_load()
+
+              self._state     = self._persistence_list["state"]
+              self._timeoutat = pytz.UTC.localize(datetime.datetime.strptime(self._persistence_list["timeoutat"].split(".")[0].replace("T"," "), '%Y-%m-%d %H:%M:%S')) if self._persistence_list["timeoutat"] != None else None
+              self._returnto  = self._persistence_list["returnto"]
+
+              self.save_alarm_state()
 
     # Alarm properties
     @property
@@ -277,64 +292,68 @@ class BWAlarm(alarm.AlarmControlPanel):
     @property
     def device_state_attributes(self):
         return {
-            'immediate':          sorted(list(self.immediate)),
-            'delayed':            sorted(list(self.delayed)),
-            'override':           sorted(list(self._override)),
-            'ignored':            sorted(list(self.ignored)),
-            'allsensors':         sorted(list(self._allsensors)),
-            'perimeter':          sorted(list(self._perimeter)),
-            'perimeter_mode':     self._perimeter_mode,
-            'changedby':          self.changed_by,
-            'warning_colour':     self._warning_colour,
-            'pending_colour':     self._pending_colour,
-            'disarmed_colour':    self._disarmed_colour,
-            'triggered_colour':   self._triggered_colour,
-            'armed_home_colour':  self._armed_home_colour,
-            'armed_away_colour':  self._armed_away_colour,
-            'panic_mode':         self._panic_mode,
-            'countdown_time':     self._countdown_time,
-            'clock':              self._clock,
-            'weather':            self._weather,
-            'settings':           self._settings,
-            'settings_list':      self._settings_list,
-            'hide_all_sensors':   self._hide_all_sensors,
-            'hide_sidebar':      self._hide_sidebar,
-            'panel_locked':       self._panel_locked,
+            'immediate':                sorted(list(self.immediate)),
+            'delayed':                  sorted(list(self.delayed)),
+            'override':                 sorted(list(self._override)),
+            'ignored':                  sorted(list(self.ignored)),
+            'allsensors':               sorted(list(self._allsensors)),
+            'perimeter':                sorted(list(self._perimeter)),
+            'perimeter_mode':           self._perimeter_mode,
+            'changedby':                self.changed_by,
+            'warning_colour':           self._warning_colour,
+            'pending_colour':           self._pending_colour,
+            'disarmed_colour':          self._disarmed_colour,
+            'triggered_colour':         self._triggered_colour,
+            'armed_home_colour':        self._armed_home_colour,
+            'armed_away_colour':        self._armed_away_colour,
+            'panic_mode':               self._panic_mode,
+            'countdown_time':           self._countdown_time,
+            'clock':                    self._clock,
+            'weather':                  self._weather,
+            'persistence':              self._persistence,
+        #    'settings_list':            self._persistence_list,
+            'hide_sensor_groups':       self._hide_sensor_groups,
+            'hide_custom_panel':        self._hide_custom_panel,
+            'hide_passcode':            self._hide_passcode,
+            'hide_sidebar':             self._hide_sidebar,
+            'panel_locked':             self._panel_locked,
             'passcode_attempt_timeout': self._passcodeAttemptTimeout,
-            'supported_statuses_on': self._supported_statuses_on,
-            'supported_statuses_off': self._supported_statuses_off
+            'supported_statuses_on':    self._supported_statuses_on,
+            'supported_statuses_off':   self._supported_statuses_off
         }
-    #def settings_test(self, settings=None):
-    #    _LOGGER.error("[ALARM] test triggered %s", settings)
-    #    self._settings_list = '{"bacon2":"yes"}'
-    #    self.schedule_update_ha_state()
 
-    ### LOAD Settings previously saved
-    def settings_load(self):
+    ### LOAD persistence previously saved
+    def persistence_load(self):
         try:
-           if os.path.isfile(self._settings_final_path):  #Find the settings JSON file and load. Once found update the alarm_control_panel object
-              _LOGGER.error("[ALARM] Settings file exists")
-              self._settings_list = json.load(open(self._settings_final_path, 'r'))
-           else: #No Settings file found
-              _LOGGER.error("[ALARM] Settings file doesnt exist")
-              self._settings_list = None
+           if os.path.isfile(self._persistence_final_path):  #Find the persistence JSON file and load. Once found update the alarm_control_panel object
+              self._persistence_list = json.load(open(self._persistence_final_path, 'r'))
+           else: #No persistence file found
+              _LOGGER.warning("[ALARM] Persistence file doesnt exist")
+              self._persistence_list = json.loads('{"state":"disarmed", "timeoutat":null, "returnto":null}')
 
         except Exception as e:
            _LOGGER.error("[ALARM] Error occured loading: %s", str(e))
 
-    ### UPDATE Settings
-    def settings_save(self, settings): 
-        if settings is not None: #Check we have something to save [TODO] validate this is a settings object
-            self._settings_list = settings
-
+    ### UPDATE persistence
+    def persistence_save(self, persistence): 
+        if persistence is not None: #Check we have something to save [TODO] validate this is a persistence object
+            self._persistence_list = persistence
             try:
-               if self._settings_list is not None: #Check we have genuine settings to save if so dump to file
-                  with open(self._settings_final_path, 'w') as fil:
-                     fil.write(json.dumps(self._settings_list, ensure_ascii=False))
+               if self._persistence_list is not None: #Check we have genuine persistence to save if so dump to file
+                  with open(self._persistence_final_path, 'w') as fil:
+                     fil.write(json.dumps(self._persistence_list, ensure_ascii=False))
                else:
-                  _LOGGER.error("[ALARM] No settings to save!")
+                  _LOGGER.error("[ALARM] No persistence to save!")
             except Exception as e:
                _LOGGER.error("[ALARM] Error occured saving: %s", str(e))
+
+
+    ### Save alarm state
+    def save_alarm_state(self):
+        self._persistence_list["state"]     = self._state
+        self._persistence_list["timeoutat"] = self._timeoutat.isoformat() if self._timeoutat != None else None
+        self._persistence_list["returnto"]  = self._returnto
+        self.persistence_save(self._persistence_list)
     
     ### Actions from the outside world that affect us, turn into enum events for internal processing
     def time_change_listener(self, eventignored):
@@ -346,23 +365,27 @@ class BWAlarm(alarm.AlarmControlPanel):
 
     def state_change_listener(self, event):
         """ Something changed, we only care about things turning on at this point """
-        new = event.data.get('new_state', None)
-        if new is None:
-            return
 
-        if new.state.lower() in self._supported_statuses_on:
-            eid = event.data['entity_id']
-            if eid in self.immediate:
-                self._lasttrigger = eid
-                self.process_event(Events.ImmediateTrip)
-            elif eid in self.delayed:
-                self._lasttrigger = eid
-                self.process_event(Events.DelayedTrip)
+        if self._state != STATE_ALARM_DISARMED:
+            new = event.data.get('new_state', None)
+            if new is None:
+                return
+
+            if new.state != None:
+                if new.state.lower() in self._supported_statuses_on:
+                    eid = event.data['entity_id']
+                    if eid in self.immediate:
+                        self._lasttrigger = eid
+                        self.process_event(Events.ImmediateTrip)
+                    elif eid in self.delayed:
+                        self._lasttrigger = eid
+                        self.process_event(Events.DelayedTrip)
 
     def check_open_sensors(self):
         for sensor in self._allsensors:    
-            if self._hass.states.get(sensor).state in self._supported_statuses_on:
-                _LOGGER.error(self._hass.states.get(sensor)) # do summit
+            if self._hass.states.get(sensor).state != None:
+                if self._hass.states.get(sensor).state in self._supported_statuses_on:
+                    _LOGGER.error(self._hass.states.get(sensor)) # do summit
 
     @property
     def code_format(self):
@@ -415,10 +438,10 @@ class BWAlarm(alarm.AlarmControlPanel):
         self.immediate = set()
         self.delayed = set()
         self.ignored = self._allsensors.copy()
+        self._timeoutat = None
 
     def process_event(self, event):
         old = self._state
-
         # Update state if applicable
         if event == Events.Disarm:
             self._state = STATE_ALARM_DISARMED
@@ -480,11 +503,12 @@ class BWAlarm(alarm.AlarmControlPanel):
                 switch.turn_off(self._hass, self._alarm)
 
             # Let HA know that something changed
+            if self._persistence:
+                self.save_alarm_state()
             self.schedule_update_ha_state()
 
     def _validate_code(self, code, state):
         """Validate given code."""
-        self.check_open_sensors()
         if ((self._passcodeAttemptAllowed == -1) or (self._passcodeAttemptNo <= self._passcodeAttemptAllowed)):
             check = self._code is None or code == self._code
             if check:

@@ -46,14 +46,17 @@ light.gateway_light_f0b429cbef3f:
   friendly_name: Xiaomi Gateway
   icon: mdi:google-circles-extended
   homebridge_visible: true
-  homebridge_name: Xiaomi Gateway
-  homebridge_mfg: Xiaomi
-  homebridge_model: Aqara Gateway
+  homebridge_name: "Xiaomi Gateway"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Smart Home Multifunctional Gateway"
 sensor.illumination_f0b429cbef3f:
-  friendly_name: Illuminazione
+  friendly_name: Illuminazione Cucina
 binary_sensor.door_window_sensor_158d000201980a:
   homebridge_visible: true
   friendly_name: Finestra Cucina
+  homebridge_name: "Sensore Porte/Finestre Cucina"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Temperature Humidity Sensor"
   
 # Sala da Pranzo
 group.sala_da_pranzo:
@@ -61,40 +64,55 @@ group.sala_da_pranzo:
 group.lampadario_tv:
   icon: mdi:ceiling-light
 sensor.humidity_158d00015b2df4:
-  friendly_name: "Umidit\xE0"
+  friendly_name: "Umidit\xE0 Sala da Pranzo"
   icon: mdi:water-percent
   homebridge_visible: true
-#   homebridge_name: Sensore Umidità
+  homebridge_name: "Sensore Umidit\xE0 Sala da Pranzo"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Temperature Humidity Sensor"
 #   homebridge_battery_source: sensor.battery_humidity_158d00015b2df4
 #   homebridge_charging_source: sensor.humidity_158d00015b2df4_battery_status
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Humidity Sensor
 sensor.temperature_158d00015b2df4:
   friendly_name: Temperatura
   icon: mdi:temperature-celsius
   homebridge_visible: true
-#   homebridge_name: Sensore Temperatura
+  homebridge_name: "Sensore Temperatura Sala da Pranzo"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Temperature Humidity Sensor"
 #   homebridge_battery_source: sensor.battery_temperature_158d00015b2df4
 #   homebridge_charging_source: sensor.temperature_158d00015b2df4_battery_status
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Temperature Sensor
 light.tepee:
   friendly_name: Tepee
   icon: mdi:tent
   homebridge_visible: true
   homebridge_switch_type: outlet
+  homebridge_name: "Tepee"
+  homebridge_mfg: "Osram"
+  homebridge_model: "Osram Lightify Plug"
 binary_sensor.door_window_sensor_158d00013ed2c1:
   friendly_name: Interruttore Sala da Pranzo
   icon: mdi:lightbulb-on
 media_player.lg_webos_smart_tv:
   homebridge_visible: true
   homebridge_media_player_switch: on_off
+  icon: mdi:television
+  homebridge_name: "LG WebOS Smart TV"
+  homebridge_mfg: "LG"
+  homebridge_model: "LG OLED55B7V-Z"
 binary_sensor.motion_sensor_158d0001e5413e:
   homebridge_visible: true
   friendly_name: Movimento Sala da Pranzo
+  homebridge_name: "Sensore Movimento/Luminosit\xE0 Sala da Pranzo"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Human Body Sensor"
 sensor.illumination_158d0001e5413e: 
-  friendly_name: Illuminazione
+  friendly_name: "Luminosit\xE0 Sala da Pranzo"
+  homebridge_visible: true
+  homebridge_name: "Sensore Movimento/Luminosit\xE0 Sala da Pranzo"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Human Body Sensor"
   
+  # Group
 group.soggiorno:
   icon: mdi:sofa
 group.dispensa:
@@ -103,57 +121,64 @@ group.dispensa:
 # Dispenza
 light.lampadario_dispensa:
   icon: mdi:hololens
-  friendly_name: Plafoniera 
-# light.yeelight_rgb_f0b429b82058:
-#   friendly_name: Lampadario Camerino
-#   icon: mdi:ceiling-light
+  friendly_name: Plafoniera Dispenza
 binary_sensor.door_window_sensor_158d00013fede0:
   friendly_name: Porta Dispenza
   homebridge_visible: true
-#   homebridge_name: Sensore Porta
-#   homebridge_battery_source: sensor.battery_door_window_sensor_158d00013fede0
-#   homebridge_charging_source: sensor.door_window_sensor_158d00013fede0_battery_status
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Door/Window Sensor
+  homebridge_name: "Sensore Porte/Finestre Dispenza"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Window Door Sensor"
 binary_sensor.switch_158d00013f84db:
   homebridge_visible: true
-  friendly_name: Bottone
+  friendly_name: Bottone Dispenza
+  homebridge_name: "Bottone Dispenza"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Smart Wireless Switch"
 
 # Garage
 group.garage:
   icon: mdi:garage
-switch.plug_158d00010ad640:
-  friendly_name: Neon
-  icon: mdi:white-balance-iridescent
-  homebridge_visible: false
-  homebridge_mfg: Xiaomi
-  homebridge_model: Plug Zigbee
-binary_sensor.switch_158d000128c08c:
-  homebridge_visible: true
-  friendly_name: Bottone
 binary_sensor.motion_sensor_158d00010f7fda:
   friendly_name: Movimento Garage
   homebridge_visible: true
+  homebridge_name: "Sensore Movimento Sala da Pranzo"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Human Body Sensor"
 binary_sensor.door_window_sensor_158d0001fd6296:
   friendly_name: Sensore Saracinesca
+  homebridge_visible: false
+  homebridge_name: "Sensore Porte/Finestre Garage"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Window Door Sensor"
 switch.sonoff_garage_1:
   friendly_name: Neon Interni
   homebridge_visible: true
+  homebridge_name: "Neon Interni Garage"
+  homebridge_mfg: "ITEA"
+  homebridge_model: "ITEA Sonoff 4CH Pro"
   icon: mdi:white-balance-iridescent
 switch.sonoff_garage_2:
   friendly_name: Neon Esterno
   homebridge_visible: true
+  homebridge_name: "Neon Esterno Garage"
+  homebridge_mfg: "ITEA"
+  homebridge_model: "ITEA Sonoff 4CH Pro"
+  icon: mdi:white-balance-iridescent
+# switch.sonoff_garage_3:
+#   friendly_name: 
+#   homebridge_visible: true
+#   homebridge_name: ""
+#   homebridge_mfg: "ITEA"
+#   homebridge_model: "ITEA Sonoff 4CH Pro"
   icon: mdi:white-balance-iridescent
 cover.saracinesca:
   friendly_name: Saracinesca
   homebridge_visible: true
   homebridge_cover_type: garage_door
   device_class: garage
-#   homebridge_name: Sensore Movimento
-#   homebridge_battery_source: sensor.battery_motion_sensor_158d00010f7fda
-#   homebridge_charging_source: sensor.motion_sensor_158d00010f7fda_battery_status
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Motion Sensor
+  homebridge_name: "Saracinesca"
+  homebridge_mfg: "ITEA"
+  homebridge_model: "ITEA Sonoff 4CH Pro"
 
 # Camera da letto
 group.camera_da_letto:
@@ -164,17 +189,29 @@ binary_sensor.cube_158d0001051007:
 binary_sensor.switch_158d00012641b4:
   homebridge_visible: true
   friendly_name: Bottone Andrea
+  homebridge_name: "Bottone Andrea"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Smart Wireless Switch"
 binary_sensor.switch_158d00013ecb24:
   homebridge_visible: true
   friendly_name: Bottone Eleonora
+  homebridge_name: "Bottone Eleonora"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Smart Wireless Switch"
 light.comodino_ele:
   friendly_name: Comodino Eleonora
   icon: mdi:lamp
   homebridge_visible: true
+  homebridge_name: "Comodino Eleonora"
+  homebridge_mfg: "Osram"
+  homebridge_model: "Osram Lightify LED Ampoule Classic B40"
 light.comodino_andrea:
   friendly_name: Comodino Andrea
   icon: mdi:lamp
   homebridge_visible: true
+  homebridge_name: "Comodino Andrea"
+  homebridge_mfg: "Osram"
+  homebridge_model: "Osram Lightify LED Ampoule Classic B40"
   
 # Ingresso
 group.ingresso:
@@ -182,20 +219,28 @@ group.ingresso:
 binary_sensor.door_window_sensor_158d000112031b:
   friendly_name: Porta Ingresso
   homebridge_visible: true
-#   homebridge_name: Sensore Ingresso
-#   homebridge_battery_source: sensor.battery_door_window_sensor_158d000112031b
-#   homebridge_charging_source: sensor.door_window_sensor_158d000112031b_battery_status
+  homebridge_name: "Sensore Porte/Finestre Ingresso"
+  homebridge_mfg: "Xiaomi"
+  homebridge_model: "Xiaomi Window Door Sensor"
 binary_sensor.motion_sensor_158d0001e5764c:
   homebridge_visible: true
   friendly_name: Movimento Ingresso
+  homebridge_name: "Sensore Movimento Ingresso"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Human Body Sensor"
 sensor.illumination_158d0001e5764c:
-  friendly_name: Illuminazione
+  friendly_name: Illuminazione Ingresso
+  homebridge_name: "Sensore Luminosit\xE0 Ingresso"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Human Body Sensor"
 
+# Batterie
 sensor.ilendrius_battery_state:
   hidden: true
 sensor.ilendrius_pro_battery_state:
   hidden: true
 
+# Automations
 group.all_automations:
   hidden: false
   friendly_name: Tutte le automazioni
@@ -226,16 +271,39 @@ group.network:
 # Allarme
 alarm_control_panel.house:
   homebridge_visible: true
+  homebridge_name: "Allarme di Casa"
+  homebridge_mfg: "Home Assistant"
+  homebridge_model: "Home Assistant Allarm Center"
   
 # Bagno
+group.bagno:
+  icon: mdi:water-pump
+#   entity_picture: /local/icons/bathroom.svg
 sensor.temperature_158d0001e549e0:
-  friendly_name: Temperatura
+  friendly_name: Temperatura Bagno
   homebridge_visible: true
+  homebridge_name: "Sensore Temperatura Bagno"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Temperature Humidity Sensor"
 sensor.humidity_158d0001e549e0:
-  friendly_name: Umidità
+  friendly_name: Umidità Bagno
   homebridge_visible: true
+  homebridge_name: "Sensore Umidità Bagno"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Temperature Humidity Sensor"
+sensor.pressure_158d0001e549e0:
+  friendly_name: Pressione Bagno
+  homebridge_visible: true
+  homebridge_name: "Sensore Pressione Bagno"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Temperature Humidity Sensor"
 
 # Bagnetto
+group.bagnetto:
+  icon: mdi:water-pump
 binary_sensor.door_window_sensor_158d0001b95bf4:
   friendly_name: Sensore finestra a ribalta
   homebridge_visible: true
+  homebridge_name: "Sensore Finestra a Ribalta Bagnetto"
+  homebridge_mfg: "Aqara"
+  homebridge_model: "Aqara Window Door Sensor"

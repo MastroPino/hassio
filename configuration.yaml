@@ -20,77 +20,12 @@ homeassistant:
 # Enables the frontend
 frontend:
   javascript_version: es5
+  themes: !include_dir_merge_named themes/
 #   panel_iframe:
 #     nodered:
 #       title: 'Node-Red'
 #       icon: 'mdi:shuffle-variant'
 #       url: 'http://mastropino.homepc.it:1880'
-  themes:
-    PmxMononight:
-      # MyVariables
-      base-hue: '220' #Controls the base (and accent) color hue (0-360) | 0=Red 60=Yellow 120=Green 180=Cyan 240=Blue 300=Magenta 360=Red
-      base-sat: '16%' #Controls the saturation of the theme (0%-100%) | 0%=Grey 100%=Full Saturation
-      # MyVar
-      huesat: 'var(--base-hue), var(--base-sat),'
-      # Primary Color
-      primary-color: 'hsl(var(--huesat) 20%)'
-      # Backgrounds
-      primary-background-color: 'var(--primary-color)'
-      secondary-background-color: 'hsl(var(--huesat) 16%)'
-      paper-listbox-background-color: 'var(--primary-color)'
-      paper-card-background-color: 'hsl(var(--huesat) 12%)'
-      paper-dialog-background-color: 'var(--paper-card-background-color)'
-      table-row-background-color: 'hsl(var(--huesat) 12%)'
-      table-row-alternative-background-color: 'hsl(var(--huesat) 10%)'
-      # Devider
-      divider-color: 'hsla(0, 0%, 0%, 0)'
-      dark-divider-opacity: '0'
-      light-divider-opacity: '0'
-      # Text colors
-      primary-text-color: 'hsl(var(--huesat) 60%)'
-      text-primary-color: 'hsl(var(--huesat) 60%)'
-      secondary-text-color: 'hsl(var(--huesat) 60%)'
-      disabled-text-color: 'hsl(var(--huesat) 70%)'
-      sidebar-text_-_color: 'hsl(var(--huesat) 90%)'
-      sidebar-text-color: 'hsl(var(--huesat) 90%)'
-      paper-card-header-color: 'hsl(var(--base-hue), 90%, 50%)'
-      # Text Adjustments
-      paper-font-headline_-_letter-spacing: '-0.5px'
-      paper-font-headline_-_font-weight: '500'
-      paper-font-body1_-_font-weight: '500'
-      # Nav Menu
-      paper-listbox-color: 'hsl(var(--huesat) 50%)'
-      paper-grey-50: 'hsl(var(--huesat) 50%)'
-      paper-grey-200: 'hsla(var(--huesat) 26%)'
-      # Paper card
-      paper-item-icon-color: 'hsl(var(--huesat) 30%)'
-      paper-item-icon-active-color: 'var(--paper-item-icon-color)'
-      paper-item-icon_-_color: 'var(--paper-item-icon-color)'
-      paper-item-selected_-_background-color: 'hsla(0, 0%, 0%, 0.2)'
-      paper-tabs-selection-bar-color: 'hsla(0, 0%, 0%, 0.2)'
-      # Labels
-      label-badge-red: 'hsla(0, 0%, 0%, 0)'
-      label-badge-border-color: 'var(--label-badge-red)'
-      label-badge-background-color: 'var(--paper-card-background-color)'
-      label-badge-text-color: 'var(--primary-text-color)'
-      # Shadows
-      shadow-elevation-2dp_-_box-shadow: 'inset 0px 0px 0px 4px hsl(var(--huesat) 18%)'
-      shadow-elevation-16dp_-_box-shadow: 'inset 0px 0px 0px 4px hsl(var(--huesat) 28%)'
-      # Switches
-      paper-toggle-button-checked-button-color: 'hsl(var(--base-hue), 90%, 50%)'
-      paper-toggle-button-checked-bar-color: 'hsl(var(--huesat) 25%)'
-      paper-toggle-button-unchecked-button-color: 'hsl(var(--huesat) 25%)'
-      paper-toggle-button-unchecked-bar-color: 'hsl(var(--huesat) 5%)'
-      # Sliders
-      paper-slider-knob-color:  'hsl(var(--base-hue), 90%, 50%)'
-      paper-slider-knob-start-color: 'hsl(var(--base-hue), 80%, 25%)'
-      paper-slider-pin-color:  'hsl(var(--base-hue), 90%, 50%)'
-      paper-slider-active-color:  'hsl(var(--base-hue), 90%, 50%)'
-      paper-slider-container-color: 'hsl(var(--huesat) 28%)'
-      paper-slider-secondary-color: 'hsl(var(--huesat) 90%)'
-      paper-slider-disabled-active-color: 'hsl(var(--base-hue), 80%, 25%)'
-      paper-slider-disabled-secondary-color: 'hsl(var(--base-hue), 80%, 25%)'
-      paper-dialog-color: 'hsl(var(--base-hue), 20%, 80%)'
 #   router:
 #     title: 'Router'
 #     icon: 'mdi:router-wireless'
@@ -130,6 +65,9 @@ history:
 
 # View all events in a logbook
 logbook:
+  exclude:
+    entities:
+      - automation.sonoff_http_command
 
 # Track the sun
 sun:
@@ -180,6 +118,7 @@ netatmo:
   username: !secret netatmo_username
   password: !secret netatmo_password
 
+# APC
 apcupsd:
   host: localhost
 
@@ -196,12 +135,7 @@ device_tracker:
       hostone: 192.168.0.62
 
 # Media Player
-media_player:
-  - platform: webostv
-    host: 192.168.0.20
-    turn_on_action:
-      service: media_player.turn_on
-      entity_id: media_player.lg_webos_smart_tv
+media_player: !include_dir_merge_list media_player/
 
 # Groups
 group: !include_dir_merge_named group
@@ -214,26 +148,33 @@ zone 2:
   radius: 50
   icon: mdi:worker
 
+# Xiaomi Aqara
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
     - key: !secret xiaomi_key
 
+# Confiuration Panel
 config:
 
-ios: #ios component
+# iOS Component
+ios:
 
+#IFTT Component
 ifttt:
   key: !secret ifttt_key
 
+# Automations
 automation: !include automations.yaml
 
+# Alarm
 alarm_control_panel: !include alarm.yaml
 panel_custom: !include panel_custom.yaml
 
 # Script
 script: !include_dir_merge_named script
 
+# Input
 input_select:
   sala_da_pranzo_preset:
     options:
@@ -247,77 +188,9 @@ input_select:
       - Lettura
       - Concentrazione
       - Energia
- 
-switch: 
-  - platform: mqtt
-    name: "Sonoff Garage 1"
-    command_topic: "cmnd/garage/power1"
-    state_topic: "stat/garage/POWER1"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-  - platform: mqtt
-    name: "Sonoff Garage 2"
-    command_topic: "cmnd/garage/power2"
-    state_topic: "stat/garage/POWER2"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-  - platform: mqtt
-    name: "Sonoff Garage 3"
-    command_topic: "cmnd/garage/power3"
-    state_topic: "stat/garage/POWER3"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-  - platform: mqtt
-    name: "Sonoff Garage 4"
-    state_topic: "stat/garage/POWER4"
-    command_topic: "cmnd/garage/power4"
-    qos: 0
-    optimistic: false
-    retain: true
-    payload_on: "ON"
-    payload_off: "OFF"
-    
-cover:
-#   - platform: mqtt
-#     state_topic: "stat/garage/POWER4"
-#     command_topic: "cmnd/garage/power4"
-#     name: "Saracinesca"
-#     qos: 0
-#     retain: false
-#     payload_open: "ON"
-#     payload_close: "ON"
-#     payload_stop: "ON"
-#     state_open: "ON"
-#     state_closed: "OFF"
-#     optimistic: false
-  - platform: template
-    covers:
-      saracinesca:
-        friendly_name: "Saracinesca"
-        value_template: >-
-          {% if is_state('binary_sensor.door_window_sensor_158d0001fd6296', 'on') %}
-            open
-          {% else %}
-            closed
-          {% endif %}
-        open_cover:
-          service: script.attivagarage
-        close_cover:
-          service: script.attivagarage
-        stop_cover:
-          service: script.attivagarage
-        icon_template: >-
-          {% if is_state('binary_sensor.door_window_sensor_158d0001fd6296', 'on') %}
-            mdi:garage-open
-          {% else %}
-            mdi:garage
-          {% endif %}
-          
-shell_command:
-  fix_sonoff_4: 'sh /config/shell_command/fix-gaposa.sh'
+
+# Switch
+switch: !include_dir_merge_list switch
+
+# Cover
+cover: !include_dir_merge_list cover

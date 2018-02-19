@@ -1,0 +1,44 @@
+- platform: mqtt
+  name: "Sonoff Garage 1"
+  command_topic: "cmnd/garage/power1"
+  state_topic: "stat/garage/POWER1"
+  availability_topic: "tele/garage/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Sonoff Garage 2"
+  command_topic: "cmnd/garage/power2"
+  state_topic: "stat/garage/POWER2"
+  availability_topic: "tele/garage/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Sonoff Garage 3"
+  command_topic: "cmnd/garage/power3"
+  state_topic: "stat/garage/POWER3"
+  availability_topic: "tele/garage/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Sonoff Garage 4"
+  state_topic: "stat/garage/POWER4"
+  command_topic: "cmnd/garage/power4"
+  availability_topic: "tele/garage/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false

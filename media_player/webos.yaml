@@ -1,0 +1,5 @@
+  - platform: webostv
+    host: 192.168.0.20
+    turn_on_action:
+      service: media_player.turn_on
+      entity_id: media_player.lg_webos_smart_tv

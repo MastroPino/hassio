@@ -1,10 +1,20 @@
+# - id: autosonoff-off
+#   alias: Sonoff http command
+#   trigger:
+#     platform: time
+#     seconds: 30
+#   action:
+#   - service: shell_command.fix_sonoff_4
 - id: autosonoff-off
-  alias: Sonoff http command
+  alias: Sonoff Fix
   trigger:
     platform: time
     seconds: 30
   action:
-  - service: shell_command.fix_sonoff_4
+  - service: mqtt.publish
+    data:
+      topic: cmnd/garage/power4
+      payload: 'OFF'
 
 - id: fix-sonoff
   alias: 'Power state on HA start-up'
@@ -27,7 +37,7 @@
   - service: mqtt.publish
     data:
       topic: cmnd/garage/power4
-      payload: 'OFF'
+      payload: ''
 
 - id: notify_garage_apertura
   alias: '[Notifica] Notifica Apertura Garage'
