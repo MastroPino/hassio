@@ -1,0 +1,5 @@
+climate:
+  name: Termostato
+  view: no
+  entities:
+    - climate.termostato

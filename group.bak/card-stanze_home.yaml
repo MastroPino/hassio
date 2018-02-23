@@ -8,6 +8,6 @@ Generale:
     - group.camera_da_letto
     - group.balcone_interno
     - group.dispensa
-    - group.bagno
-    - group.bagnetto
+#     - group.bagno
+#     - group.bagnetto
     - group.garage

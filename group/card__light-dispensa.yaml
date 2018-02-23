@@ -1,0 +1,4 @@
+light_dispensa:
+  name: Dispensa
+  entities:
+    - light.lampadario_dispensa

@@ -1,0 +1,7 @@
+light_sala_da_pranzo:
+  name: Sala da Pranzo
+  entities:
+    - group.lampadario_tv
+    - light.fiore
+    - light.hue_go
+    - light.tepee

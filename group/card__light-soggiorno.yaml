@@ -1,0 +1,7 @@
+light_soggiorno:
+  name: Soggiorno
+  entities:
+    - light.piantana
+    - light.abatjour_bianca
+    - light.abatjour_verde
+    - input_select.soggiorno_preset

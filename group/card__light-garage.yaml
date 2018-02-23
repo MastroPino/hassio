@@ -1,0 +1,8 @@
+light_garage:
+  name: Garage
+  entities:
+    - switch.sonoff_garage_1
+    - switch.sonoff_garage_2
+#     - switch.sonoff_garage_3
+#     - switch.sonoff_garage_4
+    - cover.saracinesca

@@ -1,0 +1,5 @@
+light_camera_da_letto:
+  name: Camera da letto
+  entities:
+    - light.comodino_andrea
+    - light.comodino_ele

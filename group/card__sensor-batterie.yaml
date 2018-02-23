@@ -1,0 +1,4 @@
+sensor_batterie:
+  name: Batterie
+  entities:
+    - group.batterie

@@ -1,0 +1,7 @@
+sensor_sala_da_pranzo:
+  name: Sala da Pranzo
+  entities:
+    - sensor.temperature_158d00015b2df4
+    - sensor.humidity_158d00015b2df4
+    - binary_sensor.motion_sensor_158d0001e5413e
+    - sensor.illumination_158d0001e5413e

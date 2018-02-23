@@ -1,13 +1,56 @@
+# Frontend Tabs
+group.default_view:
+  order: '1'
+group.lights: 
+  order: '2'
+group.sensors: 
+  order: '3'
+group.network:
+  order: '4'
+group.all_automations:
+  hidden: false
+  friendly_name: Tutte le automazioni
+  order: '5'
+
+#Group Light
+group.light_balcone_interno:
+  icon: mdi:cat
+  order: '2'
+group.light_cucina:
+  icon: mdi:pot-mix
+  order: '1'
+group.light_soggiorno:
+  icon: mdi:sofa
+group.light_dispensa:
+  icon: mdi:food-variant
+group.light_sala_da_pranzo:
+  icon: mdi:silverware-variant
+group.light_garage:
+  icon: mdi:garage
+group.light_camera_da_letto:
+  icon: mdi:hotel
+group.light_bagno:
+  icon: mdi:water-pump
+group.light_bagnetto:
+  icon: mdi:water-pump
+
+#Group Sensor
+group.family:
+  order: '1'
+
+# Device Tracker
 # device_tracker.hostone:
 #   friendly_name: Lendrius
 device_tracker.64bc0c807396:
   friendly_name: Ele
-group.family:
-  order: 1
+
+# Sun and Moon
 sun.sun:
   hidden: true
 sensor.moon:
   hidden: true
+  
+# Dark Sky
 sensor.dark_sky_summary:
   friendly_name: Meteo
 sensor.dark_sky_apparent_temperature:
@@ -26,16 +69,8 @@ sensor.dark_sky_daily_high_temperature:
   friendly_name: Temperatura Massima
 sensor.dark_sky_daily_low_temperature:
   friendly_name: Temperatura Minima
-group.balcone_interno:
-  icon: mdi:cat
-  order: '2'
-group.cucina:
-  icon: mdi:pot-mix
-  order: '1'
-light.lampadario:
-  icon: mdi:ceiling-light
-light.fiore:
-  icon: mdi:image-filter-vintage
+  
+# Soggiorno
 light.abatjour_bianca:
   icon: mdi:lamp
 light.abatjour_verde:
@@ -51,6 +86,8 @@ light.gateway_light_f0b429cbef3f:
   homebridge_model: "Xiaomi Smart Home Multifunctional Gateway"
 sensor.illumination_f0b429cbef3f:
   friendly_name: Illuminazione Cucina
+light.lampadario:
+  icon: mdi:ceiling-light
 binary_sensor.door_window_sensor_158d000201980a:
   homebridge_visible: true
   friendly_name: Finestra Cucina
@@ -59,9 +96,7 @@ binary_sensor.door_window_sensor_158d000201980a:
   homebridge_model: "Aqara Temperature Humidity Sensor"
   
 # Sala da Pranzo
-group.sala_da_pranzo:
-  icon: mdi:silverware-variant
-group.lampadario_tv:
+group.light_lampadario_tv:
   icon: mdi:ceiling-light
 sensor.humidity_158d00015b2df4:
   friendly_name: "Umidit\xE0 Sala da Pranzo"
@@ -89,6 +124,8 @@ light.tepee:
   homebridge_name: "Tepee"
   homebridge_mfg: "Osram"
   homebridge_model: "Osram Lightify Plug"
+light.fiore:
+  icon: mdi:image-filter-vintage
 binary_sensor.door_window_sensor_158d00013ed2c1:
   friendly_name: Interruttore Sala da Pranzo
   icon: mdi:lightbulb-on
@@ -111,12 +148,6 @@ sensor.illumination_158d0001e5413e:
   homebridge_name: "Sensore Movimento/Luminosit\xE0 Sala da Pranzo"
   homebridge_mfg: "Aqara"
   homebridge_model: "Aqara Human Body Sensor"
-  
-  # Group
-group.soggiorno:
-  icon: mdi:sofa
-group.dispensa:
-  icon: mdi:food-variant
 
 # Dispenza
 light.lampadario_dispensa:
@@ -136,8 +167,6 @@ binary_sensor.switch_158d00013f84db:
   homebridge_model: "Xiaomi Smart Wireless Switch"
 
 # Garage
-group.garage:
-  icon: mdi:garage
 binary_sensor.motion_sensor_158d00010f7fda:
   friendly_name: Movimento Garage
   homebridge_visible: true
@@ -170,7 +199,6 @@ switch.sonoff_garage_2:
 #   homebridge_name: ""
 #   homebridge_mfg: "ITEA"
 #   homebridge_model: "ITEA Sonoff 4CH Pro"
-  icon: mdi:white-balance-iridescent
 cover.saracinesca:
   friendly_name: Saracinesca
   homebridge_visible: true
@@ -181,8 +209,6 @@ cover.saracinesca:
   homebridge_model: "ITEA Sonoff 4CH Pro"
 
 # Camera da letto
-group.camera_da_letto:
-  icon: mdi:hotel
 binary_sensor.cube_158d0001051007:
   friendly_name: Magic Cube
   icon: mdi:cube-outline
@@ -214,7 +240,7 @@ light.comodino_andrea:
   homebridge_model: "Osram Lightify LED Ampoule Classic B40"
   
 # Ingresso
-group.ingresso:
+group.sensor_ingresso:
   icon: mdi:login
 binary_sensor.door_window_sensor_158d000112031b:
   friendly_name: Porta Ingresso
@@ -240,11 +266,7 @@ sensor.ilendrius_battery_state:
 sensor.ilendrius_pro_battery_state:
   hidden: true
 
-# Automations
-group.all_automations:
-  hidden: false
-  friendly_name: Tutte le automazioni
-  order: 5
+# UPS
 sensor.cpu_load_total:
   friendly_name: Carico CPU
 sensor.memory_usage_real:
@@ -261,12 +283,6 @@ sensor.used_space_volume_1:
   friendly_name: Spazio Utilizzato
 sensor.volume_used_volume_1:
   friendly_name: Occupato
-group.default_view:
-  order: 1
-group.stanze: 
-  order: 2
-group.network:
-  order: 3
 
 # Allarme
 alarm_control_panel.house:
@@ -276,9 +292,6 @@ alarm_control_panel.house:
   homebridge_model: "Home Assistant Allarm Center"
   
 # Bagno
-group.bagno:
-  icon: mdi:water-pump
-#   entity_picture: /local/icons/bathroom.svg
 sensor.temperature_158d0001e549e0:
   friendly_name: Temperatura Bagno
   homebridge_visible: true
@@ -288,7 +301,7 @@ sensor.temperature_158d0001e549e0:
 sensor.humidity_158d0001e549e0:
   friendly_name: Umidità Bagno
   homebridge_visible: true
-  homebridge_name: "Sensore Umidità Bagno"
+  homebridge_name: "Sensore Umidit\xE0 Bagno"
   homebridge_mfg: "Aqara"
   homebridge_model: "Aqara Temperature Humidity Sensor"
 sensor.pressure_158d0001e549e0:
@@ -299,8 +312,6 @@ sensor.pressure_158d0001e549e0:
   homebridge_model: "Aqara Temperature Humidity Sensor"
 
 # Bagnetto
-group.bagnetto:
-  icon: mdi:water-pump
 binary_sensor.door_window_sensor_158d0001b95bf4:
   friendly_name: Sensore finestra a ribalta
   homebridge_visible: true

@@ -6,10 +6,12 @@ default_view:
   entities:
     - device_tracker.ilendrius
     - device_tracker.64bc0c807396
+    - group.family
+    - group.generale
+    - group.climate
     - sensor.dark_sky_temperature
     - sensor.dark_sky_humidity
-    - group.stanze_home
-    - group.climate
+    - group.meteo
     - media_player.lg_webos_smart_tv
     - media_player.apple_tv_2
     - updater.updater

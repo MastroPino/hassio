@@ -10,6 +10,6 @@ stanze:
   - group.cucina
   - group.camera_da_letto
   - group.dispensa
-#   - group.bagno
+  - group.bagno
   - group.bagnetto
   - group.balcone_interno

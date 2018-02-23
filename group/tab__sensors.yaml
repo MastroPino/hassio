@@ -1,0 +1,13 @@
+sensors:
+  name: Sensori
+  view: true
+  icon: mdi:alarm-light
+  entities:
+  - group.sensor_garage
+  - group.sensor_ingresso
+  - group.sensor_sala_da_pranzo
+  - group.sensor_cucina
+  - group.sensor_camera_da_letto
+  - group.sensor_dispensa
+  - group.sensor_bagno
+  - group.sensor_bagnetto

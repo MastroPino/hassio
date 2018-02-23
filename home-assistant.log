@@ -1,6 +1,6 @@
-2018-02-19 14:29:29 ERROR (SyncWorker_0) [homeassistant.util.yaml] YAML file /config/customize.yaml contains duplicate key "icon". Check lines 165 and 172.
-2018-02-19 14:29:38 WARNING (MainThread) [homeassistant.components.recorder] From version 0.64.0 the 'recorder' component will by default purge data older than 10 days. To keep data longer you must configure 'purge_keep_days' or 'purge_interval'.
-2018-02-19 14:29:53 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-02-23 17:45:58 WARNING (MainThread) [homeassistant.components.recorder] From version 0.64.0 the 'recorder' component will by default purge data older than 10 days. To keep data longer you must configure 'purge_keep_days' or 'purge_interval'.
+2018-02-23 17:46:00 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=34 from 2018-02-23 16:41:20.974132)
+2018-02-23 17:46:17 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 84, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -21,7 +21,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-02-19 14:29:53 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+2018-02-23 17:46:17 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 84, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -42,6 +42,4 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-02-19 14:30:07 WARNING (MainThread) [homeassistant.setup] Setup of xiaomi_aqara is taking over 10 seconds.
-2018-02-19 14:30:14 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
-2018-02-19 14:30:41 WARNING (SyncWorker_15) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-02-23 17:46:35 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.

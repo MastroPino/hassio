@@ -65,7 +65,16 @@ history:
 
 # View all events in a logbook
 logbook:
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+      - cover
+      - light
   exclude:
+    domains:
+      - automation
     entities:
       - automation.sonoff_http_command
 

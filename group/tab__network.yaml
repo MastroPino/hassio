@@ -1,0 +1,9 @@
+network:
+  view: yes
+  icon: mdi:ethernet
+  name: Rete
+  entities:
+    - group.sensor_apc
+    - group.sensor_synology_dsm
+    - group.sensor_speedtest
+    - group.sensor_gearbest

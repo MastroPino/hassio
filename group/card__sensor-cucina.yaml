@@ -1,0 +1,5 @@
+sensor_cucina:
+  name: Cucina
+  entities:
+    - sensor.illumination_f0b429cbef3f
+    - binary_sensor.door_window_sensor_158d000201980a

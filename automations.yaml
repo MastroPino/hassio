@@ -7,6 +7,8 @@
 #   - service: shell_command.fix_sonoff_4
 - id: autosonoff-off
   alias: Sonoff Fix
+  initial_state: 'on'
+  hide_entity: True
   trigger:
     platform: time
     seconds: 30
@@ -18,6 +20,8 @@
 
 - id: fix-sonoff
   alias: 'Power state on HA start-up'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
     platform: homeassistant
     event: start
@@ -41,6 +45,8 @@
 
 - id: notify_garage_apertura
   alias: '[Notifica] Notifica Apertura Garage'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     from: 'off'
@@ -52,6 +58,8 @@
     service: notify.ios_ilendrius
 - id: notify_garage_chiusura
   alias: '[Notifica] Notifica Chiusura Garage'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     from: 'on'
@@ -64,6 +72,8 @@
       
 - id: notify_ingresso_apertura
   alias: '[Notifica] Notifica Apertura Ingresso'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000112031b
     from: 'off'
@@ -75,6 +85,8 @@
     service: notify.ios_ilendrius
 - id: notify_ingresso_chiusura
   alias: '[Notifica] Notifica Chiusura Ingresso'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000112031b
     from: 'on'
@@ -86,6 +98,7 @@
     service: notify.ios_ilendrius
 - id: comodino_andrea_on_off
   alias: '[Stanza da letto] Comodino Andrea On/Off'
+  initial_state: 'on'
   trigger:
   - event_data:
       click_type: single
@@ -99,6 +112,7 @@
     service: light.toggle
 - id: comodino_andrea_bright
   alias: '[Stanza da letto] Comodino Andrea Bright'
+  initial_state: 'on'
   trigger:
   - event_data:
       click_type: long_click_press
@@ -116,6 +130,7 @@
     service: light.turn_on
 - id: comodino_andrea_dim
   alias: '[Stanza da letto] Comodino Andrea Dim'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: click
@@ -132,6 +147,7 @@
         '
 - id: comodino_eleonora_on_off
   alias: '[Stanza da letto] Comodino Eleonora On/Off'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: click
@@ -142,7 +158,7 @@
     service: light.toggle
     entity_id: light.comodino_ele
 - id: comodino_eleonora_bright
-  alias: '[Stanza da letto] Comodino Eleonora Bright'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: click
@@ -159,6 +175,7 @@
         '
 - id: comodino_eleonora_dim
   alias: '[Stanza da letto] Comodino Eleonora Dim'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: click
@@ -175,6 +192,7 @@
         '
 - id: accendi_neon_interni_garage_auto
   alias: '[Garage] Neon Interni On Movimento'
+  initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
     from: 'off'
@@ -211,6 +229,8 @@
 #     condition: time
 - id: notifica_garage
   alias: '[Notifica] Notifica Movimento Garage'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
     from: 'off'
@@ -223,6 +243,7 @@
   condition:
 - id: spegni_garage_auto
   alias: '[Garage] Timer Off (2 minuti)'
+  initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
     for:
@@ -243,6 +264,7 @@
     state: 'off'
 - id: dispensa_on
   alias: '[Dispenza] Lampadario On'
+  initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d00013fede0
     from: 'off'
@@ -254,6 +276,7 @@
     service: light.turn_on
 - id: dispensa_off
   alias: '[Dispenza] Lampadario Off'
+  initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d00013fede0
     from: 'on'
@@ -264,6 +287,7 @@
     service: light.turn_off
 - id: dispensa_on_off
   alias: '[Dispenza] On/Off'
+  initial_state: 'on'
   trigger:
   - event_data:
       click_type: single
@@ -277,6 +301,8 @@
     service: light.toggle
 - id: alarm_armed_away
   alias: '[Allarme] Modalità Assente attivata'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -290,6 +316,8 @@
     service: notify.ios_ilendrius
 - id: alarm_armed_home
   alias: '[Allarme] Modalità A Casa attivata'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -303,6 +331,8 @@
     service: notify.ios_ilendrius
 - id: alarm_arming_away
   alias: '[Allarme] Attivando Modalità Assente'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -314,6 +344,8 @@
     service: notify.ios_ilendrius
 - id: alarm_disarmed
   alias: '[Allarme] Disarmato'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -329,6 +361,8 @@
     service: notify.ios_ilendrius
 - id: alarm_triggered
   alias: '[Allarme] Scattato'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -343,6 +377,8 @@
         }}
 - id: alarm_warning
   alias: '[Allarme] Attenzione'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -358,6 +394,8 @@
     service: notify.ios_ilendrius
 - id: accendi_balcone
   alias: '[Balcone Interno] Accendi Lampione'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000201980a
     from: 'off'
@@ -374,6 +412,8 @@
     condition: time
 - id: spegni_balcone
   alias: '[Balcone Interno] Spegni Lampione'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000201980a
     from: 'on'
@@ -384,7 +424,9 @@
       entity_id: light.balcone_interno
     service: light.turn_off
 - id: imposta_sala_da_pranzo
-  alias: Scene sala da pranzo
+  alias: 'Scene sala da pranzo'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
     platform: state
     entity_id: input_select.sala_da_pranzo
@@ -392,7 +434,9 @@
     service: script.turn_on
     entity_id: script.input_select_sala_da_pranzo_script
 - id: imposta_soggiorno
-  alias: Scene soggiorno
+  alias: 'Scene soggiorno'
+  initial_state: 'on'
+  hide_entity: True
   trigger:
     platform: state
     entity_id: input_select.soggiorno

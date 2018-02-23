@@ -1,0 +1,4 @@
+light_balcone_interno:
+  name: Balcone Interno
+  entities:
+    - light.lampione

@@ -1,0 +1,5 @@
+light_cucina:
+  name: Cucina
+  entities:
+    - light.lampadario
+    - light.gateway_light_f0b429cbef3f
