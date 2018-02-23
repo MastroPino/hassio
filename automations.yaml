@@ -6,7 +6,7 @@
 #   action:
 #   - service: shell_command.fix_sonoff_4
 - id: autosonoff-off
-  alias: Sonoff Fix
+  alias: 'Sonoff Fix'
   initial_state: 'on'
   hide_entity: True
   trigger:
