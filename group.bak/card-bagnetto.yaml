@@ -1,4 +1,0 @@
-bagnetto:
-  name: Bagnetto
-  entities:
-    - binary_sensor.door_window_sensor_158d0001b95bf4

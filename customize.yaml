@@ -69,7 +69,7 @@ sensor.dark_sky_daily_high_temperature:
   friendly_name: Temperatura Massima
 sensor.dark_sky_daily_low_temperature:
   friendly_name: Temperatura Minima
-  
+
 # Soggiorno
 light.abatjour_bianca:
   icon: mdi:lamp
@@ -85,7 +85,7 @@ light.gateway_light_f0b429cbef3f:
   homebridge_mfg: "Xiaomi"
   homebridge_model: "Xiaomi Smart Home Multifunctional Gateway"
 sensor.illumination_f0b429cbef3f:
-  friendly_name: Illuminazione Cucina
+  friendly_name: "Illuminazione Cucina"
 light.lampadario:
   icon: mdi:ceiling-light
 binary_sensor.door_window_sensor_158d000201980a:
@@ -93,10 +93,10 @@ binary_sensor.door_window_sensor_158d000201980a:
   friendly_name: Finestra Cucina
   homebridge_name: "Sensore Porte/Finestre Cucina"
   homebridge_mfg: "Aqara"
-  homebridge_model: "Aqara Temperature Humidity Sensor"
+  homebridge_model: "Aqara Window Door Sensor"
   
 # Sala da Pranzo
-group.light_lampadario_tv:
+group.lampadario_tv:
   icon: mdi:ceiling-light
 sensor.humidity_158d00015b2df4:
   friendly_name: "Umidit\xE0 Sala da Pranzo"
@@ -108,12 +108,12 @@ sensor.humidity_158d00015b2df4:
 #   homebridge_battery_source: sensor.battery_humidity_158d00015b2df4
 #   homebridge_charging_source: sensor.humidity_158d00015b2df4_battery_status
 sensor.temperature_158d00015b2df4:
-  friendly_name: Temperatura
+  friendly_name: "Temperatura sala da pranzo"
   icon: mdi:temperature-celsius
-  homebridge_visible: true
-  homebridge_name: "Sensore Temperatura Sala da Pranzo"
-  homebridge_mfg: "Xiaomi"
-  homebridge_model: "Xiaomi Temperature Humidity Sensor"
+#   homebridge_visible: true
+#   homebridge_name: "Sensore Temperatura Sala da Pranzo"
+#   homebridge_mfg: "Xiaomi"
+#   homebridge_model: "Xiaomi Temperature Humidity Sensor"
 #   homebridge_battery_source: sensor.battery_temperature_158d00015b2df4
 #   homebridge_charging_source: sensor.temperature_158d00015b2df4_battery_status
 light.tepee:
@@ -294,10 +294,10 @@ alarm_control_panel.house:
 # Bagno
 sensor.temperature_158d0001e549e0:
   friendly_name: Temperatura Bagno
-  homebridge_visible: true
-  homebridge_name: "Sensore Temperatura Bagno"
-  homebridge_mfg: "Aqara"
-  homebridge_model: "Aqara Temperature Humidity Sensor"
+#   homebridge_visible: true
+#   homebridge_name: "Sensore Temperatura Bagno"
+#   homebridge_mfg: "Aqara"
+#   homebridge_model: "Aqara Temperature Humidity Sensor"
 sensor.humidity_158d0001e549e0:
   friendly_name: Umidità Bagno
   homebridge_visible: true

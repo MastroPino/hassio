@@ -1,0 +1,177 @@
+### Input boolean to mute gateway sound ###
+input_boolean:
+  mute_gateway_sounds:
+    name: Mute
+    icon: mdi:volume-off
+### Scripts to play gateway sounds ###
+script:
+  play_sel_sound:
+    alias: "Loop Play Sound"
+    sequence:
+      - condition: state
+        entity_id: input_boolean.mute_gateway_sounds
+        state: 'off'
+      - service: xiaomi.play_ringtone
+        data_template:
+          gw_mac: !secret xiaomi_mac
+          ringtone_id: "{{ states.input_select.gateway_sound.state.split('-')[0] }}"
+          ringtone_vol: "{{ states.input_slider.gateway_volume.state|int }}"
+      - delay: '00:00:{{ states.input_slider.loop_delay.state | int }}'
+      - service: script.play_sel_sound_loop
+  play_sel_sound_loop:
+    alias: "Play selected sound in Loop"
+    sequence:
+      - condition: state
+        entity_id: input_boolean.mute_gateway_sounds
+        state: 'off'
+      - delay: '00:00:{{ states.input_slider.loop_delay.state | int }}'
+      - service: script.play_sel_sound
+  play_sel_sound_single:
+    alias: "Single Play Sound"
+    sequence:
+      - condition: state
+        entity_id: input_boolean.mute_gateway_sounds
+        state: 'off'
+      - service: xiaomi.play_ringtone
+        data_template:
+          gw_mac: !secret xiaomi_mac
+          ringtone_id: "{{ states.input_select.gateway_sound.state.split('-')[0] }}"
+          ringtone_vol: "{{ states.input_slider.gateway_volume.state|int }}"
+
+### Input slider to control gateway volume ###
+input_number:
+  gateway_volume:
+    name: Volume
+    initial: 10
+    min: 0
+    max: 100
+    step: 2
+    icon: mdi:volume-high
+### Input slider to control loop delay ###
+  loop_delay:
+    name: "Loop Delay"
+    initial: 1
+    min: 0
+    max: 15
+    step: 1
+    icon: mdi:loop
+
+### Input select to select sound to play ###
+input_select:
+  gateway_sound:
+    name: Ringtone
+    options: 
+      - "0 - Police car 1"
+      - "1 - Police car 2"
+      - "2 - Accident"
+      - "3 - Countdown"
+      - "4 - Ghost"
+      - "5 - Sniper rifle"
+      - "6 - Battle"
+      - "7 - Air raid"
+      - "8 - Bark"
+#      - "9 - None"
+      - "10 - Doorbell"
+      - "11 - Knock at a door"
+      - "12 - Amuse"
+      - "13 - Alarm clock"
+#      - "14 - None"
+#      - "15 - None"
+#      - "16 - None"
+#      - "17 - None"
+#      - "18 - None"
+#      - "19 - None"
+      - "20 - MiMix"
+      - "21 - Enthusiastic"
+      - "22 - GuitarClassic"
+      - "23 - IceWorldPiano"
+      - "24 - LeisureTime"
+      - "25 - ChildHood"
+      - "26 - MorningStreamLiet"
+      - "27 - MusicBox"
+      - "28 - Orange"
+      - "29 - Thinker"
+      - "10001 - Alarm Sound 3"
+      - "10002 - Beep 2x"
+      - "10003 - Time beep 3x"
+      - "10004 - Alarm Sound 1"
+      - "10005 - Alarm Sound 2"
+      - "10006 - Time beeps long"
+    icon: mdi:music-note
+
+automation:
+### Play specific sound while alarm is arming ###
+  - alias: "Alarm arm pending"
+    trigger:
+      platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'pending'
+    action:
+### Turn off gateway mute to play sound ###
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.mute_gateway_sounds
+### Play ringtone sound in loop until arm is done ###
+      - service: script.play_sound
+        data:
+          ringtone_id: 10006
+          ringtone_vol: 4
+          delay: 2
+### Stop sound when alarm is disarmed or armed ###
+  - alias: "Alarm Turn off or Armed"
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        to: 'disarmed'
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        to: 'armed_away'
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        to: 'armed_home'
+    action:
+### Turn on gateway mute NOT to play sound ###
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.mute_gateway_sounds
+### Stop ringtone sound --> didn't seem to work due to loop ###
+      - service: xiaomi.stop_ringtone
+        data:
+          gw_mac: !secret xiaomi_mac
+### Wait 10 seconds & then turn off gateway mute ###
+      - delay: 
+          seconds: 10
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.mute_gateway_sounds
+
+### Alarm trigger while armed away ###
+  - alias: "Alarm trigger while armed away"
+    trigger:
+### Front Door opened ###
+      - platform: state
+        entity_id: binary_sensor.door_window_sensor_158d00019f302c
+        to: 'on'
+### Any movement detected ###
+      - platform: state
+        entity_id: group.all_motion
+        to: 'on'
+### Alarm status is armed away ###
+    condition:
+      condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'armed_away'
+    action:
+### Turn off gateway mute to play sound ###
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.mute_gateway_sounds
+### Trigger alarm ###
+      - service: alarm_control_panel.alarm_trigger
+        entity_id: alarm_control_panel.home_alarm
+### Play ringtone sound in loop ###
+      - service: script.play_sound
+        data:
+          ringtone_id: 10004
+          ringtone_vol: 50
+          delay: 2

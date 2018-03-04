@@ -8,9 +8,11 @@ default_view:
     - device_tracker.64bc0c807396
     - sensor.dark_sky_temperature
     - sensor.dark_sky_humidity
+    - cover.saracinesca
     - group.stanze_home
     - group.climate
     - media_player.lg_webos_smart_tv
     - media_player.apple_tv_2
     - updater.updater
     - alarm_control_panel.home_alarm
+    - group.aqara_controls

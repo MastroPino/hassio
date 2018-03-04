@@ -1,5 +1,0 @@
-Dispensa:
-  entities:
-    - light.lampadario_dispensa
-    - binary_sensor.door_window_sensor_158d00013fede0
-    - binary_sensor.switch_158d00013f84db

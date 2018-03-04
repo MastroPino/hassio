@@ -5,4 +5,4 @@ light_garage:
     - switch.sonoff_garage_2
 #     - switch.sonoff_garage_3
 #     - switch.sonoff_garage_4
-    - cover.saracinesca
+#     - cover.saracinesca

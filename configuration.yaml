@@ -36,8 +36,8 @@ http:
   api_password: !secret home_password
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret home_url
-#   ssl_certificate: /ssl/fullchain.pem
-#   ssl_key: /ssl/privkey.pem
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
 
 # Checks for available updates
 updater:
@@ -143,6 +143,10 @@ device_tracker:
     hosts:
       hostone: 192.168.0.62
 
+homekit:
+  pincode: '123-45-678'
+  port: 51827
+
 # Media Player
 media_player: !include_dir_merge_list media_player/
 
@@ -197,9 +201,73 @@ input_select:
       - Lettura
       - Concentrazione
       - Energia
+  gateway_sound:
+    name: Ringtone
+    options: 
+      - "0 - Police car 1"
+      - "1 - Police car 2"
+      - "2 - Accident"
+      - "3 - Countdown"
+      - "4 - Ghost"
+      - "5 - Sniper rifle"
+      - "6 - Battle"
+      - "7 - Air raid"
+      - "8 - Bark"
+#      - "9 - None"
+      - "10 - Doorbell"
+      - "11 - Knock at a door"
+      - "12 - Amuse"
+      - "13 - Alarm clock"
+#      - "14 - None"
+#      - "15 - None"
+#      - "16 - None"
+#      - "17 - None"
+#      - "18 - None"
+#      - "19 - None"
+      - "20 - MiMix"
+      - "21 - Enthusiastic"
+      - "22 - GuitarClassic"
+      - "23 - IceWorldPiano"
+      - "24 - LeisureTime"
+      - "25 - ChildHood"
+      - "26 - MorningStreamLiet"
+      - "27 - MusicBox"
+      - "28 - Orange"
+      - "29 - Thinker"
+      - "10001 - Alarm Sound 3"
+      - "10002 - Beep 2x"
+      - "10003 - Time beep 3x"
+      - "10004 - Alarm Sound 1"
+      - "10005 - Alarm Sound 2"
+      - "10006 - Time beeps long"
+    icon: mdi:music-note
 
+
+
+input_boolean:
+  mute_gateway_sounds:
+    name: Mute
+    icon: mdi:volume-off
 # Switch
 switch: !include_dir_merge_list switch
 
 # Cover
 cover: !include_dir_merge_list cover
+
+### Input slider to control gateway volume ###
+input_number:
+  gateway_volume:
+    name: Volume
+    initial: 10
+    min: 0
+    max: 100
+    step: 2
+    icon: mdi:volume-high
+### Input slider to control loop delay ###
+  loop_delay:
+    name: "Loop Delay"
+    initial: 1
+    min: 0
+    max: 15
+    step: 1
+    icon: mdi:loop

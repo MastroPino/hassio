@@ -1,6 +1,0 @@
-Gearbest:
-  entities:
-    - sensor.aqara_human_body_sensor
-    - sensor.aqara_smart_light_switch_wireless_version
-    - sensor.aqara_window_door_sensor
-    - sensor.awara_temperature_humidity_sensor

@@ -158,6 +158,7 @@
     service: light.toggle
     entity_id: light.comodino_ele
 - id: comodino_eleonora_bright
+  alias: '[Stanza da letto] Comodino Eleonora Bright'
   initial_state: 'on'
   trigger:
     platform: event
@@ -339,8 +340,7 @@
     to: pending
   action:
   - data:
-      message: Sto attivando l'allarme di casa, assicurati che le porte e le finestre
-        siano chiuse
+      message: Sto attivando l'allarme di casa, assicurati che le porte e le finestre siano chiuse
     service: notify.ios_ilendrius
 - id: alarm_disarmed
   alias: '[Allarme] Disarmato'
@@ -429,17 +429,88 @@
   hide_entity: True
   trigger:
     platform: state
-    entity_id: input_select.sala_da_pranzo
+    entity_id: input_select.sala_da_pranzo_preset
   action:
-    service: script.turn_on
-    entity_id: script.input_select_sala_da_pranzo_script
+    service: hue.hue_activate_scene
+    data_template:
+      group_name: 'Sala da pranzo'
+      scene_name: '{{ trigger.to_state.state }}'
 - id: imposta_soggiorno
   alias: 'Scene soggiorno'
   initial_state: 'on'
   hide_entity: True
   trigger:
     platform: state
-    entity_id: input_select.soggiorno
+    entity_id: input_select.soggiorno_preset
   action:
-    service: script.turn_on
-    entity_id: script.input_select_soggiorno_script
+    service: hue.hue_activate_scene
+    data_template:
+      group_name: 'Soggiorno'
+      scene_name: '{{ trigger.to_state.state }}'
+
+- id: trigger-home
+  alias: '[Allarme] Trigger alarm while armed home'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d000112031b
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001b95bf4
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d000201980a
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house
+      state: armed_home
+  action:
+    service: xiaomi_aqara.play_ringtone
+    data:
+      gw_mac: !secret xiaomi_mac
+      ringtone_id: 2
+      ringtone_vol: 8
+
+- id: trigger-away
+  alias: '[Allarme] Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d000112031b
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d0001b95bf4
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d000201980a
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00010f7fda
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001e5413e
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001e5764c
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house
+      state: armed_away
+  action:
+    service: xiaomi_aqara.play_ringtone
+    data:
+      gw_mac: !secret xiaomi_mac
+      ringtone_id: 2
+      ringtone_vol: 8
+
+# - id: hue-soggiorno
+#   alias: Soggiorno concentrazione
+#     trigger:
+#       platform: state
+#       entity_id: input_select.soggiorno_preset
+#       to: "Concentrazione"
+#     action:
+#       service: hue.hue_activate_scene
+#       data:
+#         group_name: "Soggiorno"
+#         scene_name: "Concentrazione"

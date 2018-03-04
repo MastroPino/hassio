@@ -1,5 +1,0 @@
-Ingresso:
-  entities:
-    - binary_sensor.door_window_sensor_158d000112031b
-    - binary_sensor.motion_sensor_158d0001e5764c
-    - sensor.illumination_158d0001e5764c

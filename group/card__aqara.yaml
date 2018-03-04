@@ -1,0 +1,10 @@
+aqara_controls:
+  name: Aqara
+  entities:
+    - input_boolean.mute_gateway_sounds
+    - input_number.gateway_volume
+    - input_number.loop_delay
+    - input_select.gateway_sound
+    - script.play_sel_sound
+    - script.play_sel_sound_single
+    - script.play_sel_sound_loop
