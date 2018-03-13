@@ -1,14 +1,8 @@
-# - id: autosonoff-off
-#   alias: Sonoff http command
-#   trigger:
-#     platform: time
-#     seconds: 30
-#   action:
-#   - service: shell_command.fix_sonoff_4
+# Sonoff Fix Temporaneo
 - id: autosonoff-off
   alias: 'Sonoff Fix'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: False
   trigger:
     platform: time
     seconds: 30
@@ -18,6 +12,7 @@
       topic: cmnd/garage/power4
       payload: 'OFF'
 
+# Sonoff Fix from Hass.io
 - id: fix-sonoff
   alias: 'Power state on HA start-up'
   initial_state: 'on'
@@ -43,33 +38,8 @@
       topic: cmnd/garage/power4
       payload: ''
 
-- id: notify_garage_apertura
-  alias: '[Notifica] Notifica Apertura Garage'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-    from: 'off'
-    platform: state
-    to: 'on'
-  action:
-  - data:
-      message: Saracinesca aperta
-    service: notify.ios_ilendrius
-- id: notify_garage_chiusura
-  alias: '[Notifica] Notifica Chiusura Garage'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-    from: 'on'
-    platform: state
-    to: 'off'
-  action:
-  - data:
-      message: Saracinesca chiusa
-    service: notify.ios_ilendrius
-      
+
+# Ingresso Notifiche     
 - id: notify_ingresso_apertura
   alias: '[Notifica] Notifica Apertura Ingresso'
   initial_state: 'on'
@@ -96,6 +66,8 @@
   - data:
       message: Ingresso chiuso
     service: notify.ios_ilendrius
+    
+# Camera da Letto Trigger
 - id: comodino_andrea_on_off
   alias: '[Stanza da letto] Comodino Andrea On/Off'
   initial_state: 'on'
@@ -191,6 +163,8 @@
         - 50 %} {% if suggested > 25 %} {{ suggested }} {% else %} 25 {% endif %}
 
         '
+
+# Garage Trigger
 - id: accendi_neon_interni_garage_auto
   alias: '[Garage] Neon Interni On Movimento'
   initial_state: 'on'
@@ -210,45 +184,13 @@
   - after: '18:00'
     before: '12:00'
     condition: time
-# - id: accendi_neon_esterno_garage_auto
-#   alias: '[Garage] Neon Esterno On Movimento'
-#   trigger:
-#   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
-#     from: 'off'
-#     platform: state
-#     to: 'on'
-#   action:
-#   - data:
-#       entity_id: switch.sonoff_garage_2
-#     service: switch.turn_on
-#   condition:
-#   - condition: state
-#     entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-#     state: 'on'
-#   - after: '20:00'
-#     before: 07:00
-#     condition: time
-- id: notifica_garage
-  alias: '[Notifica] Notifica Movimento Garage'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - entity_id: binary_sensor.motion_sensor_158d00010f7fda
-    from: 'off'
-    platform: state
-    to: 'on'
-  action:
-  - data:
-      message: Movimento rilevato in garage
-    service: notify.ios_ilendrius
-  condition:
 - id: spegni_garage_auto
-  alias: '[Garage] Timer Off (2 minuti)'
+  alias: '[Garage] Timer Off (1 minuto)'
   initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
     for:
-      seconds: 30
+      seconds: 60
     from: 'on'
     platform: state
     to: 'off'
@@ -263,6 +205,50 @@
   - condition: state
     entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     state: 'off'
+
+# Garage Notifiche
+- id: notifica_garage
+  alias: '[Notifica] Notifica Movimento Garage'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d00010f7fda
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      message: Movimento rilevato in garage
+    service: notify.ios_ilendrius
+  condition:
+- id: notify_garage_apertura
+  alias: '[Notifica] Notifica Apertura Garage'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      message: Saracinesca aperta
+    service: notify.ios_ilendrius
+- id: notify_garage_chiusura
+  alias: '[Notifica] Notifica Chiusura Garage'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      message: Saracinesca chiusa
+    service: notify.ios_ilendrius
+
+# Dispenza Trigger
 - id: dispensa_on
   alias: '[Dispenza] Lampadario On'
   initial_state: 'on'
@@ -287,7 +273,7 @@
   - entity_id: light.lampadario_dispensa
     service: light.turn_off
 - id: dispensa_on_off
-  alias: '[Dispenza] On/Off'
+  alias: '[Dispenza] On/Off con Sensore Porta'
   initial_state: 'on'
   trigger:
   - event_data:
@@ -300,98 +286,9 @@
       entity_id: light.lampadario_dispensa
     entity_id: light.lampadario_dispensa
     service: light.toggle
-- id: alarm_armed_away
-  alias: '[Allarme] Modalità Assente attivata'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - platform: state
-    entity_id: alarm_control_panel.house
-    to: armed_away
-  action:
-  - data:
-      message: Modalità Assente attivata
-    data_template:
-      message: L'allarme di casa è stato attivato in modalità Assente. Arrivederci
-      title: Modalità Assente attivata
-    service: notify.ios_ilendrius
-- id: alarm_armed_home
-  alias: '[Allarme] Modalità A Casa attivata'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - platform: state
-    entity_id: alarm_control_panel.house
-    to: armed_home
-  action:
-  - data:
-      message: Modalità A Casa attivata
-    data_template:
-      message: L'allarme di casa è stato attivato in modalità A Casa. Buonanotte
-      title: Modalità a casa attivata
-    service: notify.ios_ilendrius
-- id: alarm_arming_away
-  alias: '[Allarme] Attivando Modalità Assente'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - platform: state
-    entity_id: alarm_control_panel.house
-    to: pending
-  action:
-  - data:
-      message: Sto attivando l'allarme di casa, assicurati che le porte e le finestre siano chiuse
-    service: notify.ios_ilendrius
-- id: alarm_disarmed
-  alias: '[Allarme] Disarmato'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - platform: state
-    entity_id: alarm_control_panel.house
-    to: disarmed
-  action:
-  - service: notify.ios_ilendrius
-    data:
-      message: Allarme Disabled
-  - service: switch.turn_off
-    entity_id: switch.siren_switch
-  - data:
-      message: The house alarm has been Deactivated
-    service: notify.ios_ilendrius
-- id: alarm_triggered
-  alias: '[Allarme] Scattato'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - platform: state
-    entity_id: alarm_control_panel.house
-    to: triggered
-  action:
-  - service: switch.turn_on
-    entity_id: switch.siren_switch
-  - service: notify.ios_ilendrius
-    data:
-      message: ALLARME SCATTATO!!! {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
-        states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
-        }}
-- id: alarm_warning
-  alias: '[Allarme] Attenzione'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - platform: state
-    entity_id: alarm_control_panel.house
-    to: warning
-  action:
-  - service: notify.ios_ilendrius
-    data:
-      message: ALLARME Attenzione {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
-        states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
-        }}
-  - data:
-      message: Hello, the house alarm has been tripped. Please deactivate
-    service: notify.ios_ilendrius
+
+
+# Balcone Interno Trigger
 - id: accendi_balcone
   alias: '[Balcone Interno] Accendi Lampione'
   initial_state: 'on'
@@ -411,11 +308,13 @@
     before: '7:00'
     condition: time
 - id: spegni_balcone
-  alias: '[Balcone Interno] Spegni Lampione'
+  alias: '[Balcone Interno] Spegni Lampione dopo 10 secondi'
   initial_state: 'on'
   hide_entity: True
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000201980a
+    for:
+      seconds: 10
     from: 'on'
     platform: state
     to: 'off'
@@ -423,33 +322,11 @@
   - data:
       entity_id: light.balcone_interno
     service: light.turn_off
-- id: imposta_sala_da_pranzo
-  alias: 'Scene sala da pranzo'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-    platform: state
-    entity_id: input_select.sala_da_pranzo_preset
-  action:
-    service: hue.hue_activate_scene
-    data_template:
-      group_name: 'Sala da pranzo'
-      scene_name: '{{ trigger.to_state.state }}'
-- id: imposta_soggiorno
-  alias: 'Scene soggiorno'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-    platform: state
-    entity_id: input_select.soggiorno_preset
-  action:
-    service: hue.hue_activate_scene
-    data_template:
-      group_name: 'Soggiorno'
-      scene_name: '{{ trigger.to_state.state }}'
 
+
+# Allarme Trigger
 - id: trigger-home
-  alias: '[Allarme] Trigger alarm while armed home'
+  alias: '[Allarme] Scatta allarme quando attivo A Casa'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d000112031b
@@ -469,10 +346,9 @@
     data:
       gw_mac: !secret xiaomi_mac
       ringtone_id: 2
-      ringtone_vol: 8
-
+      ringtone_vol: 100
 - id: trigger-away
-  alias: '[Allarme] Trigger alarm while armed away'
+  alias: '[Allarme] Scatta allarme quando Attivo'
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d000112031b
@@ -497,20 +373,150 @@
       entity_id: alarm_control_panel.house
       state: armed_away
   action:
-    service: xiaomi_aqara.play_ringtone
+  - service: xiaomi_aqara.play_ringtone
     data:
       gw_mac: !secret xiaomi_mac
       ringtone_id: 2
       ringtone_vol: 8
 
-# - id: hue-soggiorno
-#   alias: Soggiorno concentrazione
-#     trigger:
-#       platform: state
-#       entity_id: input_select.soggiorno_preset
-#       to: "Concentrazione"
-#     action:
-#       service: hue.hue_activate_scene
-#       data:
-#         group_name: "Soggiorno"
-#         scene_name: "Concentrazione"
+
+# Allarme Notifiche
+- id: alarm_armed_away
+  alias: '[Notifica] Modalità Assente attivata'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: armed_away
+  action:
+    data_template:
+      message: 'Allarme di casa è stato attivato in modalità Assente. Arrivederci'
+      title: 'Allarme'
+    service: notify.ios_ilendrius
+# - id: alarm_armed_home
+#   alias: '[Allarme] Modalità A Casa attivata'
+#   initial_state: 'on'
+#   hide_entity: True
+#   trigger:
+#   - platform: state
+#     entity_id: alarm_control_panel.house
+#     to: armed_home
+#   action:
+#     data_template:
+#       title: 'Allarme'
+#       message: 'Allarme di casa è stato attivato in modalità A Casa. Buonanotte'
+#   - service: notify.ios_ilendrius
+- id: alarm_arming_away
+  alias: '[Notifica] Attivando Modalità Assente'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: pending
+  action:
+  - service: notify.ios_ilendrius
+    data_template:
+      title: 'Allarme'
+      message: 'Sto attivando allarme di casa, assicurati che le porte e le finestre siano chiuse'
+  - service: xiaomi_aqara.play_ringtone
+    data:
+      gw_mac: !secret xiaomi_mac
+      ringtone_id: 2
+      ringtone_vol: 2
+- id: alarm_disarmed
+  alias: '[Notifica] Disarmato'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: disarmed
+  action:
+  - data_template:
+      title: 'Allarme'
+      message: 'Allarme di casa disattivato.'
+    service: notify.ios_ilendrius
+- id: alarm_triggered
+  alias: '[Allarme] Scattato'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: triggered
+  action:
+  - service: switch.turn_on
+    entity_id: switch.siren_switch
+  - service: notify.ios_ilendrius
+    data_template:
+      title: 'Allarme'
+      message: 'Scattato! {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
+        states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
+        }}'
+- id: alarm_warning
+  alias: '[Notifica] Attenzione'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: warning
+  action:
+  - service: notify.ios_ilendrius
+    data:
+      title: 'Allarme'
+      message: 'Attenzione {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
+        states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
+        }}'
+
+# Slider
+- id: 'Soggiorno-brightness-slider'
+  alias: 'Soggiorno Light - Adjust Brightness'
+  trigger:
+    platform: state
+    entity_id: input_number.soggiorno_brightness
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.soggiorno
+        brightness: "{{ trigger.to_state.state | int }}"
+
+- id: 'Sala-da-pranzo-brightness-slider'
+  alias: 'Sala da pranzo Light - Adjust Brightness'
+  trigger:
+    platform: state
+    entity_id: input_number.sala_da_pranzo_brightness
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.sala_da_pranzo
+        brightness: "{{ trigger.to_state.state | int }}"
+
+
+# Select
+- id: imposta_sala_da_pranzo
+  alias: 'Scene sala da pranzo'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_select.sala_da_pranzo_preset
+  action:
+    service: hue.hue_activate_scene
+    data_template:
+      group_name: 'Sala da pranzo'
+      scene_name: '{{ trigger.to_state.state }}'
+- id: imposta_soggiorno
+  alias: 'Scene soggiorno'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_select.soggiorno_preset
+  action:
+    service: hue.hue_activate_scene
+    data_template:
+      group_name: 'Soggiorno'
+      scene_name: '{{ trigger.to_state.state }}'

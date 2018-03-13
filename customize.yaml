@@ -75,6 +75,8 @@ light.abatjour_bianca:
   icon: mdi:lamp
 light.abatjour_verde:
   icon: mdi:lamp
+input_select.soggiorno_preset:
+  friendly_name: "Scene"
   
 # Cucina
 light.gateway_light_f0b429cbef3f:
@@ -96,7 +98,7 @@ binary_sensor.door_window_sensor_158d000201980a:
   homebridge_model: "Aqara Window Door Sensor"
   
 # Sala da Pranzo
-group.lampadario_tv:
+light.lampadario_tv:
   icon: mdi:ceiling-light
 sensor.humidity_158d00015b2df4:
   friendly_name: "Umidit\xE0 Sala da Pranzo"
@@ -148,6 +150,8 @@ sensor.illumination_158d0001e5413e:
   homebridge_name: "Sensore Movimento/Luminosit\xE0 Sala da Pranzo"
   homebridge_mfg: "Aqara"
   homebridge_model: "Aqara Human Body Sensor"
+input_select.sala_da_pranzo_preset:
+  friendly_name: "Scene"
 
 # Dispenza
 light.lampadario_dispensa:

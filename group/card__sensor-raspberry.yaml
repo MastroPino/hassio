@@ -1,0 +1,11 @@
+sensor_raspberry:
+  name: Raspberry Pi
+  icon: mdi:raspberrypi
+  entities:
+    - sensor.disk_use_percent
+    - sensor.memory_free
+    - sensor.memory_use_percent
+    - sensor.processor_use
+    - sensor.since_last_boot
+    - sensor.network_in_eth0
+    - sensor.network_out_eth0

@@ -1,6 +1,7 @@
-2018-03-04 09:12:03 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-03-13 11:02:42 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=96 from 2018-03-13 09:57:21.368908)
+2018-03-13 11:02:53 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 84, in async_setup
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
   File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
     return fut.result()
@@ -12,16 +13,16 @@ Traceback (most recent call last):
     if not data.get_camera_names():
   File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
     self.update()
-  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 308, in wrapper
+  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 319, in wrapper
     result = method(*args, **kwargs)
   File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 115, in update
     self.camera_data = lnetatmo.CameraData(self.auth, size=100)
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-03-04 09:12:03 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+2018-03-13 11:02:53 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 84, in async_setup
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
   File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
     return fut.result()
@@ -33,103 +34,81 @@ Traceback (most recent call last):
     for camera_name in data.get_camera_names():
   File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
     self.update()
-  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 308, in wrapper
+  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 319, in wrapper
     result = method(*args, **kwargs)
   File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 115, in update
     self.camera_data = lnetatmo.CameraData(self.auth, size=100)
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-03-04 09:12:28 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
-2018-03-04 09:13:18 WARNING (SyncWorker_12) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 09:14:37 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 09:15:04 WARNING (SyncWorker_13) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 09:21:54 WARNING (SyncWorker_6) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 09:21:57 WARNING (SyncWorker_6) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 09:21:59 WARNING (SyncWorker_18) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 09:22:01 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 09:28:50 WARNING (MainThread) [homeassistant.helpers.entity] Update of sensor.network_up is taking over 10 seconds
-2018-03-04 17:04:41 WARNING (SyncWorker_4) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 17:04:46 WARNING (SyncWorker_9) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 17:04:59 WARNING (SyncWorker_17) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 17:05:00 WARNING (SyncWorker_0) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 17:05:04 WARNING (SyncWorker_19) [phue] run_scene: More than 1 group found by name Sala da Pranzo
-2018-03-04 17:09:52 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 17:11:21 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 17:12:08 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 17:12:45 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 17:15:15 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 17:15:32 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_on
-2018-03-04 17:16:15 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
-2018-03-04 17:23:29 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:23:31 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:23:31 ERROR (MainThread) [homeassistant.core] Error executing service <ServiceCall script.play_sel_sound>
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/template.py", line 131, in async_render
-    return self._compiled.render(kwargs).strip()
-  File "/usr/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/usr/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "<template>", line 1, in top-level template code
-  File "/usr/lib/python3.6/site-packages/jinja2/filters.py", line 653, in do_int
-    return int(value)
-jinja2.exceptions.UndefinedError: 'None' has no attribute 'state'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/core.py", line 1010, in _event_to_service_call
-    yield from service_handler.func(service_call)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/script.py", line 163, in service_handler
-    yield from script.async_turn_on(variables=service.data)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/script.py", line 215, in async_turn_on
-    yield from self.script.async_run(kwargs.get(ATTR_VARIABLES))
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/script.py", line 105, in async_run
-    delay.async_render(variables))
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/template.py", line 133, in async_render
-    raise TemplateError(err)
-homeassistant.exceptions.TemplateError: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:23:32 ERROR (MainThread) [homeassistant.core] Error executing service <ServiceCall script.play_sel_sound_loop>
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/template.py", line 131, in async_render
-    return self._compiled.render(kwargs).strip()
-  File "/usr/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/usr/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/usr/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "<template>", line 1, in top-level template code
-  File "/usr/lib/python3.6/site-packages/jinja2/filters.py", line 653, in do_int
-    return int(value)
-jinja2.exceptions.UndefinedError: 'None' has no attribute 'state'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/core.py", line 1010, in _event_to_service_call
-    yield from service_handler.func(service_call)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/script.py", line 163, in service_handler
-    yield from script.async_turn_on(variables=service.data)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/script.py", line 215, in async_turn_on
-    yield from self.script.async_run(kwargs.get(ATTR_VARIABLES))
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/script.py", line 105, in async_run
-    delay.async_render(variables))
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/template.py", line 133, in async_render
-    raise TemplateError(err)
-homeassistant.exceptions.TemplateError: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:23:33 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:23:40 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:24:15 WARNING (MainThread) [homeassistant.components.script] Script script.play_sel_sound_loop already running.
-2018-03-04 17:24:28 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:24:29 WARNING (MainThread) [homeassistant.components.script] Script script.play_sel_sound_loop already running.
-2018-03-04 17:24:29 WARNING (MainThread) [homeassistant.components.script] Script script.play_sel_sound already running.
-2018-03-04 17:24:30 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
-2018-03-04 17:24:40 ERROR (MainThread) [homeassistant.helpers.service] Error rendering data template: UndefinedError: 'None' has no attribute 'state'
+2018-03-13 11:03:21 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
+2018-03-13 11:03:53 WARNING (SyncWorker_1) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-03-13 11:04:02 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-03-13 11:11:01 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 5.9.15.188
+2018-03-13 11:11:01 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 5.9.15.188
+2018-03-13 11:11:08 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 5.9.15.188
+2018-03-13 11:11:10 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 5.9.15.188
+2018-03-13 11:11:15 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 5.9.15.188
+2018-03-13 11:11:21 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from 5.9.15.188
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:53 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:54 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
+2018-03-13 11:14:55 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6954 TypeError: undefined is not an object (evaluating 't.attributes')
