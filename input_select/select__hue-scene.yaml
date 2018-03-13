@@ -1,0 +1,21 @@
+# Select Scene Sala da Pranzo
+  sala_da_pranzo_preset:
+    options:
+      - Seleziona
+      - Relax
+      - Lettura
+      - Concentrazione
+      - Energia
+      - 'OFF'
+    initial: 'Seleziona'
+    
+# Select Scene Soggiorno
+  soggiorno_preset:
+    options:
+      - Seleziona
+      - Relax
+      - Lettura
+      - Concentrazione
+      - Energia
+      - 'OFF'
+    initial: 'Seleziona'

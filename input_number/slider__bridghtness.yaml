@@ -1,0 +1,15 @@
+# Slider Soggiorno
+  soggiorno_brightness:
+    name: 'Luminosità'
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+    
+# Slider Sala da Pranzo
+  sala_da_pranzo_brightness:
+    name: 'Luminosità'
+    initial: 254
+    min: 0
+    max: 254
+    step: 1

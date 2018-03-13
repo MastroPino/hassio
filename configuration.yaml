@@ -1,21 +1,13 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Casa
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret home_latitude
   longitude: !secret home_longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: !secret home_elevation
-  # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Rome
 
   customize: !include customize.yaml
   packages: !include_dir_named packages
-
-# Show links to resources in log and frontend
-#introduction:
 
 # Enables the frontend
 frontend:
@@ -176,26 +168,8 @@ panel_custom: !include panel_custom.yaml
 # Script
 script: !include_dir_merge_named script
 
-# Input
-input_select:
-  sala_da_pranzo_preset:
-    options:
-      - Seleziona
-      - Relax
-      - Lettura
-      - Concentrazione
-      - Energia
-      - 'OFF'
-    initial: 'Seleziona'
-  soggiorno_preset:
-    options:
-      - Seleziona
-      - Relax
-      - Lettura
-      - Concentrazione
-      - Energia
-      - 'OFF'
-    initial: 'Seleziona'
+# Input Select
+input_select: !include_dir_merge_named input_select
 
 # Switch
 switch: !include_dir_merge_list switch
@@ -203,17 +177,5 @@ switch: !include_dir_merge_list switch
 # Cover
 cover: !include_dir_merge_list cover
 
-### Input slider to control gateway volume ###
-input_number:
-  soggiorno_brightness:
-    name: 'Luminosità'
-    initial: 254
-    min: 0
-    max: 254
-    step: 1
-  sala_da_pranzo_brightness:
-    name: 'Luminosità'
-    initial: 254
-    min: 0
-    max: 254
-    step: 1
+# Input Number
+input_number: !include_dir_merge_named input_number
