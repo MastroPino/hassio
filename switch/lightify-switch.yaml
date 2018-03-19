@@ -1,0 +1,13 @@
+  - platform: template
+    switches:
+      tepee:
+        friendly_name: "Tepee"
+        value_template: "{{ is_state('light.tepee', 'on') }}"
+        turn_on:
+          service: light.turn_on
+          data:
+            entity_id: light.tepee
+        turn_off:
+          service: light.turn_off
+          data:
+            entity_id: light.tepee

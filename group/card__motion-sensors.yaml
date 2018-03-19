@@ -1,0 +1,9 @@
+motion_sensors:
+  name: Sensori Movimento
+  entities:
+    # Movimento Ingresso
+    - binary_sensor.motion_sensor_158d0001e5764c
+    # Movimento Sala da Pranzo
+    - binary_sensor.motion_sensor_158d0001e5413e
+    # Movimento Garage
+    - binary_sensor.motion_sensor_158d00010f7fda

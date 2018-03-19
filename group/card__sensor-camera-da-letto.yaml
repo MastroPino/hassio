@@ -1,6 +1,5 @@
 sensor_camera_da_letto:
   name: Camera da letto
   entities:
-    - binary_sensor.cube_158d0001051007
-    - binary_sensor.switch_158d00012641b4
-    - binary_sensor.switch_158d00013ecb24
+    # Sensore Finestra Camera da Letto
+    - binary_sensor.door_window_sensor_158d0001de6e16

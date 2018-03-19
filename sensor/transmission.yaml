@@ -1,0 +1,9 @@
+  - platform: transmission
+    host: !secret synology_ip
+    username: !secret transmission_username
+    password: !secret transmission_password
+    monitored_variables:
+      - 'current_status'
+      - 'download_speed'
+      - 'upload_speed'
+      - 'active_torrents'

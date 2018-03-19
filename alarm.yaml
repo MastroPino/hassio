@@ -21,8 +21,8 @@ hide_sensor_groups: False #[Optional] - False by default. Setting this to True h
 hide_custom_panel: True #[Optional] - True by default. Setting this to False enables a custom panel below the sensors groups which allows you to add your own html code. Use this to bring any other features you would like to see for example displaying live camera feeds, a rotating image gallery, custom HA buttons and sensors. To use this enable the custom panel in alarm.yaml (custom_panel: True) then ensure you take a copy of custom-element.html and add it to you www/alarm/ folder. Edit the html code between the <template> tags. I'm have added a custom sample folder where I will upload examples of 'things' which can be added here. Please contribute!!!
 
 ##[PASSCODE RELATED]
-#passcode_attempts: 3 #[Optional] Disabled if commented out. When a value equal or greater than 0 is set, the system will only allow the set amount of password attempts before timing out
-#passcode_attempts_timeout: 30 #[Optional] Default 30 seconds. When set with the password attempts option the panel will timeout for the amount of seconds set if the password is entered incorrectly as per the password_attempts option. The system will then reset the allowed password attempts
+passcode_attempts: 3 #[Optional] Disabled if commented out. When a value equal or greater than 0 is set, the system will only allow the set amount of password attempts before timing out
+passcode_attempts_timeout: 30 #[Optional] Default 30 seconds. When set with the password attempts option the panel will timeout for the amount of seconds set if the password is entered incorrectly as per the password_attempts option. The system will then reset the allowed password attempts
 
 ##[MQTT RELATED]
 #mqtt: True #[OPTIONAL] - False by default. Settings this to True will enable MQTT Mode. Uncomment options below to use See the README for guidance.
@@ -46,30 +46,47 @@ triggered_colour: 'red'
 ############# SENSOR GROUPS ########################
 ##Sensors in this group tigger the alarm immediately
 immediate:
-  - binary_sensor.motion_sensor_158d00010f7fda
-  - binary_sensor.door_window_sensor_158d000201980a
-  - binary_sensor.motion_sensor_158d0001e5413e
-  - binary_sensor.motion_sensor_158d0001e5764c
-  - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Finestra Stanza Armadio
+    - binary_sensor.door_window_sensor_158d0001b95954
+    # Finestra Cucina
+    - binary_sensor.door_window_sensor_158d000201980a
+    # Finestra Camera da Letto
+    - binary_sensor.door_window_sensor_158d0001de6e16
+    # Finestra a Ribalta Bagno
+    - binary_sensor.door_window_sensor_158d0001e44493
+    # Finestra a ribalta Bagnetto
+    - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Movimento Ingresso
+    - binary_sensor.motion_sensor_158d0001e5764c
+    # Movimento Sala da Pranzo
+    - binary_sensor.motion_sensor_158d0001e5413e
+    # Movimento Garage
+    - binary_sensor.motion_sensor_158d00010f7fda
 
 ##Sensors in this group start the clock (pending_time) when tripped before the alarm is activated in 'Away' mode
 delayed:
+  # Porta Ingresso
   - binary_sensor.door_window_sensor_158d000112031b
 
 ##Same as notathome but hopefully the title is more self explanatory. Can still use notathome for backwards compatibility
 ##Note sensors can exist in more than one group notice top_floor appears in two groups
 homemodeignore:
-  - binary_sensor.motion_sensor_158d00010f7fda
-  - binary_sensor.motion_sensor_158d0001e5413e
-  - binary_sensor.motion_sensor_158d0001e5764c
+    # Movimento Garage
+    - binary_sensor.motion_sensor_158d00010f7fda
+    # Movimento Sala da Pranzo
+    - binary_sensor.motion_sensor_158d0001e5413e
+    # Movimento Ingresso
+    - binary_sensor.motion_sensor_158d0001e5764c
 ##Use this group to automatically override the warning message on open sensors when setting 'away' mode. (I use this as I have a motion sensor at the front door)
 override:
   - binary_sensor.hall_multi_sensor_sensor
 
 ##This group is special and only effects 'perimeter mode'. If perimeter_mode is enabled then any sensor in this group will trigger the alarm immediately if arm perimeter is set. There is no delayed group for this mode (unless requested as a feature of course!)
 perimeter:
-  - binary_sensor.door_window_sensor_158d000201980a
-  - binary_sensor.door_window_sensor_158d000112031b
+    # Finestra Cucina
+    - binary_sensor.door_window_sensor_158d000201980a
+    # Sensore Porte/Finestre Ingresso
+    - binary_sensor.door_window_sensor_158d000112031b
 
 ##[OPTIONAL] - CUSTOM SENSOR STATUSES - These settings allow devices which are not natively supported by this panel to be used. 
 ##This is to be used when the state of the device is not recognised by the panel. Examples are provided below 

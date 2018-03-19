@@ -10,8 +10,10 @@ default_view:
     - sensor.dark_sky_humidity
     - cover.saracinesca
     - group.stanze_home
+    - group.window_sensors
+    - group.motion_sensors
     - group.climate
     - media_player.lg_webos_smart_tv
-    - media_player.apple_tv_2
+    - media_player.apple_tv
     - updater.updater
     - alarm_control_panel.home_alarm

@@ -1,16 +1,16 @@
 # Sonoff Fix Temporaneo
-- id: autosonoff-off
-  alias: 'Sonoff Fix'
-  initial_state: 'on'
-  hide_entity: False
-  trigger:
-    platform: time
-    seconds: 30
-  action:
-  - service: mqtt.publish
-    data:
-      topic: cmnd/garage/power4
-      payload: 'OFF'
+# - id: autosonoff-off
+#   alias: 'Sonoff Fix'
+#   initial_state: 'off'
+#   hide_entity: False
+#   trigger:
+#     platform: time
+#     seconds: 30
+#   action:
+#   - service: mqtt.publish
+#     data:
+#       topic: cmnd/garage/power4
+#       payload: 'OFF'
 
 # Sonoff Fix from Hass.io
 - id: fix-sonoff

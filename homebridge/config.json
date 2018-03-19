@@ -12,7 +12,7 @@
       "platform": "HomeAssistant",
       "name": "HomeAssistant",
       "host": "http://hassio/homeassistant",
-      "password": "",
+      "password": "5eecdf22486b4795973c570addb35ea5",
       "default_visibility": "hidden",
       "supported_types": [
         "alarm_control_panel",

@@ -1,123 +1,176 @@
 light.lampadario_1:
+  name: Lampadario 1
   platform: hue
   unique_id: 00:17:88:01:10:29:57:aa-0b
 light.abatjour_verde:
+  name: Abatjour Verde
   platform: hue
   unique_id: 00:17:88:01:10:44:40:d2-0b
 light.lampadario:
+  name: Lampadario
   platform: hue
   unique_id: 00:17:88:01:02:6e:de:ca-0b
 light.fiore:
+  name: Fiore
   platform: hue
   unique_id: 00:17:88:01:10:4b:bb:29-0b
 light.lampadario_2:
+  name: Lampadario 2
   platform: hue
   unique_id: 00:17:88:01:10:46:c2:b3-0b
 light.lampadario_3:
+  name: Lampadario 3
   platform: hue
   unique_id: 00:17:88:01:10:46:be:01-0b
 light.lampione:
+  name: Lampione
   platform: hue
   unique_id: 00:17:88:01:10:2c:b3:d0-0b
 light.abatjour_bianca:
+  name: Abatjour Bianca
   platform: hue
   unique_id: 00:17:88:01:10:41:f0:dc-0b
 light.piantana:
+  name: Piantana
   platform: hue
   unique_id: 00:17:88:01:10:26:b3:11-0b
 light.hue_go:
+  name: HUE Go
   platform: hue
   unique_id: 00:17:88:01:01:14:db:b4-0b
 light.lampadario_dispensa:
+  name: Plafoniera Dispenza
   platform: hue
   unique_id: 00:17:88:01:10:2b:01:3e-0b
 sensor.ilendrius_pro_battery_level:
+  name: iLendrius Pro
   platform: ios
   unique_id: level_ilendrius_pro
 sensor.ilendrius_pro_battery_state:
+  name: Stato Batteria iLendrius Pro
   platform: ios
   unique_id: state_ilendrius_pro
 sensor.ilendrius_battery_level:
+  name: iLendrius
   platform: ios
   unique_id: level_ilendrius
 sensor.ilendrius_battery_state:
+  name: Stato Batteria iLendrius
   platform: ios
   unique_id: state_ilendrius
 media_player.apple_tv:
+  name:
   platform: apple_tv
   unique_id: f5bec2d3c85bceee10995c4bc372393f423c3c5b330ee1949937659d02e2f3ed
 remote.apple_tv:
+  name:
   platform: apple_tv
   unique_id: f5bec2d3c85bceee10995c4bc372393f423c3c5b330ee1949937659d02e2f3ed
 media_player.apple_tv_2:
+  name:
   platform: apple_tv
   unique_id: 044e947934923861ea0ff49132f616008818c4107dbf90b63046cfd0d2127227
 remote.apple_tv_2:
+  name:
   platform: apple_tv
   unique_id: 044e947934923861ea0ff49132f616008818c4107dbf90b63046cfd0d2127227
 binary_sensor.switch_158d00012641b4:
+  name: Bottone Andrea
   platform: xiaomi_aqara
   unique_id: status158d00012641b4
 binary_sensor.door_window_sensor_158d00013ed2c1:
+  name: Interruttore Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: status158d00013ed2c1
 binary_sensor.door_window_sensor_158d000201980a:
+  name: Finestra Cucina
   platform: xiaomi_aqara
   unique_id: status158d000201980a
 binary_sensor.motion_sensor_158d0001e5764c:
+  name: Movimento Ingresso
   platform: xiaomi_aqara
   unique_id: status158d0001e5764c
 binary_sensor.motion_sensor_158d0001e5413e:
+  name: Movimento Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: status158d0001e5413e
 binary_sensor.door_window_sensor_158d0001fd6296:
+  name: Saracinesca
   platform: xiaomi_aqara
   unique_id: status158d0001fd6296
 binary_sensor.door_window_sensor_158d00013fede0:
+  name: Porta Dispenza
   platform: xiaomi_aqara
   unique_id: status158d00013fede0
 binary_sensor.door_window_sensor_158d0001b95bf4:
+  name: Finestra a Ribalta Bagnetto
   platform: xiaomi_aqara
   unique_id: status158d0001b95bf4
 binary_sensor.door_window_sensor_158d000112031b:
+  name: Porta Ingresso
   platform: xiaomi_aqara
   unique_id: status158d000112031b
 binary_sensor.switch_158d00013ecb24:
+  name: Bottone Eleonora
   platform: xiaomi_aqara
   unique_id: status158d00013ecb24
 binary_sensor.cube_158d0001051007:
+  name: Cube
   platform: xiaomi_aqara
   unique_id: cube158d0001051007
 binary_sensor.motion_sensor_158d00010f7fda:
+  name: Movimento Garage
   platform: xiaomi_aqara
   unique_id: status158d00010f7fda
 binary_sensor.switch_158d00013f84db:
+  name: Bottone Dispenza
   platform: xiaomi_aqara
   unique_id: status158d00013f84db
 sensor.illumination_f0b429cbef3f:
+  name: Illuminazione Cucina
   platform: xiaomi_aqara
   unique_id: illuminationf0b429cbef3f
 sensor.humidity_158d00015b2df4:
+  name: Umidità Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: humidity158d00015b2df4
 sensor.pressure_158d0001e549e0:
+  name: Pressione Bagno
   platform: xiaomi_aqara
   unique_id: pressure158d0001e549e0
 sensor.temperature_158d0001e549e0:
+  name: Temperatura Bagno
   platform: xiaomi_aqara
   unique_id: temperature158d0001e549e0
 sensor.humidity_158d0001e549e0:
+  name: Umidità Bagno
   platform: xiaomi_aqara
   unique_id: humidity158d0001e549e0
 sensor.illumination_158d0001e5413e:
+  name: Luminosità Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: lux158d0001e5413e
 sensor.illumination_158d0001e5764c:
+  name: Illuminazione Ingresso
   platform: xiaomi_aqara
   unique_id: lux158d0001e5764c
 sensor.temperature_158d00015b2df4:
+  name: Temperatura sala da pranzo
   platform: xiaomi_aqara
   unique_id: temperature158d00015b2df4
 light.gateway_light_f0b429cbef3f:
+  name: Luce Gateway
   platform: xiaomi_aqara
   unique_id: rgbf0b429cbef3f
+binary_sensor.door_window_sensor_158d0001de6e16:
+  name: Finestra Camera da Letto
+  platform: xiaomi_aqara
+  unique_id: status158d0001de6e16
+binary_sensor.door_window_sensor_158d0001b95954:
+  name: Finestra Camera Armadio
+  platform: xiaomi_aqara
+  unique_id: status158d0001b95954
+binary_sensor.door_window_sensor_158d0001e44493:
+  name: Finestra a Ribalta Bagno
+  platform: xiaomi_aqara
+  unique_id: status158d0001e44493

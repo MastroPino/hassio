@@ -1,0 +1,4 @@
+  platform: transmission
+  host: !secret synology_ip
+  username: !secret transmission_username
+  password: !secret transmission_password

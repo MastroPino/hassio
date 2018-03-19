@@ -14,6 +14,12 @@ frontend:
   javascript_version: es5
   themes: !include_dir_merge_named themes/
 
+panel_iframe:
+  sonoff_garage:
+    title: 'Garage'
+    icon: 'mdi:shuffle-variant'
+    url: 'http://192.168.0.99'
+
 http:
   api_password: !secret home_password
   base_url: !secret home_url
@@ -179,3 +185,4 @@ cover: !include_dir_merge_list cover
 
 # Input Number
 input_number: !include_dir_merge_named input_number
+

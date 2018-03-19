@@ -4,3 +4,8 @@
       - service: switch.turn_on
         data:
           entity_id: switch.sonoff_garage_4
+      - delay:
+          seconds: 1
+      - service: switch.turn_off
+        data:
+          entity_id: switch.sonoff_garage_4 

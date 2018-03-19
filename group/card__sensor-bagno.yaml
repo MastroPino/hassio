@@ -4,3 +4,5 @@ sensor_bagno:
     - sensor.temperature_158d0001e549e0
     - sensor.humidity_158d0001e549e0
     - sensor.pressure_158d0001e549e0
+    # Sensore Finestra a Ribalta Bagno
+    - binary_sensor.door_window_sensor_158d0001e44493

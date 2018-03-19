@@ -1,0 +1,18 @@
+window_sensors:
+  name: Sensori Finestre
+  control: hidden
+  entities:
+    # Sensore Porte/Finestre Ingresso
+    - binary_sensor.door_window_sensor_158d000112031b
+    # Sensore Finestra Stanza Armadio
+    - binary_sensor.door_window_sensor_158d0001b95954
+    # Finestra Cucina
+    - binary_sensor.door_window_sensor_158d000201980a
+    # Sensore Finestra Camera da Letto
+    - binary_sensor.door_window_sensor_158d0001de6e16
+    # Sensore Finestra a Ribalta Bagno
+    - binary_sensor.door_window_sensor_158d0001e44493
+    # Sensore Porte/Finestra a ribalta Bagnetto
+    - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Sensore Saracinesca
+    - binary_sensor.door_window_sensor_158d0001fd6296

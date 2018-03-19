@@ -1,4 +1,4 @@
-2018-03-13 14:50:20 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-03-19 15:34:41 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -19,7 +19,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-03-13 14:50:20 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+2018-03-19 15:34:41 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -40,12 +40,115 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-03-13 14:50:43 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
-2018-03-13 14:51:11 WARNING (SyncWorker_15) [netdisco.ssdp] Found malformed XML at http://192.168.0.20:9080: status=ok
-2018-03-13 14:51:15 WARNING (SyncWorker_15) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
-2018-03-13 14:51:41 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-03-13 14:51:41 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-03-13 14:51:41 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-03-13 14:52:43 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-03-13 14:52:43 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-03-13 14:52:43 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
+2018-03-19 15:35:11 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
+2018-03-19 15:35:41 WARNING (SyncWorker_7) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-03-19 15:36:44 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:38 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:39 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 15:38:40 ERROR (MainThread) [frontend.js.es5.201803100] https://mastropino.homepc.it:8123/frontend_es5/core-088588bf8c69528f3df37b31864cb98d.js:1:6955 Uncaught TypeError: Cannot read property 'attributes' of undefined
+2018-03-19 17:04:58 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-03-19 17:04:58 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
+2018-03-19 17:04:58 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
+2018-03-19 17:54:03 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-03-19 17:54:03 ERROR (SyncWorker_9) [xiaomi_gateway] Cannot connect to Gateway
+2018-03-19 17:54:03 ERROR (SyncWorker_9) [xiaomi_gateway] No data in response from hub None
+2018-03-19 17:54:13 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-03-19 17:54:13 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
+2018-03-19 17:54:13 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
+2018-03-19 17:54:34 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-03-19 17:54:34 ERROR (SyncWorker_19) [xiaomi_gateway] Cannot connect to Gateway
+2018-03-19 17:54:34 ERROR (SyncWorker_19) [xiaomi_gateway] No data in response from hub None
+2018-03-19 17:55:36 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-03-19 17:55:36 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-03-19 17:55:36 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-03-19 19:36:30 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1925878320: Client exceeded max pending messages [2]: 512
+2018-03-19 19:52:08 ERROR (MainThread) [homeassistant.core] Error executing service <ServiceCall notify.ios_ilendrius: message=<homeassistant.helpers.template.Template object at 0x721f1db0>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/core.py", line 1006, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/notify/__init__.py", line 137, in async_notify_message
+    yield from notify_service.async_send_message(**kwargs)
+  File "/usr/lib/python3.6/asyncio/futures.py", line 332, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 250, in _wakeup
+    future.result()
+  File "/usr/lib/python3.6/asyncio/futures.py", line 245, in result
+    raise self._exception
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/notify/ios.py", line 109, in send_message
+    log_rate_limits(target, req.json())
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/notify/ios.py", line 29, in log_rate_limits
+    rate_limits = resp["rateLimits"]
+KeyError: 'rateLimits'
+2018-03-19 20:30:10 WARNING (MainThread) [homeassistant.helpers.entity] Update of sensor.status_smart_sdb is taking over 10 seconds
