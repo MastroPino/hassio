@@ -1,17 +1,3 @@
-# Sonoff Fix Temporaneo
-# - id: autosonoff-off
-#   alias: 'Sonoff Fix'
-#   initial_state: 'off'
-#   hide_entity: False
-#   trigger:
-#     platform: time
-#     seconds: 30
-#   action:
-#   - service: mqtt.publish
-#     data:
-#       topic: cmnd/garage/power4
-#       payload: 'OFF'
-
 # Sonoff Fix from Hass.io
 - id: fix-sonoff
   alias: 'Power state on HA start-up'
@@ -51,7 +37,8 @@
     to: 'on'
   action:
   - data:
-      message: Ingresso aperto
+      title: "Ingresso"
+      message: Porta aperta
     service: notify.ios_ilendrius
 - id: notify_ingresso_chiusura
   alias: '[Notifica] Notifica Chiusura Ingresso'
@@ -64,7 +51,8 @@
     to: 'off'
   action:
   - data:
-      message: Ingresso chiuso
+      title: "Ingresso"
+      message: Porta chiusa
     service: notify.ios_ilendrius
     
 # Camera da Letto Trigger
@@ -218,22 +206,24 @@
     to: 'on'
   action:
   - data:
+      title: "Garage"
       message: Movimento rilevato in garage
     service: notify.ios_ilendrius
   condition:
-- id: notify_garage_apertura
-  alias: '[Notifica] Notifica Apertura Garage'
-  initial_state: 'on'
-  hide_entity: True
-  trigger:
-  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-    from: 'off'
-    platform: state
-    to: 'on'
-  action:
-  - data:
-      message: Saracinesca aperta
-    service: notify.ios_ilendrius
+# - id: notify_garage_apertura
+#   alias: '[Notifica] Notifica Apertura Garage'
+#   initial_state: 'on'
+#   hide_entity: True
+#   trigger:
+#   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+#     from: 'off'
+#     platform: state
+#     to: 'on'
+#   action:
+#   - data:
+#       title: "Garage"
+#       message: Saracinesca aperta
+#     service: notify.ios_ilendrius
 - id: notify_garage_chiusura
   alias: '[Notifica] Notifica Chiusura Garage'
   initial_state: 'on'
@@ -245,6 +235,7 @@
     to: 'off'
   action:
   - data:
+      title: "Garage"
       message: Saracinesca chiusa
     service: notify.ios_ilendrius
 
@@ -394,19 +385,19 @@
       message: 'Allarme di casa è stato attivato in modalità Assente. Arrivederci'
       title: 'Allarme'
     service: notify.ios_ilendrius
-# - id: alarm_armed_home
-#   alias: '[Allarme] Modalità A Casa attivata'
-#   initial_state: 'on'
-#   hide_entity: True
-#   trigger:
-#   - platform: state
-#     entity_id: alarm_control_panel.house
-#     to: armed_home
-#   action:
-#     data_template:
-#       title: 'Allarme'
-#       message: 'Allarme di casa è stato attivato in modalità A Casa. Buonanotte'
-#   - service: notify.ios_ilendrius
+- id: alarm_armed_home
+  alias: '[Allarme] Modalità A Casa attivata'
+  initial_state: 'on'
+  hide_entity: True
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.house
+    to: armed_home
+  action:
+    data_template:
+      title: 'Allarme'
+      message: 'Allarme di casa è stato attivato in modalità A Casa. Buonanotte'
+    service: notify.ios_ilendrius
 - id: alarm_arming_away
   alias: '[Notifica] Attivando Modalità Assente'
   initial_state: 'on'
