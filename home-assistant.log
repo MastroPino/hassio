@@ -1,4 +1,4 @@
-2018-03-20 20:01:03 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-03-25 00:11:24 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -19,7 +19,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-03-20 20:01:03 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+2018-03-25 00:11:24 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -40,5 +40,62 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-03-20 20:01:25 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
-2018-03-20 20:02:06 WARNING (SyncWorker_0) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-03-25 00:11:47 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
+2018-03-25 00:12:18 WARNING (SyncWorker_16) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-03-25 00:58:07 ERROR (SyncWorker_17) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-25 00:58:38 ERROR (SyncWorker_14) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-25 01:17:40 ERROR (SyncWorker_0) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-25 01:38:51 ERROR (SyncWorker_2) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-25 05:24:38 ERROR (SyncWorker_0) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-25 12:20:54 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1925190320: Client exceeded max pending messages [2]: 512
+2018-03-25 13:47:21 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_1: 
+2018-03-25 13:47:21 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_2: 
+2018-03-25 13:47:21 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_3: 
+2018-03-25 13:47:21 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_4: 
+2018-03-25 15:36:09 ERROR (SyncWorker_11) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-25 16:43:28 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_1: 
+2018-03-25 16:43:28 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_2: 
+2018-03-25 16:43:29 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_3: 
+2018-03-25 16:43:29 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_4: 
+2018-03-25 16:45:33 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_1: 
+2018-03-25 16:45:33 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_2: 
+2018-03-25 16:45:33 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_3: 
+2018-03-25 16:45:33 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_4: 
+2018-03-25 16:58:38 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_1: 
+2018-03-25 16:58:38 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_2: 
+2018-03-25 16:58:38 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_3: 
+2018-03-25 16:58:38 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_4: 
+2018-03-25 17:08:51 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_1: 
+2018-03-25 17:08:51 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_2: 
+2018-03-25 17:08:51 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_3: 
+2018-03-25 17:08:51 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_4: 
+2018-03-25 17:12:06 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_1: 
+2018-03-25 17:12:06 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_2: 
+2018-03-25 17:12:06 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_3: 
+2018-03-25 17:12:06 WARNING (MainThread) [homeassistant.components.mqtt.discovery] Unable to parse JSON garage_4: 
+2018-03-25 19:23:02 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_off
+2018-03-25 19:23:02 WARNING (MainThread) [homeassistant.core] Unable to find service input_number/turn_off
+2018-03-25 19:23:03 WARNING (MainThread) [homeassistant.core] Unable to find service input_number/turn_on
+2018-03-25 19:23:03 WARNING (MainThread) [homeassistant.core] Unable to find service input_select/turn_on
+2018-03-25 19:25:14 WARNING (SyncWorker_13) [netdisco.ssdp] Found malformed XML at http://192.168.0.20:9080: status=ok
+2018-03-25 19:55:11 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-03-25 20:46:05 ERROR (MainThread) [homeassistant.core] Error doing job: Fatal error on SSL transport
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/asyncio/sslproto.py", line 638, in _process_write_backlog
+    ssldata, offset = self._sslpipe.feed_appdata(data, offset)
+AttributeError: 'NoneType' object has no attribute 'feed_appdata'
+2018-03-25 20:46:05 ERROR (MainThread) [homeassistant.core] Error doing job: Fatal error on SSL transport
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/asyncio/sslproto.py", line 638, in _process_write_backlog
+    ssldata, offset = self._sslpipe.feed_appdata(data, offset)
+AttributeError: 'NoneType' object has no attribute 'feed_appdata'
+2018-03-25 21:04:38 WARNING (MainThread) [homeassistant.helpers.entity] Update of media_player.lg_webos_smart_tv is taking over 10 seconds
+2018-03-25 21:04:39 WARNING (MainThread) [homeassistant.components.media_player] Updating webostv media_player took longer than the scheduled update interval 0:00:10
+2018-03-25 21:05:44 WARNING (MainThread) [homeassistant.helpers.entity] Update of media_player.lg_webos_smart_tv is taking over 10 seconds
+2018-03-25 21:10:19 WARNING (MainThread) [homeassistant.helpers.entity] Update of media_player.lg_webos_smart_tv is taking over 10 seconds
+2018-03-26 05:33:14 ERROR (SyncWorker_4) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-03-26 07:51:10 WARNING (SyncWorker_19) [netdisco.ssdp] Error fetching description at http://192.168.0.50:49152/BasicDevice.xml
+2018-03-26 07:51:10 WARNING (SyncWorker_19) [netdisco.ssdp] Error fetching description at http://192.168.0.50:53629/
+2018-03-26 08:32:19 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1859684240: Client exceeded max pending messages [2]: 512
+2018-03-26 08:32:19 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1859684240: Client exceeded max pending messages [2]: 512
+2018-03-26 08:32:19 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1859684240: Client exceeded max pending messages [2]: 512

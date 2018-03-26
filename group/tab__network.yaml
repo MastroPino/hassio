@@ -3,10 +3,11 @@ network:
   icon: mdi:ethernet
   name: Rete
   entities:
-    - group.sensor_batterie
     - group.sensor_transmission
     - group.sensor_apc
     - group.sensor_raspberry
     - group.sensor_synology_dsm
     - group.sensor_speedtest
+    - group.sonoff_upgrade
     - group.sensor_gearbest
+    - group.sensor_batterie

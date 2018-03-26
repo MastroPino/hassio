@@ -100,11 +100,6 @@ sensor.temperature_158d00015b2df4:
 light.tepee:
   friendly_name: Tepee
   icon: mdi:tent
-#   homebridge_visible: false
-#   homebridge_switch_type: outlet
-#   homebridge_name: Tepee
-#   homebridge_mfg: Osram
-#   homebridge_model: Osram Lightify Plug
 switch.tepee:
   friendly_name: Tepee
   icon: mdi:tent
@@ -320,3 +315,11 @@ sensor.processor_use:
   icon: mdi:chip
 sensor.awara_temperature_humidity_sensor:
   friendly_name: Aqara Temperature Humidity Sensor
+script.check_sonoffs_version:
+  friendly_name: Cerca aggiornamenti...
+  icon: mdi:checkbox-multiple-marked-outline
+script.update_sonoffs:
+  friendly_name: Aggiorna Sonoffs
+  icon: mdi:download-network
+sensor.sonoff_4ch_pro_garage:
+  icon: mdi:power-socket-eu

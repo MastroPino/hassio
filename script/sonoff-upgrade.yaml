@@ -1,0 +1,13 @@
+  check_sonoffs_version:
+      sequence:
+        - service: mqtt.publish
+          data_template:
+            topic: "cmnd/sonoffs/status"
+            payload: 2
+
+  update_sonoffs:
+      sequence:
+        - service: mqtt.publish
+          data_template:
+            topic: "cmnd/sonoffs/upgrade"
+            payload: 1

@@ -8,17 +8,30 @@ homeassistant:
 
   customize: !include customize.yaml
   packages: !include_dir_named packages
+  customize_glob:
+    "*.*":
+      custom_ui_state_card: state-card-custom-ui
+    "light.*":
+      show_last_changed: false
+      state_card_mode: break-slider
+    "switch.*":
+      show_last_changed: true
+    "binary_sensor.*":
+      show_last_changed: true
+    "sensor.*":
+      show_last_changed: true
+    "automation.*":
+      confirm_controls_show_lock: true
 
 # Enables the frontend
 frontend:
-  javascript_version: es5
+#   javascript_version: es5
   themes: !include_dir_merge_named themes/
+#   extra_html_url:
+#     - /local/custom_ui/state-card-custom-ui.html
+#   extra_html_url_es5:
+#     - /local/custom_ui/state-card-custom-ui-es5.html
 
-panel_iframe:
-  sonoff_garage:
-    title: 'Garage'
-    icon: 'mdi:shuffle-variant'
-    url: 'http://192.168.0.99'
 
 http:
   api_password: !secret home_password
@@ -229,3 +242,5 @@ cover: !include_dir_merge_list cover
 # Input Number
 input_number: !include_dir_merge_named input_number
 
+customizer:
+  custom_ui: local

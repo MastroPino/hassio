@@ -9,9 +9,12 @@
             closed
           {% endif %}
         open_cover:
-          service: script.attivagarage
+          - service: script.attivagarage
         close_cover:
-          service: script.attivagarage
+          - condition: state
+            entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+            state: 'on'
+          - service: script.attivagarage
         stop_cover:
           service: script.attivagarage
         icon_template: >-

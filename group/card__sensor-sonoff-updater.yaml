@@ -1,0 +1,8 @@
+sonoff_upgrade:
+  name: Sonoff Tasmota
+  control: hidden
+  entities:
+    - sensor.ultima_release
+    - script.check_sonoffs_version
+    - script.update_sonoffs
+    - sensor.sonoff_4ch_pro_garage

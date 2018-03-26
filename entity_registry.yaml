@@ -39,7 +39,7 @@ light.hue_go:
   platform: hue
   unique_id: 00:17:88:01:01:14:db:b4-0b
 light.lampadario_dispensa:
-  name: Plafoniera Dispenza
+  name: Plafoniera Dispensa
   platform: hue
   unique_id: 00:17:88:01:10:2b:01:3e-0b
 sensor.ilendrius_pro_battery_level:
