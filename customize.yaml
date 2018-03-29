@@ -30,6 +30,10 @@ group.light_bagno:
   icon: mdi:water-pump
 group.light_bagnetto:
   icon: mdi:water-pump
+group.stanze_home:
+  order: '2'
+group.weather:
+  order: '1'
 group.family:
   order: '1'
 device_tracker.64bc0c807396:
@@ -174,13 +178,14 @@ switch.sonoff_garage_2:
   homebridge_model: ITEA Sonoff 4CH Pro
   icon: mdi:white-balance-iridescent
 cover.saracinesca:
-  friendly_name: Saracinesca
-  homebridge_visible: true
-  homebridge_cover_type: garage_door
   device_class: garage
-  homebridge_name: Saracinesca
+  friendly_name: Saracinesca
+  homebridge_cover_type: garage_door
   homebridge_mfg: ITEA
   homebridge_model: ITEA Sonoff 4CH Pro
+  homebridge_name: Saracinesca
+  homebridge_visible: true
+  show_last_changed: true
 binary_sensor.cube_158d0001051007:
   icon: mdi:cube-outline
 binary_sensor.switch_158d00012641b4:
@@ -302,6 +307,13 @@ binary_sensor.door_window_sensor_158d0001de6e16:
   homebridge_model: Aqara Window Door Sensor
   homebridge_serial: 158d0001de6e16
   homebridge_battery_source: sensor.batteria_finestra_camera_da_letto
+binary_sensor.door_window_sensor_158d0001b95954:
+  homebridge_visible: true
+  homebridge_name: Finestra Camera Armadio
+  homebridge_mfg: Aqara
+  homebridge_model: Aqara Window Door Sensor
+  homebridge_serial: 158d0001b95954
+  homebridge_battery_source: sensor.batteria_finestra_stanza_armadio
 sensor.transmission_active_torrents:
   friendly_name: Torrent Attivi
 sensor.transmission_down_speed:
@@ -313,7 +325,7 @@ sensor.transmission_up_speed:
 sensor.processor_use:
   friendly_name: Utilizzo Processore
   icon: mdi:chip
-sensor.awara_temperature_humidity_sensor:
+sensor.aqara_temperature_humidity_sensor:
   friendly_name: Aqara Temperature Humidity Sensor
 script.check_sonoffs_version:
   friendly_name: Cerca aggiornamenti...

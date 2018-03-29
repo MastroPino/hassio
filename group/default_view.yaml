@@ -6,8 +6,7 @@ default_view:
   entities:
     - device_tracker.ilendrius
     - device_tracker.64bc0c807396
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_humidity
+    - group.weather
     - cover.saracinesca
     - group.stanze_home
     - group.window_sensors
