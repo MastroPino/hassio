@@ -1,8 +1,7 @@
-# Sonoff Fix from Hass.io
 - id: fix-sonoff
-  alias: 'Power state on HA start-up'
+  alias: Power state on HA start-up
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: homeassistant
     event: start
@@ -23,13 +22,10 @@
     data:
       topic: cmnd/garage/power4
       payload: ''
-
-
-# Ingresso Notifiche     
 - id: notify_ingresso_apertura
   alias: '[Notifica] Notifica Apertura Ingresso'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000112031b
     from: 'off'
@@ -37,13 +33,13 @@
     to: 'on'
   action:
   - data:
-      title: "Ingresso"
+      title: Ingresso
       message: Porta aperta
     service: notify.ios_ilendrius
 - id: notify_ingresso_chiusura
   alias: '[Notifica] Notifica Chiusura Ingresso'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000112031b
     from: 'on'
@@ -51,11 +47,9 @@
     to: 'off'
   action:
   - data:
-      title: "Ingresso"
+      title: Ingresso
       message: Porta chiusa
     service: notify.ios_ilendrius
-    
-# Camera da Letto Trigger
 - id: comodino_andrea_on_off
   alias: '[Stanza da letto] Comodino Andrea On/Off'
   initial_state: 'on'
@@ -151,8 +145,6 @@
         - 50 %} {% if suggested > 25 %} {{ suggested }} {% else %} 25 {% endif %}
 
         '
-
-# Garage Trigger
 - id: accendi_neon_interni_garage_auto
   alias: '[Garage] Neon Interni On Movimento'
   initial_state: 'on'
@@ -163,7 +155,7 @@
     to: 'on'
   action:
   - data:
-      entity_id: switch.sonoff_garage_1
+      entity_id: switch.sonoff_garage_3
     service: switch.turn_on
   condition:
   - condition: state
@@ -193,12 +185,10 @@
   - condition: state
     entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     state: 'off'
-
-# Garage Notifiche
 - id: notifica_garage
   alias: '[Notifica] Notifica Movimento Garage'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
     from: 'off'
@@ -206,28 +196,14 @@
     to: 'on'
   action:
   - data:
-      title: "Garage"
+      title: Garage
       message: Movimento rilevato in garage
     service: notify.ios_ilendrius
   condition:
-# - id: notify_garage_apertura
-#   alias: '[Notifica] Notifica Apertura Garage'
-#   initial_state: 'on'
-#   hide_entity: True
-#   trigger:
-#   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-#     from: 'off'
-#     platform: state
-#     to: 'on'
-#   action:
-#   - data:
-#       title: "Garage"
-#       message: Saracinesca aperta
-#     service: notify.ios_ilendrius
 - id: notify_garage_chiusura
   alias: '[Notifica] Notifica Chiusura Garage'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     from: 'on'
@@ -235,11 +211,9 @@
     to: 'off'
   action:
   - data:
-      title: "Garage"
+      title: Garage
       message: Saracinesca chiusa
     service: notify.ios_ilendrius
-
-# Dispenza Trigger
 - id: dispensa_on
   alias: '[Dispenza] Lampadario On'
   initial_state: 'on'
@@ -277,13 +251,10 @@
       entity_id: light.lampadario_dispensa
     entity_id: light.lampadario_dispensa
     service: light.toggle
-
-
-# Balcone Interno Trigger
 - id: accendi_balcone
   alias: '[Balcone Interno] Accendi Lampione'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000201980a
     from: 'off'
@@ -295,13 +266,16 @@
       entity_id: light.balcone_interno
     service: light.turn_on
   condition:
-  - after: '18:00'
-    before: '7:00'
-    condition: time
+    condition: or
+    conditions:
+    - condition: sun
+      after: sunset
+    - condition: sun
+      before: sunrise
 - id: spegni_balcone
   alias: '[Balcone Interno] Spegni Lampione dopo 10 secondi'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000201980a
     for:
@@ -313,95 +287,78 @@
   - data:
       entity_id: light.balcone_interno
     service: light.turn_off
-
-
-# Allarme Trigger
 - id: trigger-home
   alias: '[Allarme] Scatta allarme quando attivo A Casa'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d000112031b
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d0001b95bf4
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d000201980a
-      to: 'on'
+  - platform: state
+    entity_id: binary_sensor.door_window_sensor_158d000112031b, binary_sensor.door_window_sensor_158d0001b95954,
+      binary_sensor.door_window_sensor_158d000201980a, binary_sensor.door_window_sensor_158d0001de6e16,
+      binary_sensor.door_window_sensor_158d0001e44493, binary_sensor.door_window_sensor_158d0001b95bf4
+    to: 'on'
   condition:
-    - condition: state
-      entity_id: alarm_control_panel.house
-      state: armed_home
+  - condition: state
+    entity_id: alarm_control_panel.house
+    state: armed_home
   action:
     service: xiaomi_aqara.play_ringtone
     data:
-      gw_mac: !secret xiaomi_mac
+      gw_mac: F0B429CBEF3F
       ringtone_id: 2
       ringtone_vol: 100
 - id: trigger-away
   alias: '[Allarme] Scatta allarme quando Attivo'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d000112031b
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d0001b95bf4
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d000201980a
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d00010f7fda
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001e5413e
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001e5764c
-      to: 'on'
+  - platform: state
+    entity_id: binary_sensor.door_window_sensor_158d000112031b, binary_sensor.door_window_sensor_158d0001b95954,
+      binary_sensor.door_window_sensor_158d000201980a, binary_sensor.door_window_sensor_158d0001de6e16,
+      binary_sensor.door_window_sensor_158d0001e44493, binary_sensor.door_window_sensor_158d0001b95bf4
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001e5764c, binary_sensor.motion_sensor_158d0001e5413e,
+      binary_sensor.motion_sensor_158d0001e514df, binary_sensor.motion_sensor_158d0001e51489,
+      binary_sensor.motion_sensor_158d0001e513a8, binary_sensor.motion_sensor_158d0001e515b8,
+      binary_sensor.motion_sensor_158d0001e5156a
+    to: 'on'
   condition:
-    - condition: state
-      entity_id: alarm_control_panel.house
-      state: armed_away
+  - condition: state
+    entity_id: alarm_control_panel.house
+    state: armed_away
   action:
   - service: xiaomi_aqara.play_ringtone
     data:
-      gw_mac: !secret xiaomi_mac
+      gw_mac: F0B429CBEF3F
       ringtone_id: 2
       ringtone_vol: 8
-
-
-# Allarme Notifiche
 - id: alarm_armed_away
   alias: '[Notifica] Modalità Assente attivata'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
     to: armed_away
   action:
     data_template:
-      message: 'Allarme di casa è stato attivato in modalità Assente. Arrivederci'
-      title: 'Allarme'
+      message: Allarme di casa è stato attivato in modalità Assente. Arrivederci
+      title: Allarme
     service: notify.ios_ilendrius
 - id: alarm_armed_home
   alias: '[Allarme] Modalità A Casa attivata'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
     to: armed_home
   action:
     data_template:
-      title: 'Allarme'
-      message: 'Allarme di casa è stato attivato in modalità A Casa. Buonanotte'
+      title: Allarme
+      message: Allarme di casa è stato attivato in modalità A Casa. Buonanotte
     service: notify.ios_ilendrius
 - id: alarm_arming_away
   alias: '[Notifica] Attivando Modalità Assente'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -409,30 +366,31 @@
   action:
   - service: notify.ios_ilendrius
     data_template:
-      title: 'Allarme'
-      message: 'Sto attivando allarme di casa, assicurati che le porte e le finestre siano chiuse'
+      title: Allarme
+      message: Sto attivando allarme di casa, assicurati che le porte e le finestre
+        siano chiuse
   - service: xiaomi_aqara.play_ringtone
     data:
-      gw_mac: !secret xiaomi_mac
+      gw_mac: F0B429CBEF3F
       ringtone_id: 2
       ringtone_vol: 2
 - id: alarm_disarmed
   alias: '[Notifica] Disarmato'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
     to: disarmed
   action:
   - data_template:
-      title: 'Allarme'
-      message: 'Allarme di casa disattivato.'
+      title: Allarme
+      message: Allarme di casa disattivato.
     service: notify.ios_ilendrius
 - id: alarm_triggered
   alias: '[Allarme] Scattato'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -442,14 +400,14 @@
     entity_id: switch.siren_switch
   - service: notify.ios_ilendrius
     data_template:
-      title: 'Allarme'
-      message: 'Scattato! {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
+      title: Allarme
+      message: Scattato! {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
         states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
-        }}'
+        }}
 - id: alarm_warning
   alias: '[Notifica] Attenzione'
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
   - platform: state
     entity_id: alarm_control_panel.house
@@ -457,57 +415,161 @@
   action:
   - service: notify.ios_ilendrius
     data:
-      title: 'Allarme'
-      message: 'Attenzione {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
+      title: Allarme
+      message: Attenzione {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
         states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
-        }}'
-
-# Slider
-- id: 'Soggiorno-brightness-slider'
-  alias: 'Soggiorno Light - Adjust Brightness'
+        }}
+- id: Soggiorno-brightness-slider
+  alias: Soggiorno Light - Adjust Brightness
   trigger:
     platform: state
     entity_id: input_number.soggiorno_brightness
   action:
-    - service: light.turn_on
-      data_template:
-        entity_id: light.soggiorno
-        brightness: "{{ trigger.to_state.state | int }}"
-
-- id: 'Sala-da-pranzo-brightness-slider'
-  alias: 'Sala da pranzo Light - Adjust Brightness'
+  - service: light.turn_on
+    data_template:
+      entity_id: light.soggiorno
+      brightness: '{{ trigger.to_state.state | int }}'
+- id: Sala-da-pranzo-brightness-slider
+  alias: Sala da pranzo Light - Adjust Brightness
   trigger:
     platform: state
     entity_id: input_number.sala_da_pranzo_brightness
   action:
-    - service: light.turn_on
-      data_template:
-        entity_id: light.sala_da_pranzo
-        brightness: "{{ trigger.to_state.state | int }}"
-
-
-# Select
+  - service: light.turn_on
+    data_template:
+      entity_id: light.sala_da_pranzo
+      brightness: '{{ trigger.to_state.state | int }}'
 - id: imposta_sala_da_pranzo
-  alias: 'Scene sala da pranzo'
+  alias: Scene sala da pranzo
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: state
     entity_id: input_select.sala_da_pranzo_preset
   action:
     service: hue.hue_activate_scene
     data_template:
-      group_name: 'Sala da pranzo'
+      group_name: Sala da pranzo
       scene_name: '{{ trigger.to_state.state }}'
 - id: imposta_soggiorno
-  alias: 'Scene soggiorno'
+  alias: Scene soggiorno
   initial_state: 'on'
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: state
     entity_id: input_select.soggiorno_preset
   action:
     service: hue.hue_activate_scene
     data_template:
-      group_name: 'Soggiorno'
+      group_name: Soggiorno
       scene_name: '{{ trigger.to_state.state }}'
+- alias: Update Last Motion
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001e5764c, binary_sensor.motion_sensor_158d0001e5413e,
+      binary_sensor.motion_sensor_158d0001e514df, binary_sensor.motion_sensor_158d0001e51489,
+      binary_sensor.motion_sensor_158d0001e513a8, binary_sensor.motion_sensor_158d0001e515b8,
+      binary_sensor.motion_sensor_158d0001e5156a
+    to: 'on'
+  action:
+  - service: variable.set_variable
+    data:
+      variable: last_motion
+      attributes_template: "{\n  \"history_1\": \"{{ variable.state }}\",\n  \"history_2\"\
+        : \"{{ variable.attributes.history_1 }}\",\n  \"history_3\": \"{{ variable.attributes.history_2\
+        \ }}\"\n}\n"
+    data_template:
+      value: '{{ trigger.to_state.attributes.friendly_name }}'
+- action:
+  - data:
+      message: Una nuova versione di Home Assistant è disponibile.
+    service: notify.ios_ilendrius
+  alias: '[Notifica] Aggiornamento Hass.io'
+  condition: []
+  id: '1522931404545'
+  trigger:
+  - entity_id: updater.updater
+    platform: state
+- action:
+  - data:
+      entity_id: light.lampadario
+    service: light.turn_on
+  alias: '[Cucina] Movimento On'
+  condition:
+  - after: '18:00'
+    before: '01:00'
+    condition: time
+  id: '1523184478168'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d0001e515b8
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - delay: '00:01:00'
+  - data:
+      entity_id: light.lampadario
+    service: light.turn_off
+  alias: '[Cucina] Movimento Off'
+  condition:
+  - condition: state
+    entity_id: light.lampadario
+    state: 'on'
+  id: '1523184658496'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d0001e515b8
+    for:
+      minutes: 1
+    from: 'on'
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      brightness: '175'
+      entity_id: light.abatjour_bianca
+      kelvin: '2600'
+    service: light.turn_on
+  alias: '[Soggiorno] Movimento On Abatjour'
+  condition:
+  - after: '18:00'
+    before: '01:00'
+    condition: time
+  id: '1523185380524'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d0001e513a8
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      entity_id: light.piantana,light.abatjour_verde
+    service: light.turn_off
+  alias: '[Soggiorno] Movimento Off'
+  condition: []
+  id: '1523185553261'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d0001e513a8
+    for:
+      minutes: 15
+    from: 'on'
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      brightness: '100'
+      entity_id: light.abatjour_bianca
+      kelvin: '2600'
+    service: light.turn_on
+  alias: '[Soggiorno] Movimento Off Dim Abatjour'
+  condition:
+  - condition: state
+    entity_id: light.abatjour_bianca
+    state: 'on'
+  id: '1523185681021'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d0001e513a8
+    for:
+      minutes: 15
+    from: 'on'
+    platform: state
+    to: 'off'

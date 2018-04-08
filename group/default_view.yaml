@@ -11,8 +11,9 @@ default_view:
     - group.stanze_home
     - group.window_sensors
     - group.motion_sensors
+    - variable.last_motion
     - group.climate
     - media_player.lg_webos_smart_tv
-    - media_player.apple_tv
+    - media_player.apple_tv_2
     - updater.updater
     - alarm_control_panel.home_alarm

@@ -1,0 +1,9 @@
+sensor_camera_armadi:
+  name: Camera Armadi
+  entities:
+    # Finestra Camera Armadi
+    - binary_sensor.door_window_sensor_158d0001b95954
+    # Movimento Camera Armadi
+    - binary_sensor.motion_sensor_158d0001e51489
+    # Luminosità Camera Armadi
+    - sensor.illumination_158d0001e51489

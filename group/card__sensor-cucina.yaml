@@ -1,5 +1,9 @@
 sensor_cucina:
   name: Cucina
   entities:
+    # Movimento Cucina
     - binary_sensor.door_window_sensor_158d000201980a
+    # Movimento Cucina
+    - binary_sensor.motion_sensor_158d0001e515b8
+    # Illuminazione Cucina
     - sensor.illumination_f0b429cbef3f

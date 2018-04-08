@@ -1,0 +1,19 @@
+broker: !secret mqtt_broker
+port: !secret mqtt_port
+client_id: home-assistant-1
+keepalive: 60
+username: !secret mqtt_username
+password: !secret mqtt_password
+protocol: 3.1
+discovery: true
+discovery_prefix: homeassistant
+birth_message:
+  topic: "tele/hass1/LWT"
+  payload: "Online"
+  qos: 1
+  retain: true
+will_message:
+  topic: "tele/hass1/LWT"
+  payload: "Offline"
+  qos: 1
+  retain: true

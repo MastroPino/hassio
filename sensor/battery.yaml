@@ -55,6 +55,31 @@
       value_template: '{{ states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level }}'
       icon_template: '{%- if  states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d00010f7fda.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
       unit_of_measurement: "%"
+    batteria_sensore_movimento_corridoio:
+      friendly_name: 'Movimento Corridoio'
+      value_template: '{{ states.binary_sensor.motion_sensor_158d0001e514df.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.motion_sensor_158d0001e514df.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d0001e514df.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d0001e514df.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    batteria_sensore_movimento_cucina:
+      friendly_name: 'Movimento Cucina'
+      value_template: '{{ states.binary_sensor.motion_sensor_158d0001e515b8.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.motion_sensor_158d0001e515b8.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d0001e515b8.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d0001e515b8.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    batteria_sensore_movimento_soggiorno:
+      friendly_name: 'Movimento Soggiorno'
+      value_template: '{{ states.binary_sensor.motion_sensor_158d0001e513a8.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.motion_sensor_158d0001e513a8.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d0001e513a8.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d0001e513a8.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    batteria_sensore_movimento_camera_da_letto:
+      friendly_name: 'Movimento Camera da Letto'
+      value_template: '{{ states.binary_sensor.motion_sensor_158d0001e5156a.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.motion_sensor_158d0001e5156a.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d0001e5156a.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d0001e5156a.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
+    batteria_sensore_movimento_camera_armadi:
+      friendly_name: 'Movimento Camera Armadi'
+      value_template: '{{ states.binary_sensor.motion_sensor_158d0001e51489.attributes.battery_level }}'
+      icon_template: '{%- if  states.binary_sensor.motion_sensor_158d0001e51489.attributes.battery_level <= 5 %}mdi:battery-outline{%- elif states.binary_sensor.motion_sensor_158d0001e51489.attributes.battery_level >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.binary_sensor.motion_sensor_158d0001e51489.attributes.battery_level|float / 10)|round*10}}{%- endif %}'
+      unit_of_measurement: "%"
     batteria_bottone_comodino_andrea:
       friendly_name: 'Bottone Comodino Andrea'
       value_template: '{{ states.binary_sensor.switch_158d00012641b4.attributes.battery_level }}'

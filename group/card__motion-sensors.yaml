@@ -5,5 +5,15 @@ motion_sensors:
     - binary_sensor.motion_sensor_158d0001e5764c
     # Movimento Sala da Pranzo
     - binary_sensor.motion_sensor_158d0001e5413e
+    # Movimento Corridoio
+    - binary_sensor.motion_sensor_158d0001e514df
+    # Movimento Camera Armadi
+    - binary_sensor.motion_sensor_158d0001e51489
+    # Movimento Soggiorno
+    - binary_sensor.motion_sensor_158d0001e513a8
+    # Movimento Cucina
+    - binary_sensor.motion_sensor_158d0001e515b8
+    # Movimento Camera da Letto
+    - binary_sensor.motion_sensor_158d0001e5156a
     # Movimento Garage
     - binary_sensor.motion_sensor_158d00010f7fda

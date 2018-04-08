@@ -1,0 +1,12 @@
+use_include_order: True
+include:
+  domains:
+    - sensor
+    - climate
+    - switch
+    - media_player
+exclude:
+  domains:
+    - automation
+    - weblink
+    - updater

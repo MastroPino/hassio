@@ -1,0 +1,7 @@
+sensor_soggiorno:
+  name: Soggiorno
+  entities:
+    # Movimento Soggiorno
+    - binary_sensor.motion_sensor_158d0001e513a8
+    # Luminosità Soggiorno
+    - sensor.illumination_158d0001e513a8

@@ -1,0 +1,7 @@
+sensor_corridoio:
+  name: Corridoio
+  entities:
+    # Movimento Corridoio
+    - binary_sensor.motion_sensor_158d0001e514df
+    # Luminosità Corridoio
+    - sensor.illumination_158d0001e514df

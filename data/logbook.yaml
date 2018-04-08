@@ -1,0 +1,10 @@
+include:
+  domains:
+    - sensor
+    - switch
+    - media_player
+    - cover
+    - light
+exclude:
+  domains:
+    - automation

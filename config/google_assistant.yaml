@@ -1,0 +1,66 @@
+project_id: hassio-7bce7
+client_id: !secret ga_client_id
+access_token: !secret ga_access_token
+api_key: !secret ga_api_key
+agent_user_id: !secret ga_agent_user_id
+exposed_domains:
+  - switch
+  - light
+  - cover
+entity_config:
+  light.lampione:
+    expose: false
+  light.lampadario:
+    expose: false
+  light.lampadario_1:
+    expose: false
+  light.lampadario_2:
+    expose: false
+  light.lampadario_3:
+    expose: false
+  light.lampadario_dispensa:
+    expose: false
+  light.lampadario_tv:
+    expose: false
+  light.fiore:
+    expose: false
+  light.hue_go:
+    expose: false
+  light.piantana:
+    expose: false
+  light.abatjour_bianca:
+    expose: false
+  light.abatjour_verde:
+    expose: false
+  switch.sonoff_garage_4:
+    expose: false
+  light.xmasactivegroupeven:
+    expose: false
+  light.xmasactivegroupodd:
+    expose: false
+  light.xmasactivegroup:
+    expose: false
+  light.tepee:
+    expose: false
+  light.stanza_da_letto:
+    expose: false
+  light.soggiorno:
+    expose: false
+  light.sala_da_pranzo:
+    expose: false
+  light.garage:
+    expose: false
+  light.entrata:
+    expose: false
+  light.dispensa:
+    expose: false
+  light.cucina:
+    expose: false
+  light.corridoio:
+    expose: false
+  light.bagno:
+    expose: false
+  light.bagnetto:
+    expose: false
+  light.area_di_intrattenimento_1:
+    expose: false

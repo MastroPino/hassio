@@ -1,0 +1,11 @@
+push:
+  categories:
+    - name: garage1
+      identifier: 'garage'
+      actions:
+        - identifier: 'CHIUDI_GARAGE' ## this must point to an action ##
+          title: 'Chiudi saracinesca'
+          activationMode: 'background'
+          authenticationRequired: yes
+          destructive: yes
+          behavior: 'default'

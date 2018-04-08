@@ -5,253 +5,84 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: metric
   time_zone: Europe/Rome
-
-  customize: !include customize.yaml
+  customize: !include config/customize.yaml
   packages: !include_dir_named packages
-  customize_glob:
-    "*.*":
-      custom_ui_state_card: state-card-custom-ui
-    "light.*":
-      show_last_changed: false
-      state_card_mode: hide-slider
-    "switch.*":
-      show_last_changed: true
-    "binary_sensor.*":
-      show_last_changed: true
-    "sensor.*":
-      show_last_changed: true
-    "automation.*":
-      confirm_controls_show_lock: true
-    "input_boolean.weather":
-      custom_ui_state_card: custom-weather-card
-      friendly_name: Wetter
-      config:
-        weather: weather.yweather
-
-# Enables the frontend
+  customize_glob: !include config/customize_glob.yaml
 frontend:
   themes: !include_dir_merge_named themes/
-#   javascript_version: es5
+  javascript_version: latest
   extra_html_url:
     - /local/custom_ui/custom-weather-card.html
   extra_html_url_es5:
     - /local/custom_ui/custom-weather-card.html
-
-
 http:
   api_password: !secret home_password
   base_url: !secret home_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-
-# Checks for available updates
+  cors_allowed_origins: !secret cors_allowed_origins
 updater:
-
-# Discover some devices automatically
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
-
-# Enables support for tracking state changes over time.
-history:
-  use_include_order: True
-  include:
-    domains:
-      - sensor
-      - climate
-      - switch
-      - media_player
-  exclude:
-    domains:
-      - automation
-      - weblink
-      - updater
-
-# View all events in a logbook
-logbook:
-  include:
-    domains:
-      - sensor
-      - switch
-      - media_player
-      - cover
-      - light
-  exclude:
-    domains:
-      - automation
-    entities:
-      - automation.sonoff_http_command
-
-# Track the sun
+history: !include data/history.yaml
+logbook: !include data/logbook.yaml
 sun:
-
-# Weather Prediction
 sensor: !include_dir_merge_list sensor/
-
 binary_sensor: !include_dir_merge_list binary_sensor/
-
-# Text to speech
 tts:
   platform: google
   language: 'it'
-
-#MQTT
-mqtt:
-  broker: !secret mqtt_broker
-  port: !secret mqtt_port
-  client_id: home-assistant-1
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  protocol: 3.1
-  discovery: true
-  discovery_prefix: homeassistant
-  birth_message:
-    topic: "tele/hass1/LWT"
-    payload: "Online"
-    qos: 1
-    retain: true
-  will_message:
-    topic: "tele/hass1/LWT"
-    payload: "Offline"
-    qos: 1
-    retain: true
-
-# Lights
+mqtt: !include config/mqtt.yaml
 light: !include_dir_merge_list lights/
 hue:
   bridges:
     - host: !secret hue_host
       allow_hue_groups: true
-
-# Netatmo entry
 netatmo:
   api_key: !secret netatmo_api_key
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
-
-# APC
 apcupsd:
   host: localhost
-
-# Presence detector
-device_tracker:
-  - platform: nmap_tracker
-    hosts: 
-      - 192.168.0.60
-      - 192.168.0.62
-    consider_home: 50
-    track_new_devices: true
-  - platform: ping
-    hosts:
-      hostone: 192.168.0.62
-
-homekit:
-  pincode: '123-45-678'
-  port: 51827
-
-# Media Player
+device_tracker: !include config/device_tracker.yaml
+homekit: !include config/homekit.yaml
 media_player: !include_dir_merge_list media_player/
-
-# Groups
 group: !include_dir_merge_named group
-
-# Zone
 zone 2:
   name: Lavoro
   latitude: !secret work_latitude
   longitude: !secret work_longitude
   radius: 50
   icon: mdi:worker
-
-# Xiaomi Aqara
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
     - key: !secret xiaomi_key
-
-# Confiuration Panel
 config:
-
-# iOS Component
-ios:
-  push:
-    categories:
-      - name: garage1
-        identifier: 'garage'
-        actions:
-          - identifier: 'CHIUDI_GARAGE' ## this must point to an action ##
-            title: 'Chiudi saracinesca'
-            activationMode: 'background'
-            authenticationRequired: yes
-            destructive: yes
-            behavior: 'default'
-
-#IFTT Component
+ios: !include config/ios.yaml
+google_assistant: !include config/google_assistant.yaml
 ifttt:
   key: !secret ifttt_key
-
-# Automations
 automation: !include automations.yaml
-
-# Automation Old
-automation old:
-  - alias: Notify iLendrius Garage #creates the notification
-    initial_state: True
-    hide_entity: True
-    trigger:
-    - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-      from: 'off'
-      platform: state
-      to: 'on'
-    action:
-        service: notify.ios_ilendrius #id of your ios device, might not show up until you've loaded the ios component in HA
-        data:
-          title: "Garage" #customizable
-          message: "La saracinesca è aperta" #customizable 
-          data:
-            push:
-              badge: 0 # this will remove the badge/app icon number
-              category: 'garage' #name matched in ios component
-
-  - alias: iOS app notification action garage1 #creates the action button
-    initial_state: True
-    hide_entity: True  
-    trigger:
-      platform: event
-      event_type: ios.notification_action_fired
-      event_data:
-        actionName: CHIUDI_GARAGE #name matched in ios component
-    action:
-      service: switch.turn_on
-      entity_id: switch.sonoff_garage_4
-
-# Alarm
+automation old: !include automations_old.yaml
 alarm_control_panel: !include alarm.yaml
 panel_custom: !include panel_custom.yaml
-
-# Script
 script: !include_dir_merge_named script
-
-# Input Select
 input_select: !include_dir_merge_named input_select
-
-# Switch
 switch: !include_dir_merge_list switch
-
-# Cover
-cover: !include_dir_merge_list cover
-
-# Input Number
+cover: !include config/cover.yaml
 input_number: !include_dir_merge_named input_number
-
-customizer:
-  custom_ui: local
-
-weather:
-  - platform: yweather
-
 input_boolean:
   weather:
+customizer:
+  custom_ui: local
+weather:
+  - platform: yweather
+variable:  
+  last_motion:
+    value: 'Sconosciuto'
+    restore: true
+    attributes:
+      icon: mdi:map-marker
+      name: "Ultimo Movimento"

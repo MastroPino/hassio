@@ -3,11 +3,15 @@ sensors:
   view: true
   icon: mdi:alarm-light
   entities:
+  - variable.last_motion
   - group.sensor_garage
   - group.sensor_ingresso
   - group.sensor_sala_da_pranzo
+  - group.sensor_corridoio
+  - group.sensor_soggiorno
   - group.sensor_cucina
   - group.sensor_camera_da_letto
+  - group.sensor_camera_armadi
   - group.sensor_dispensa
   - group.sensor_bagno
   - group.sensor_bagnetto

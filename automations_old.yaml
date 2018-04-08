@@ -1,0 +1,29 @@
+- alias: Notify iLendrius Garage #creates the notification
+  initial_state: True
+  hide_entity: True
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+      service: notify.ios_ilendrius #id of your ios device, might not show up until you've loaded the ios component in HA
+      data:
+        title: "Garage" #customizable
+        message: "La saracinesca è aperta" #customizable 
+        data:
+          push:
+            badge: 0 # this will remove the badge/app icon number
+            category: 'garage' #name matched in ios component
+
+- alias: iOS app notification action garage1 #creates the action button
+  initial_state: True
+  hide_entity: True  
+  trigger:
+    platform: event
+    event_type: ios.notification_action_fired
+    event_data:
+      actionName: CHIUDI_GARAGE #name matched in ios component
+  action:
+    service: switch.turn_on
+    entity_id: switch.sonoff_garage_4

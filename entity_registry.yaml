@@ -174,3 +174,51 @@ binary_sensor.door_window_sensor_158d0001e44493:
   name: Finestra a Ribalta Bagno
   platform: xiaomi_aqara
   unique_id: status158d0001e44493
+binary_sensor.motion_sensor_158d0001e514df:
+  name: Movimento Corridoio
+  platform: xiaomi_aqara
+  unique_id: status158d0001e514df
+sensor.illumination_158d0001e514df:
+  name: Illuminazione Corridoio
+  platform: xiaomi_aqara
+  unique_id: lux158d0001e514df
+binary_sensor.motion_sensor_158d0001e515b8:
+  name: Movimento Cucina
+  platform: xiaomi_aqara
+  unique_id: status158d0001e515b8
+sensor.illumination_158d0001e515b8:
+  name: Illuminazione Cucina
+  platform: xiaomi_aqara
+  unique_id: lux158d0001e515b8
+binary_sensor.motion_sensor_158d0001e513a8:
+  name: Movimento Soggiorno
+  platform: xiaomi_aqara
+  unique_id: status158d0001e513a8
+sensor.illumination_158d0001e513a8:
+  name: Illuminazione Soggiorno
+  platform: xiaomi_aqara
+  unique_id: lux158d0001e513a8
+binary_sensor.motion_sensor_158d0001e5156a:
+  name: Movimento Camera da Letto
+  platform: xiaomi_aqara
+  unique_id: status158d0001e5156a
+sensor.illumination_158d0001e5156a:
+  name: Illuminazione Camera da Letto
+  platform: xiaomi_aqara
+  unique_id: lux158d0001e5156a
+binary_sensor.motion_sensor_158d0001e51489:
+  name: Movimento Camera Armadi
+  platform: xiaomi_aqara
+  unique_id: status158d0001e51489
+sensor.illumination_158d0001e51489:
+  name: Illuminazione Camera Armadi
+  platform: xiaomi_aqara
+  unique_id: lux158d0001e51489
+media_player.apple_tv_3:
+  name:
+  platform: apple_tv
+  unique_id: 4a8bb3ec2bbec6799d82c89772053bb29b237399feac0828529409dd944b8d11
+remote.apple_tv_3:
+  name:
+  platform: apple_tv
+  unique_id: 4a8bb3ec2bbec6799d82c89772053bb29b237399feac0828529409dd944b8d11
