@@ -1,0 +1,28 @@
+- name: Sala da pranzo normale
+  entities:
+    light.fiore:
+      state: on
+      transition: 2
+      brightness_pct: 60
+    light.hue_go:
+      state: on
+      transition: 2
+      brightness_pct: 85
+    light.lampadario_tv:
+      state: on
+      transition: 2
+      brightness_pct: 85
+- name: Sala da pranzo dim
+  entities:
+    light.fiore:
+      state: on
+      transition: 2
+      brightness_pct: 30
+    light.hue_go:
+      state: on
+      transition: 2
+      brightness_pct: 55
+    light.lampadario_tv:
+      state: on
+      transition: 2
+      brightness_pct: 50

@@ -1,20 +1,20 @@
-sensor_batterie:
-  name: Batterie
-  entities:
-    - sensor.ilendrius_battery_level
-    - sensor.ilendrius_pro_battery_level
-    - sensor.batteria_porta_ingresso
-    - sensor.batteria_porta_dispensa
-    - sensor.batteria_finestra_stanza_armadio
-    - sensor.batteria_finestra_cucina
-    - sensor.batteria_finestra_camera_da_letto
-    - sensor.batteria_finestra_a_ribalta_bagno
-    - sensor.batteria_finestra_a_ribalta_bagnetto
-    - sensor.batteria_sensore_saracinesca
-    - sensor.batteria_sensore_movimento_ingresso
-    - sensor.batteria_sensore_movimento_sala_da_pranzo
-    - sensor.batteria_sensore_movimento_garage
-    - sensor.batteria_bottone_comodino_andrea
-    - sensor.batteria_bottone_comodino_eleonora
-    - sensor.batteria_bottone_garage
-    - sensor.batteria_magic_cube
+# sensor_batterie:
+#   name: Batterie
+#   entities:
+#     - sensor.ilendrius_battery_level
+#     - sensor.ilendrius_pro_battery_level
+#     - sensor.batteria_porta_ingresso
+#     - sensor.batteria_porta_dispensa
+#     - sensor.batteria_finestra_stanza_armadio
+#     - sensor.batteria_finestra_cucina
+#     - sensor.batteria_finestra_camera_da_letto
+#     - sensor.batteria_finestra_a_ribalta_bagno
+#     - sensor.batteria_finestra_a_ribalta_bagnetto
+#     - sensor.batteria_sensore_saracinesca
+#     - sensor.batteria_sensore_movimento_ingresso
+#     - sensor.batteria_sensore_movimento_sala_da_pranzo
+#     - sensor.batteria_sensore_movimento_garage
+#     - sensor.batteria_bottone_comodino_andrea
+#     - sensor.batteria_bottone_comodino_eleonora
+#     - sensor.batteria_bottone_garage
+#     - sensor.batteria_magic_cube

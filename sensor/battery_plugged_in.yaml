@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    ilendrius_pluggedin:
+      friendly_name: iLendrius in carica?
+      value_template: "{% if is_state('sensor.ilendrius_battery_state', 'Unplugged') %} false {%- else -%} true  {%- endif %}"

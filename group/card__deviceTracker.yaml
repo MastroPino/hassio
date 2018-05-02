@@ -1,0 +1,5 @@
+tracked_users:
+  name: Utenti tracciati
+  entities:
+    - device_tracker.ilendrius
+    - device_tracker.64bc0c807396 

@@ -3,12 +3,11 @@ entity_config:
   alarm_control_panel.house:
     code: !secret alarm_code
 filter:
-#     include_domains:
-#       - alarm_control_panel
-#       - light
-#       - sensor
-#       - cover
   include_entities:
+    - cover.saracinesca
+    - switch.sonoff_garage_1
+    - switch.sonoff_garage_2
+    - switch.sonoff_garage_3
     - alarm_control_panel.house
     - light.gateway_light_f0b429cbef3f
     - switch.tepee
@@ -55,47 +54,6 @@ filter:
     - binary_sensor.door_window_sensor_158d0001e44493
     # Sensore Finestra a ribalta Bagnetto
     - binary_sensor.door_window_sensor_158d0001b95bf4
-    # Sensore Saracinesca
-    - binary_sensor.door_window_sensor_158d0001fd6296
-#     exclude_entities:
-#       - light.lampione
-#       - light.lampadario
-#       - light.lampadario_1
-#       - light.lampadario_2
-#       - light.lampadario_3
-#       - light.lampadario_dispensa
-#       - light.lampadario_tv
-#       - light.fiore
-#       - light.hue_go
-#       - light.piantana
-#       - light.abatjour_bianca
-#       - light.abatjour_verde
-#       - switch.sonoff_garage_1
-#       - switch.sonoff_garage_2
-#       - switch.sonoff_garage_3
-#       - switch.sonoff_garage_4
-#       - light.xmasactivegroupeven
-#       - light.xmasactivegroupodd
-#       - light.xmasactivegroup
-#       - light.tepee
-#       - light.stanza_da_letto
-#       - light.soggiorno
-#       - light.sala_da_pranzo
-#       - light.garage
-#       - light.entrata
-#       - light.dispensa
-#       - light.cucina
-#       - light.corridoio
-#       - light.bagno
-#       - light.bagnetto
-#       - light.balcone_interno
-#       - light.area_di_intrattenimento_1
-#     exclude_domains:
-#       - script
-#       - group
-#       - sensor
-#       - climate
-#       - input_select
-#       - input_number
-#       - input_boolean
-
+    # Sensore Porta Dispensa
+    - binary_sensor.door_window_sensor_158d00013fede0
+    - media_player.lg_webos_smart_tv

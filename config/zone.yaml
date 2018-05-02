@@ -1,0 +1,65 @@
+- name: Lavoro
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
+  radius: 30
+  icon: mdi:worker
+- name: Bar Soglò
+  latitude: 37.5044316
+  longitude: 15.0870600
+  icon: mdi:coffee
+  radius: 10
+- name: Panineria I 4 Canti
+  latitude: 37.50490
+  longitude: 15.08796
+  icon: mdi:food
+  radius: 10
+- name: Benzinaio
+  latitude: 37.5472580
+  longitude: 15.0829814
+  icon: mdi:ev-station
+  radius: 20
+- name: Genitori
+  latitude: 37.55041
+  longitude: 15.08891
+  icon: mdi:account-heart
+  radius: 50
+- name: Di Mauro
+  latitude: 37.6741397
+  longitude: 15.1181682
+  icon: mdi:account-heart
+  radius: 50
+- name: SmokeDealers
+  latitude: 37.5381662
+  longitude: 15.0819184
+  icon: mdi:smoking
+  radius: 20
+- name: Lidl
+  latitude: 37.53587
+  longitude: 15.07647
+  icon: mdi:cart
+  radius: 50
+- name: Decò
+  latitude: 37.5509677
+  longitude: 15.0860457
+  icon: mdi:cart
+  radius: 50
+- name: Glamour
+  latitude: 37.50545
+  longitude: 15.08864
+  icon: mdi:beer
+  radius: 20
+- name: Bar15
+  latitude: 37.50465
+  longitude: 15.08281
+  icon: mdi:food
+  radius: 20
+- name: Parco I Vicerè
+  latitude: 37.5369733
+  longitude: 15.0834247
+  icon: mdi:tree
+  radius: 80
+- name: Parco Gioieni
+  latitude: 37.52925
+  longitude: 15.08286
+  icon: mdi:tree
+  radius: 250

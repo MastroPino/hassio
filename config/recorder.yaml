@@ -1,0 +1,10 @@
+purge_keep_days: 7
+exclude:
+  domains:
+    - automation
+    - weblink
+    - updater
+  entities:
+    - sun.sun # Don't record sun data
+    - sensor.last_boot # Comes from 'systemmonitor' sensor platform
+    - sensor.date

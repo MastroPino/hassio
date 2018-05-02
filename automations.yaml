@@ -145,8 +145,8 @@
         - 50 %} {% if suggested > 25 %} {{ suggested }} {% else %} 25 {% endif %}
 
         '
-- id: accendi_neon_interni_garage_auto
-  alias: '[Garage] Neon Interni On Movimento'
+- id: accendi_neon_vespa_garage_auto
+  alias: '[Garage] Neon Vespa On Movimento'
   initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
@@ -164,6 +164,31 @@
   - after: '18:00'
     before: '12:00'
     condition: time
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'on'
+- id: accendi_neon_interni_garage_auto
+  alias: '[Garage] Neon Interni On Movimento'
+  initial_state: 'on'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d00010f7fda
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      entity_id: switch.sonoff_garage_1
+    service: switch.turn_on
+  condition:
+  - condition: state
+    entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+    state: 'on'
+  - after: '18:00'
+    before: '12:00'
+    condition: time
+  - condition: state
+    entity_id: 'binary_sensor.workday_sensor'
+    state: 'off'
 - id: spegni_garage_auto
   alias: '[Garage] Timer Off (1 minuto)'
   initial_state: 'on'
@@ -305,30 +330,30 @@
       gw_mac: F0B429CBEF3F
       ringtone_id: 2
       ringtone_vol: 100
-- id: trigger-away
-  alias: '[Allarme] Scatta allarme quando Attivo'
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d000112031b, binary_sensor.door_window_sensor_158d0001b95954,
-      binary_sensor.door_window_sensor_158d000201980a, binary_sensor.door_window_sensor_158d0001de6e16,
-      binary_sensor.door_window_sensor_158d0001e44493, binary_sensor.door_window_sensor_158d0001b95bf4
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001e5764c, binary_sensor.motion_sensor_158d0001e5413e,
-      binary_sensor.motion_sensor_158d0001e514df, binary_sensor.motion_sensor_158d0001e51489,
-      binary_sensor.motion_sensor_158d0001e513a8, binary_sensor.motion_sensor_158d0001e515b8,
-      binary_sensor.motion_sensor_158d0001e5156a
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: alarm_control_panel.house
-    state: armed_away
-  action:
-  - service: xiaomi_aqara.play_ringtone
-    data:
-      gw_mac: F0B429CBEF3F
-      ringtone_id: 2
-      ringtone_vol: 8
+# - id: trigger-away
+#   alias: '[Allarme] Scatta allarme quando Attivo'
+#   trigger:
+#   - platform: state
+#     entity_id: binary_sensor.door_window_sensor_158d000112031b, binary_sensor.door_window_sensor_158d0001b95954,
+#       binary_sensor.door_window_sensor_158d000201980a, binary_sensor.door_window_sensor_158d0001de6e16,
+#       binary_sensor.door_window_sensor_158d0001e44493, binary_sensor.door_window_sensor_158d0001b95bf4
+#     to: 'on'
+#   - platform: state
+#     entity_id: binary_sensor.motion_sensor_158d0001e5764c, binary_sensor.motion_sensor_158d0001e5413e,
+#       binary_sensor.motion_sensor_158d0001e514df, binary_sensor.motion_sensor_158d0001e51489,
+#       binary_sensor.motion_sensor_158d0001e513a8, binary_sensor.motion_sensor_158d0001e515b8,
+#       binary_sensor.motion_sensor_158d0001e5156a
+#     to: 'on'
+#   condition:
+#   - condition: state
+#     entity_id: alarm_control_panel.house
+#     state: armed_away
+#   action:
+#   - service: xiaomi_aqara.play_ringtone
+#     data:
+#       gw_mac: F0B429CBEF3F
+#       ringtone_id: 2
+#       ringtone_vol: 8
 - id: alarm_armed_away
   alias: '[Notifica] Modalità Assente attivata'
   initial_state: 'on'
@@ -369,11 +394,11 @@
       title: Allarme
       message: Sto attivando allarme di casa, assicurati che le porte e le finestre
         siano chiuse
-  - service: xiaomi_aqara.play_ringtone
-    data:
-      gw_mac: F0B429CBEF3F
-      ringtone_id: 2
-      ringtone_vol: 2
+#   - service: xiaomi_aqara.play_ringtone
+#     data:
+#       gw_mac: F0B429CBEF3F
+#       ringtone_id: 2
+#       ringtone_vol: 2
 - id: alarm_disarmed
   alias: '[Notifica] Disarmato'
   initial_state: 'on'
@@ -480,73 +505,82 @@
         \ }}\"\n}\n"
     data_template:
       value: '{{ trigger.to_state.attributes.friendly_name }}'
-- action:
-  - data:
-      message: Una nuova versione di Home Assistant è disponibile.
-    service: notify.ios_ilendrius
+- id: '1522931404545'
   alias: '[Notifica] Aggiornamento Hass.io'
-  condition: []
-  id: '1522931404545'
   trigger:
   - entity_id: updater.updater
     platform: state
-- action:
+  condition: []
+  action:
   - data:
-      entity_id: light.lampadario
-    service: light.turn_on
-  alias: '[Cucina] Movimento On'
-  condition:
-  - after: '18:00'
-    before: '01:00'
-    condition: time
-  id: '1523184478168'
+      message: Una nuova versione di Home Assistant è disponibile.
+    service: notify.ios_ilendrius
+- id: '1523184478168'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d0001e515b8
     from: 'off'
     platform: state
     to: 'on'
-- action:
-  - delay: '00:01:00'
+  condition:
+  - after: '18:00'
+    before: 01:00
+    condition: time
+  action:
   - data:
       entity_id: light.lampadario
-    service: light.turn_off
+    service: light.turn_on
+  alias: '[Cucina] Movimento On'
+- id: '1523184658496'
   alias: '[Cucina] Movimento Off'
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_158d0001e515b8
+    for:
+      minutes: 10
+    from: 'on'
+    platform: state
+    to: 'off'
   condition:
   - condition: state
     entity_id: light.lampadario
     state: 'on'
-  id: '1523184658496'
+  action:
+  - delay: 00:01:00
+  - data:
+      entity_id: light.lampadario
+    service: light.turn_off
+- id: '1523185380524'
+  alias: '[Soggiorno] Movimento On Abatjour'
   trigger:
-  - entity_id: binary_sensor.motion_sensor_158d0001e515b8
-    for:
-      minutes: 1
-    from: 'on'
+  - entity_id: binary_sensor.motion_sensor_158d0001e513a8
+    from: 'off'
     platform: state
-    to: 'off'
-- action:
+    to: 'on'
+  condition:
+  - after: '18:00'
+    before: 01:00
+    condition: time
+  action:
   - data:
       brightness: '175'
       entity_id: light.abatjour_bianca
       kelvin: '2600'
     service: light.turn_on
-  alias: '[Soggiorno] Movimento On Abatjour'
-  condition:
-  - after: '18:00'
-    before: '01:00'
-    condition: time
-  id: '1523185380524'
+- id: '1523185553261'
+  alias: '[Soggiorno] Movimento Off'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d0001e513a8
-    from: 'off'
+    for:
+      minutes: 30
+    from: 'on'
     platform: state
-    to: 'on'
-- action:
+    to: 'off'
+  condition: []
+  action:
   - data:
       entity_id: light.piantana,light.abatjour_verde
     service: light.turn_off
-  alias: '[Soggiorno] Movimento Off'
-  condition: []
-  id: '1523185553261'
+- id: '1523185681021'
+  alias: '[Soggiorno] Movimento Off Dim Abatjour'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d0001e513a8
     for:
@@ -554,22 +588,101 @@
     from: 'on'
     platform: state
     to: 'off'
-- action:
+  condition:
+  - condition: state
+    entity_id: light.abatjour_bianca
+    state: 'on'
+  action:
   - data:
       brightness: '100'
       entity_id: light.abatjour_bianca
       kelvin: '2600'
     service: light.turn_on
-  alias: '[Soggiorno] Movimento Off Dim Abatjour'
-  condition:
-  - condition: state
-    entity_id: light.abatjour_bianca
-    state: 'on'
-  id: '1523185681021'
+# - id: '1523470520212'
+#   alias: '[Allarme] Attiva se assenti'
+#   trigger:
+#   - entity_id: device_tracker.ilendrius
+#     from: home
+#     platform: state
+#     to: not_home
+#   - entity_id: device_tracker.64bc0c807396
+#     from: home
+#     platform: state
+#     to: not_home
+#   condition: []
+#   action:
+#   - data:
+#       entity_id: alarm_control_panel.house
+#     service: alarm_control_panel.alarm_arm_away
+# - id: '1523472579965'
+#   alias: '[Allarme] Disattiva se rientra Andrea'
+#   trigger:
+#   - entity_id: device_tracker.ilendrius
+#     from: not_home
+#     platform: state
+#     to: home
+#   condition: []
+#   action:
+#   - data:
+#       code: '12345'
+#       entity_id: alarm_control_panel.house
+#     service: alarm_control_panel.alarm_disarm
+# - id: '1523472678780'
+#   alias: '[Allarme] Disattiva se torna Eleonora'
+#   trigger:
+#   - entity_id: device_tracker.64bc0c807396
+#     from: not_home
+#     platform: state
+#     to: home
+#   condition: []
+#   action:
+#   - data:
+#       code: '!secret alarm_code'
+#       entity_id: alarm_control_panel.house
+#     service: alarm_control_panel.alarm_disarm
+
+- id: '1523472678789'
+  alias: "Media player paused/stopped"
   trigger:
-  - entity_id: binary_sensor.motion_sensor_158d0001e513a8
-    for:
-      minutes: 15
+    - platform: state
+      entity_id: media_player.lg_webos_smart_tv
+      from: 'playing'
+      to: 'paused'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+      service: scene.turn_on
+      entity_id: scene.sala_da_pranzo_normale
+
+- id: '1523472678599'
+  alias: "Media player playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.lg_webos_smart_tv
+      to: 'playing'
+      from: 'paused'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+      service: scene.turn_on
+      entity_id: scene.sala_da_pranzo_dim
+      
+- id: notify_lg_garage_chiusura
+  alias: '[Notifica LG] Notifica Garage Aperto'
+  initial_state: 'on'
+  hide_entity: false
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     from: 'on'
     platform: state
     to: 'off'
+  action:
+  - service: notify.lg_webos_smart_tv
+    data:
+      message: La saracinesca è aperta
+      data:
+        icon: "/config/www/icons/hassio.png"

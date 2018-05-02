@@ -1,88 +1,48 @@
-homeassistant:
-  name: Casa
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  elevation: !secret home_elevation
-  unit_system: metric
-  time_zone: Europe/Rome
-  customize: !include config/customize.yaml
-  packages: !include_dir_named packages
-  customize_glob: !include config/customize_glob.yaml
-frontend:
-  themes: !include_dir_merge_named themes/
-  javascript_version: latest
-  extra_html_url:
-    - /local/custom_ui/custom-weather-card.html
-  extra_html_url_es5:
-    - /local/custom_ui/custom-weather-card.html
-http:
-  api_password: !secret home_password
-  base_url: !secret home_url
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
-  cors_allowed_origins: !secret cors_allowed_origins
+homeassistant: !include config/homeassistant.yaml
+frontend: !include config/frontend.yaml
+http: !include config/http.yaml
 updater:
 discovery:
 conversation:
+config:
+sun:
 history: !include data/history.yaml
 logbook: !include data/logbook.yaml
-sun:
 sensor: !include_dir_merge_list sensor/
 binary_sensor: !include_dir_merge_list binary_sensor/
-tts:
-  platform: google
-  language: 'it'
+tts: !include config/tts.yaml
 mqtt: !include config/mqtt.yaml
 light: !include_dir_merge_list lights/
-hue:
-  bridges:
-    - host: !secret hue_host
-      allow_hue_groups: true
-netatmo:
-  api_key: !secret netatmo_api_key
-  secret_key: !secret netatmo_secret_key
-  username: !secret netatmo_username
-  password: !secret netatmo_password
-apcupsd:
-  host: localhost
+hue: !include config/hue.yaml
+netatmo: !include config/netatmo.yaml
+apcupsd: !include config/apcupsd.yaml
 device_tracker: !include config/device_tracker.yaml
 homekit: !include config/homekit.yaml
-media_player: !include_dir_merge_list media_player/
+media_player: !include config/media_player.yaml
 group: !include_dir_merge_named group
-zone 2:
-  name: Lavoro
-  latitude: !secret work_latitude
-  longitude: !secret work_longitude
-  radius: 50
-  icon: mdi:worker
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - key: !secret xiaomi_key
-config:
+zone: !include config/zone.yaml
+xiaomi_aqara: !include config/xiaomi_aqara.yaml
 ios: !include config/ios.yaml
-google_assistant: !include config/google_assistant.yaml
-ifttt:
-  key: !secret ifttt_key
+ifttt: !include config/ifttt.yaml
 automation: !include automations.yaml
 automation old: !include automations_old.yaml
 alarm_control_panel: !include alarm.yaml
 panel_custom: !include panel_custom.yaml
 script: !include_dir_merge_named script
-input_select: !include_dir_merge_named input_select
 switch: !include_dir_merge_list switch
 cover: !include config/cover.yaml
-input_number: !include_dir_merge_named input_number
-input_boolean:
-  weather:
+input_boolean: !include config/input_boolean.yaml
+input_number: !include config/input_number.yaml
+input_select: !include config/input_select.yaml
+weather: !include config/weather.yaml
+variable: !include config/variable.yaml
+scene: !include config/scene.yaml
+recorder: !include config/recorder.yaml
+cloud: !include config/cloud.yaml
+notify: !include config/notify.yaml
+zwave: !include config/zwave.yaml
 customizer:
   custom_ui: local
-weather:
-  - platform: yweather
-variable:  
-  last_motion:
-    value: 'Sconosciuto'
-    restore: true
-    attributes:
-      icon: mdi:map-marker
-      name: "Ultimo Movimento"
+  hide_attributes:
+    - node_id
+    - value_index

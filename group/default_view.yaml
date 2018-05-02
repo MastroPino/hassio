@@ -4,14 +4,15 @@ default_view:
   icon: mdi:home-assistant
   name: Casa
   entities:
+#     - group.ilendrius_tracker
     - device_tracker.ilendrius
     - device_tracker.64bc0c807396
     - group.weather
     - cover.saracinesca
     - group.stanze_home
-    - group.window_sensors
-    - group.motion_sensors
-    - variable.last_motion
+#     - group.window_sensors
+#     - group.motion_sensors
+    - group.sensor_ultimo_movimento
     - group.climate
     - media_player.lg_webos_smart_tv
     - media_player.apple_tv_2

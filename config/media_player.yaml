@@ -1,0 +1,14 @@
+- platform: webostv
+  host: 192.168.0.20
+  timeout: 5
+  filename: webostv.conf
+  turn_on_action:
+    service: media_player.turn_on
+    entity_id: media_player.lg_webos_smart_tv
+#     customize:
+#       sources:
+#         - livetv
+#         - youtube
+#         - makotv
+#         - netflix
+#         - prime

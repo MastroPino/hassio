@@ -87,11 +87,11 @@ binary_sensor.door_window_sensor_158d000201980a:
   platform: xiaomi_aqara
   unique_id: status158d000201980a
 binary_sensor.motion_sensor_158d0001e5764c:
-  name: Movimento Ingresso
+  name: Ingresso
   platform: xiaomi_aqara
   unique_id: status158d0001e5764c
 binary_sensor.motion_sensor_158d0001e5413e:
-  name: Movimento Sala da Pranzo
+  name: Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: status158d0001e5413e
 binary_sensor.door_window_sensor_158d0001fd6296:
@@ -119,7 +119,7 @@ binary_sensor.cube_158d0001051007:
   platform: xiaomi_aqara
   unique_id: cube158d0001051007
 binary_sensor.motion_sensor_158d00010f7fda:
-  name: Movimento Garage
+  name: Garage
   platform: xiaomi_aqara
   unique_id: status158d00010f7fda
 binary_sensor.switch_158d00013f84db:
@@ -175,7 +175,7 @@ binary_sensor.door_window_sensor_158d0001e44493:
   platform: xiaomi_aqara
   unique_id: status158d0001e44493
 binary_sensor.motion_sensor_158d0001e514df:
-  name: Movimento Corridoio
+  name: Corridoio
   platform: xiaomi_aqara
   unique_id: status158d0001e514df
 sensor.illumination_158d0001e514df:
@@ -183,7 +183,7 @@ sensor.illumination_158d0001e514df:
   platform: xiaomi_aqara
   unique_id: lux158d0001e514df
 binary_sensor.motion_sensor_158d0001e515b8:
-  name: Movimento Cucina
+  name: Cucina
   platform: xiaomi_aqara
   unique_id: status158d0001e515b8
 sensor.illumination_158d0001e515b8:
@@ -191,7 +191,7 @@ sensor.illumination_158d0001e515b8:
   platform: xiaomi_aqara
   unique_id: lux158d0001e515b8
 binary_sensor.motion_sensor_158d0001e513a8:
-  name: Movimento Soggiorno
+  name: Soggiorno
   platform: xiaomi_aqara
   unique_id: status158d0001e513a8
 sensor.illumination_158d0001e513a8:
@@ -199,7 +199,7 @@ sensor.illumination_158d0001e513a8:
   platform: xiaomi_aqara
   unique_id: lux158d0001e513a8
 binary_sensor.motion_sensor_158d0001e5156a:
-  name: Movimento Camera da Letto
+  name: Camera da Letto
   platform: xiaomi_aqara
   unique_id: status158d0001e5156a
 sensor.illumination_158d0001e5156a:
@@ -207,7 +207,7 @@ sensor.illumination_158d0001e5156a:
   platform: xiaomi_aqara
   unique_id: lux158d0001e5156a
 binary_sensor.motion_sensor_158d0001e51489:
-  name: Movimento Camera Armadi
+  name: Camera Armadi
   platform: xiaomi_aqara
   unique_id: status158d0001e51489
 sensor.illumination_158d0001e51489:
@@ -222,3 +222,11 @@ remote.apple_tv_3:
   name:
   platform: apple_tv
   unique_id: 4a8bb3ec2bbec6799d82c89772053bb29b237399feac0828529409dd944b8d11
+media_player.apple_tv_4:
+  name:
+  platform: apple_tv
+  unique_id: 0f25616b7f931a430cfa3d12407ba4c3564322d3837207ff7c01484d06ae3201
+remote.apple_tv_4:
+  name:
+  platform: apple_tv
+  unique_id: 0f25616b7f931a430cfa3d12407ba4c3564322d3837207ff7c01484d06ae3201

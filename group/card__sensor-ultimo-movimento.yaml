@@ -1,0 +1,4 @@
+sensor_ultimo_movimento:
+  name: Ultimo movimento
+  entities:
+    - variable.last_motion

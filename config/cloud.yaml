@@ -1,0 +1,25 @@
+google_actions:
+  filter:
+    include_domains:
+      - switch
+      - light
+      - cover
+    exclude_entities:
+      - light.lampadario_1
+      - light.lampadario_2
+      - light.lampadario_3
+      - switch.sonoff_garage_4
+      - light.xmasactivegroupeven
+      - light.xmasactivegroupodd
+      - light.xmasactivegroup
+      - light.stanza_da_letto
+      - light.soggiorno
+      - light.sala_da_pranzo
+      - light.garage
+      - light.entrata
+      - light.dispensa
+      - light.cucina
+      - light.corridoio
+      - light.bagno
+      - light.bagnetto
+      - light.area_di_intrattenimento_1

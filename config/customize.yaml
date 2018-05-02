@@ -33,7 +33,7 @@ group.light_bagnetto:
 group.stanze_home:
   order: '2'
 group.weather:
-  order: '1'
+  order: '5'
 group.family:
   order: '1'
 device_tracker.64bc0c807396:
@@ -193,6 +193,7 @@ cover.saracinesca:
   homebridge_name: Saracinesca
   homebridge_visible: true
   show_last_changed: true
+  order: '2'
 binary_sensor.cube_158d0001051007:
   icon: mdi:cube-outline
 binary_sensor.switch_158d00012641b4:
@@ -427,4 +428,4 @@ sensor.illumination_158d0001e51489:
   homebridge_serial: 158d0001e51489
   homebridge_visible: true
 variable.last_motion:
-  friendly_name: Ultimo Movimento
+  friendly_name: Stanza

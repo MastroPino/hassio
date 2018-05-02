@@ -2,8 +2,19 @@
   hosts: 
     - 192.168.0.60
     - 192.168.0.62
-  consider_home: 50
-  track_new_devices: false
+  consider_home: 100
+  track_new_devices: true
 - platform: ping
   hosts:
-    hostone: 192.168.0.62
+    ping_eleonora: 192.168.0.62
+    ping_ilendrius: 192.168.0.60
+- platform: owntracks
+  max_gps_accuracy: 200
+  waypoints: True
+  mqtt_topic: "owntracks/#"
+  events_only: True
+  waypoint_whitelist:
+    - hassio
+# - platform: mqtt
+#   devices:
+#     ilendrius: owntracks/hassio/ilendrius

@@ -1,0 +1,6 @@
+last_motion:
+  value: 'Sconosciuto'
+  restore: true
+  attributes:
+    icon: mdi:map-marker
+    name: "Stanza"

@@ -1,0 +1,3 @@
+bridges:
+  - host: !secret hue_host
+    allow_hue_groups: true

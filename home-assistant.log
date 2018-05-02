@@ -1,25 +1,27 @@
-2018-04-08 20:24:29 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-05-02 21:54:51 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=351 from 2018-05-02 19:48:35.653889)
+2018-05-02 21:55:12 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
+2018-05-02 21:55:31 ERROR (MainThread) [homeassistant.components.sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
   File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
     return fut.result()
   File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
     result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/binary_sensor/netatmo.py", line 75, in setup_platform
-    if not data.get_camera_names():
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/sensor/netatmo.py", line 85, in setup_platform
+    for module_name in data.get_module_names():
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/sensor/netatmo.py", line 293, in get_module_names
     self.update()
   File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 319, in wrapper
     result = method(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 115, in update
-    self.camera_data = lnetatmo.CameraData(self.auth, size=100)
-  File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
-    self.default_camera = list(self.cameras[self.default_home].values())[0]
-IndexError: list index out of range
-2018-04-08 20:24:29 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/sensor/netatmo.py", line 300, in update
+    self.station_data = lnetatmo.WeatherStationData(self.auth)
+  File "/usr/lib/python3.6/site-packages/smart_home/WeatherStation.py", line 24, in __init__
+    self.rawData = resp['body']['devices']
+TypeError: 'NoneType' object is not subscriptable
+2018-05-02 21:55:32 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 82, in async_setup
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
   File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
     return fut.result()
@@ -36,47 +38,31 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-04-08 20:24:54 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
-2018-04-08 20:25:23 ERROR (zeroconf-Engine) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
-2018-04-08 20:25:33 WARNING (SyncWorker_18) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
-2018-04-08 20:26:29 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-04-08 20:26:29 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:26:30 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:28:05 ERROR (MainThread) [frontend.js.latest.201804010] :0:0 Script error.
-2018-04-08 20:28:11 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
-2018-04-08 20:28:34 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e514df is taking over 10 seconds
-2018-04-08 20:28:34 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:28:34 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:32:41 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-04-08 20:32:41 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:32:41 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:33:23 ERROR (MainThread) [frontend.js.latest.201804010] :0:0 Script error.
-2018-04-08 20:37:20 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e5156a is taking over 10 seconds
-2018-04-08 20:37:20 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:37:20 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:38:22 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-04-08 20:38:22 ERROR (SyncWorker_9) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:38:22 ERROR (SyncWorker_9) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:45:36 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-04-08 20:45:36 ERROR (SyncWorker_5) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:45:36 ERROR (SyncWorker_5) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:45:55 WARNING (MainThread) [homeassistant.helpers.entity] Update of light.comodino_ele is taking over 10 seconds
-2018-04-08 20:48:11 ERROR (MainThread) [frontend.js.latest.201804010] :0:0 Script error.
-2018-04-08 20:50:46 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-04-08 20:50:46 ERROR (SyncWorker_8) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:50:46 ERROR (SyncWorker_8) [xiaomi_gateway] No data in response from hub None
-2018-04-08 20:51:17 ERROR (MainThread) [homeassistant.core] Error doing job: Future exception was never retrieved
+2018-05-02 21:55:35 WARNING (MainThread) [homeassistant.setup] Setup of config is taking over 10 seconds.
+2018-05-02 21:55:38 WARNING (MainThread) [homeassistant.setup] Setup of xiaomi_aqara is taking over 10 seconds.
+2018-05-02 21:55:51 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
+    SLOW_SETUP_MAX_WAIT, loop=hass.loop)
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 358, in wait_for
+    return fut.result()
   File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
     result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/homekit/type_lights.py", line 150, in update_state
-    self.char_hue.set_value(hue, should_callback=False)
-  File "/usr/lib/python3.6/site-packages/pyhap/characteristic.py", line 155, in set_value
-    self.notify()
-  File "/usr/lib/python3.6/site-packages/pyhap/characteristic.py", line 193, in notify
-    "value": self.get_hap_value(),
-  File "/usr/lib/python3.6/site-packages/pyhap/characteristic.py", line 172, in get_hap_value
-    val = min(self.properties["maxValue"], val)
-TypeError: '<' not supported between instances of 'NoneType' and 'int'
-2018-04-08 20:51:24 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
-2018-04-08 20:51:24 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/binary_sensor/netatmo.py", line 75, in setup_platform
+    if not data.get_camera_names():
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
+    self.update()
+  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 319, in wrapper
+    result = method(*args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 115, in update
+    self.camera_data = lnetatmo.CameraData(self.auth, size=100)
+  File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
+    self.default_camera = list(self.cameras[self.default_home].values())[0]
+IndexError: list index out of range
+2018-05-02 21:56:18 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-05-02 21:56:23 ERROR (SyncWorker_10) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-05-02 21:56:26 WARNING (SyncWorker_16) [netdisco.ssdp] Error fetching description at http://192.168.0.1:1990/WFADevice.xml
+2018-05-02 21:56:31 WARNING (SyncWorker_16) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-05-02 21:56:32 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-02 21:56:32 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-02 21:56:32 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None

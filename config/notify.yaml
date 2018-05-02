@@ -1,0 +1,4 @@
+- platform: webostv
+  host: 192.168.0.20
+  name: lg_webos_smart_tv
+  filename: webostv.conf
