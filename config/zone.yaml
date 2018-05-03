@@ -14,8 +14,8 @@
   icon: mdi:food
   radius: 10
 - name: Benzinaio
-  latitude: 37.5472580
-  longitude: 15.0829814
+  latitude: 37.54727
+  longitude: 15.08299
   icon: mdi:ev-station
   radius: 20
 - name: Genitori
@@ -39,13 +39,13 @@
   icon: mdi:cart
   radius: 50
 - name: Decò
-  latitude: 37.5509677
-  longitude: 15.0860457
+  latitude: 37.55059
+  longitude: 15.08628
   icon: mdi:cart
   radius: 50
 - name: Glamour
-  latitude: 37.50545
-  longitude: 15.08864
+  latitude: 37.50562
+  longitude: 15.08725
   icon: mdi:beer
   radius: 20
 - name: Bar15
@@ -54,12 +54,12 @@
   icon: mdi:food
   radius: 20
 - name: Parco I Vicerè
-  latitude: 37.5369733
-  longitude: 15.0834247
+  latitude: 37.5369
+  longitude: 15.08312
   icon: mdi:tree
   radius: 80
 - name: Parco Gioieni
-  latitude: 37.52925
-  longitude: 15.08286
+  latitude: 37.529
+  longitude: 15.0816
   icon: mdi:tree
   radius: 250

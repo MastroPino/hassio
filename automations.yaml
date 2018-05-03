@@ -684,5 +684,20 @@
   - service: notify.lg_webos_smart_tv
     data:
       message: La saracinesca è aperta
-      data:
-        icon: "/config/www/icons/hassio.png"
+        
+
+- id: notify_lg_garage_apertura
+  alias: '[Notifica LG] Notifica Garage Chiuso'
+  initial_state: 'on'
+  hide_entity: false
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: notify.lg_webos_smart_tv
+    data:
+      message: La saracinesca è chiusa
+#       data:
+#         icon: "/config/www/icons/hassio.png"

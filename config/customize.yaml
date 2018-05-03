@@ -68,187 +68,57 @@ input_select.soggiorno_preset:
   friendly_name: Scene
 light.gateway_light_f0b429cbef3f:
   icon: mdi:google-circles-extended
-  homebridge_visible: false
-#   homebridge_name: Xiaomi Gateway
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Xiaomi Smart Home Multifunctional Gateway
-#   homebridge_serial: f0b429cbef3f
 light.lampadario:
   icon: mdi:ceiling-light
-binary_sensor.door_window_sensor_158d000201980a:
-  homebridge_visible: true
-  friendly_name: Finestra Cucina
-  homebridge_name: Finestra Cucina
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Window Door Sensor
-  homebridge_serial: 158d000201980a
-  homebridge_battery_source: sensor.batteria_finestra_cucina
 light.lampadario_tv:
   icon: mdi:ceiling-light
 sensor.humidity_158d00015b2df4:
-  friendly_name: Umidità Sala da Pranzo
   icon: mdi:water-percent
-  homebridge_visible: false
-#   homebridge_name: Umidità Sala da Pranzo
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Xiaomi Temperature Humidity Sensor
-#   homebridge_serial: 158d00015b2df4
 sensor.temperature_158d00015b2df4:
-  friendly_name: Temperatura sala da pranzo
   icon: mdi:temperature-celsius
-  homebridge_visible: false
-#   homebridge_name: Temperatura Sala da Pranzo
-#   homebridge_mfg: Xiaomi
-#   homebridge_model: Xiaomi Temperature Humidity Sensor
-#   homebridge_serial: 158d00015b2df4
 light.tepee:
   friendly_name: Tepee
   icon: mdi:tent
 switch.tepee:
   friendly_name: Tepee
   icon: mdi:tent
-  homebridge_visible: false
-#   homebridge_switch_type: outlet
-#   homebridge_name: Tepee
-#   homebridge_mfg: Osram
-#   homebridge_model: Osram Lightify Plug
 light.fiore:
   icon: mdi:image-filter-vintage
-binary_sensor.door_window_sensor_158d00013ed2c1:
-  icon: mdi:lightbulb-on
 media_player.lg_webos_smart_tv:
-  homebridge_visible: true
-  homebridge_media_player_switch: on_off
   icon: mdi:television
-  homebridge_name: LG WebOS Smart TV
-  homebridge_mfg: LG
-  homebridge_model: LG OLED55B7V-Z
-binary_sensor.motion_sensor_158d0001e5413e:
-  homebridge_visible: true
-  homebridge_name: Movimento Sala da Pranzo
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e5413e
-  homebridge_battery_source: sensor.batteria_sensore_movimento_sala_da_pranzo
-sensor.illumination_158d0001e5413e:
-  homebridge_visible: true
-  homebridge_name: Luminosità Sala da Pranzo
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e5413e
-  homebridge_sensor_type: light
-  homebridge_battery_source: sensor.batteria_sensore_movimento_sala_da_pranzo
 input_select.sala_da_pranzo_preset:
   friendly_name: Scene
 light.lampadario_dispensa:
   icon: mdi:hololens
-binary_sensor.door_window_sensor_158d00013fede0:
-  homebridge_visible: true
-  homebridge_name: Porta Dispenza
-  homebridge_mfg: Xiaomi
-  homebridge_model: Xiaomi Window Door Sensor
-  homebridge_serial: 158d00013fede0
-  homebridge_battery_source: sensor.batteria_porta_dispensa
-binary_sensor.switch_158d00013f84db:
-  homebridge_visible: true
-  homebridge_name: Bottone Dispenza
-  homebridge_mfg: Xiaomi
-  homebridge_model: Xiaomi Smart Wireless Switch
-  homebridge_serial: 158d00013f84db
-  homebridge_battery_source: sensor.batteria_bottone_dispenza
-binary_sensor.motion_sensor_158d00010f7fda:
-  homebridge_visible: true
-  homebridge_name: Movimento Garage
-  homebridge_mfg: Xiaomi
-  homebridge_model: Human Body Sensor
-  homebridge_serial: 158d00010f7fda
-  homebridge_battery_source: sensor.batteria_sensore_movimento_garage
 switch.sonoff_garage_1:
   friendly_name: Neon Interni
-  homebridge_visible: true
-  homebridge_name: Neon Interni Garage
-  homebridge_mfg: ITEA
-  homebridge_model: ITEA Sonoff 4CH Pro
-  icon: mdi:white-balance-iridescent
+  icon: mdi:car-side
 switch.sonoff_garage_2:
   friendly_name: Neon Esterno
-  homebridge_visible: true
-  homebridge_name: Neon Esterno Garage
-  homebridge_mfg: ITEA
-  homebridge_model: ITEA Sonoff 4CH Pro
   icon: mdi:white-balance-iridescent
 switch.sonoff_garage_3:
   friendly_name: Neon Vespa
-  homebridge_visible: true
-  homebridge_name: Neon Vespa Garage
-  homebridge_mfg: ITEA
-  homebridge_model: ITEA Sonoff 4CH Pro
-  icon: mdi:white-balance-iridescent
+  icon: mdi:motorbike
+#   entity_picture: /local/icons/vespa.svg
 cover.saracinesca:
   device_class: garage
   friendly_name: Saracinesca
-  homebridge_cover_type: garage_door
-  homebridge_mfg: ITEA
-  homebridge_model: ITEA Sonoff 4CH Pro
-  homebridge_name: Saracinesca
-  homebridge_visible: true
   show_last_changed: true
   order: '2'
 binary_sensor.cube_158d0001051007:
   icon: mdi:cube-outline
-binary_sensor.switch_158d00012641b4:
-  homebridge_visible: true
-  homebridge_name: Bottone Andrea
-  homebridge_mfg: Xiaomi
-  homebridge_model: Xiaomi Smart Wireless Switch
-  homebridge_serial: 158d00012641b4
-  homebridge_battery_source: sensor.batteria_comodino_andrea
-binary_sensor.switch_158d00013ecb24:
-  homebridge_visible: true
-  homebridge_name: Bottone Eleonora
-  homebridge_mfg: Xiaomi
-  homebridge_model: Xiaomi Smart Wireless Switch
-  homebridge_serial: 158d00013ecb24
-  homebridge_battery_source: sensor.batteria_comodino_eleonora
 light.comodino_ele:
   friendly_name: Comodino Eleonora
   icon: mdi:lamp
-  homebridge_visible: false
-#   homebridge_name: Comodino Eleonora
-#   homebridge_mfg: Osram
-#   homebridge_model: Osram Lightify LED Ampoule Classic B40
+#   entity_picture: /local/icons/light.svg
 light.comodino_andrea:
   friendly_name: Comodino Andrea
   icon: mdi:lamp
-  homebridge_visible: false
-#   homebridge_name: Comodino Andrea
-#   homebridge_mfg: Osram
-#   homebridge_model: Osram Lightify LED Ampoule Classic B40
+#   entity_picture: /local/icons/light.svg
 group.sensor_ingresso:
   icon: mdi:login
-binary_sensor.door_window_sensor_158d000112031b:
-  homebridge_visible: true
-  homebridge_name: Porta Ingresso
-  homebridge_mfg: Xiaomi
-  homebridge_model: Xiaomi Window Door Sensor
-  homebridge_serial: 158d000112031b
-  homebridge_battery_source: sensor.batteria_porta_ingresso
-binary_sensor.motion_sensor_158d0001e5764c:
-  homebridge_visible: true
-  homebridge_name: Movimento Ingresso
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e5764c
-  homebridge_battery_source: sensor.batteria_sensore_movimento_ingresso
 sensor.illumination_158d0001e5764c:
   friendly_name: Luminosità Ingresso
-  homebridge_battery_source: sensor.batteria_sensore_movimento_ingresso
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_name: Luminosità Ingresso
-  homebridge_sensor_type: light
-  homebridge_serial: 158d0001e5764c
-  homebridge_visible: true
 sensor.ilendrius_battery_state:
   hidden: true
 sensor.ilendrius_pro_battery_state:
@@ -269,59 +139,8 @@ sensor.used_space_volume_1:
   friendly_name: Spazio Utilizzato
 sensor.volume_used_volume_1:
   friendly_name: Occupato
-alarm_control_panel.house:
-  homebridge_visible: false
-#   homebridge_name: Allarme di Casa
-#   homebridge_mfg: Home Assistant
-#   homebridge_model: Home Assistant Allarm Center
-#   homebridge_alarm_code: !secret alarm_code
 sensor.temperature_158d0001e549e0:
   friendly_name: Temperatura Bagno
-  homebridge_visible: false
-#   homebridge_name: Temperatura Bagno
-#   homebridge_mfg: Aqara
-#   homebridge_model: Aqara Temperature Humidity Sensor
-#   homebridge_serial: 158d0001e549e0
-sensor.humidity_158d0001e549e0:
-  homebridge_visible: false
-#   homebridge_name: Umidità Bagno
-#   homebridge_mfg: Aqara
-#   homebridge_model: Aqara Temperature Humidity Sensor
-#   homebridge_serial: 158d0001e549e0
-sensor.pressure_158d0001e549e0:
-  homebridge_visible: true
-  homebridge_name: Pressione Bagno
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Temperature Humidity Sensor
-  homebridge_serial: 158d0001e549e0
-binary_sensor.door_window_sensor_158d0001b95bf4:
-  homebridge_visible: true
-  homebridge_name: Finestra Bagnetto
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Window Door Sensor
-  homebridge_serial: 158d0001b95bf4
-  homebridge_battery_source: sensor.batteria_finestra_a_ribalta_bagnetto
-binary_sensor.door_window_sensor_158d0001e44493:
-  homebridge_visible: true
-  homebridge_name: Finestra Bagno
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Window Door Sensor
-  homebridge_serial: 158d0001e44493
-  homebridge_battery_source: sensor.batteria_finestra_a_ribalta_bagno
-binary_sensor.door_window_sensor_158d0001de6e16:
-  homebridge_visible: 'true'
-  homebridge_name: Finestra Camera da Letto
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Window Door Sensor
-  homebridge_serial: 158d0001de6e16
-  homebridge_battery_source: sensor.batteria_finestra_camera_da_letto
-binary_sensor.door_window_sensor_158d0001b95954:
-  homebridge_visible: true
-  homebridge_name: Finestra Camera Armadio
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Window Door Sensor
-  homebridge_serial: 158d0001b95954
-  homebridge_battery_source: sensor.batteria_finestra_stanza_armadio
 sensor.transmission_active_torrents:
   friendly_name: Torrent Attivi
 sensor.transmission_down_speed:
@@ -333,8 +152,6 @@ sensor.transmission_up_speed:
 sensor.processor_use:
   friendly_name: Utilizzo Processore
   icon: mdi:chip
-sensor.aqara_temperature_humidity_sensor:
-  friendly_name: Aqara Temperature Humidity Sensor
 script.check_sonoffs_version:
   friendly_name: Cerca aggiornamenti...
   icon: mdi:checkbox-multiple-marked-outline
@@ -343,89 +160,5 @@ script.update_sonoffs:
   icon: mdi:download-network
 sensor.sonoff_4ch_pro_garage:
   icon: mdi:power-socket-eu
-sensor.batteria_bottone_comodino_andrea:
-  homebridge_hidden: true
-sensor.batteria_bottone_comodino_eleonora:
-  homebridge_hidden: true
-binary_sensor.motion_sensor_158d0001e514df:
-  homebridge_visible: true
-  homebridge_name: Movimento Corridoio
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e514df
-  homebridge_battery_source: sensor.batteria_sensore_movimento_corridoio
-sensor.illumination_158d0001e514df:
-  friendly_name: Luminosità Ingresso
-  homebridge_battery_source: sensor.batteria_sensore_movimento_corridoio
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_name: Luminosità Corridio
-  homebridge_sensor_type: light
-  homebridge_serial: 158d0001e514df
-  homebridge_visible: true
-binary_sensor.motion_sensor_158d0001e515b8:
-  homebridge_visible: true
-  homebridge_name: Movimento Cucina
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e515b8
-  homebridge_battery_source: sensor.batteria_sensore_movimento_cucina
-sensor.illumination_158d0001e515b8:
-  friendly_name: Luminosità Cucina
-  homebridge_battery_source: sensor.batteria_sensore_movimento_cucina
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_name: Luminosità Cucina
-  homebridge_sensor_type: light
-  homebridge_serial: 158d0001e515b8
-  homebridge_visible: true
-binary_sensor.motion_sensor_158d0001e513a8:
-  homebridge_visible: true
-  homebridge_name: Movimento Soggiorno
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e513a8
-  homebridge_battery_source: sensor.batteria_sensore_movimento_soggiorno
-sensor.illumination_158d0001e513a8:
-  friendly_name: Luminosità Soggiorno
-  homebridge_battery_source: sensor.batteria_sensore_movimento_soggiorno
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_name: Luminosità Soggiorno
-  homebridge_sensor_type: light
-  homebridge_serial: 158d0001e513a8
-  homebridge_visible: true
-binary_sensor.motion_sensor_158d0001e5156a:
-  homebridge_visible: true
-  homebridge_name: Movimento Camera da Letto
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e5156a
-  homebridge_battery_source: sensor.batteria_sensore_movimento_camera_da_letto
-sensor.illumination_158d0001e5156a:
-  friendly_name: Luminosità Camera da Letto
-  homebridge_battery_source: sensor.batteria_sensore_movimento_camera_da_letto
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_name: Luminosità Camera da Letto
-  homebridge_sensor_type: light
-  homebridge_serial: 158d0001e5156a
-  homebridge_visible: true
-binary_sensor.motion_sensor_158d0001e51489:
-  homebridge_visible: true
-  homebridge_name: Movimento Camera Armadi
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_serial: 158d0001e51489
-  homebridge_battery_source: sensor.batteria_sensore_movimento_camera_armadi
-sensor.illumination_158d0001e51489:
-  friendly_name: Luminosità Camera da Letto
-  homebridge_battery_source: sensor.batteria_sensore_movimento_camera_armadi
-  homebridge_mfg: Aqara
-  homebridge_model: Aqara Human Body Sensor
-  homebridge_name: Luminosità Camera Armadi
-  homebridge_sensor_type: light
-  homebridge_serial: 158d0001e51489
-  homebridge_visible: true
 variable.last_motion:
   friendly_name: Stanza

@@ -3,7 +3,6 @@ sensors:
   view: true
   icon: mdi:alarm-light
   entities:
-  - variable.last_motion
   - binary_sensor.bayesian_sleeping
   - group.sensor_garage
   - group.sensor_ingresso

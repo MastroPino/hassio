@@ -101,7 +101,7 @@ homeassistant:
 
     group.battery_alert:
       <<: *customize
-      friendly_name: "Battery Alert"
+      friendly_name: "Allarme Batterie"
       icon: mdi:steam
 
     ################################################
@@ -110,32 +110,32 @@ homeassistant:
 
     automation.battery_notification:
       <<: *customize
-      friendly_name: "Battery Notification"
+      friendly_name: "Notifica batterie"
       icon: mdi:comment-alert-outline
 
     automation.battery_notification_clear:
       <<: *customize
-      friendly_name: "Battery Notification Clear"
+      friendly_name: "Pulisci notifica batterie"
       icon: mdi:comment-remove-outline
 
     automation.battery_alert_slack:
       <<: *customize
-      friendly_name: "Battery Slack Notification"
+      friendly_name: "Notifica batterie Slack"
       icon: mdi:comment-alert-outline
 
     automation.battery_sensor_from_battery_level_attribute:
       <<: *customize
-      friendly_name: "Battery Sensor from battery_level Attribute"
+      friendly_name: "Sensore batteria dal attributo battery_level"
       icon: mdi:battery-alert
 
     automation.battery_sensor_from_battery_attribute:
       <<: *customize
-      friendly_name: "Battery Sensor from battery Attribute"
+      friendly_name: "Sensore batteria dal attributo battery"
       icon: mdi:battery-alert
 
     automation.battery_sensor_from_battery_numeric_attribute:
       <<: *customize
-      friendly_name: "Battery Sensor from battery numeric Attribute"
+      friendly_name: "Sensore batteria dal attributo battery numeric"
       icon: mdi:battery-alert
 
 ################################################
@@ -161,7 +161,7 @@ group:
 
 input_number:
   battery_alert_threshold_max:
-    name: "Max Alert Threshold"
+    name: "Soglia allarme max"
     icon: mdi:arrow-collapse-up
     mode: slider
     min: -1
@@ -169,7 +169,7 @@ input_number:
     # initial: 40
 
   battery_alert_threshold_min:
-    name: "Min Alert Threshold"
+    name: "Soglia allarme min"
     icon: mdi:arrow-collapse-down
     mode: slider
     min: -1
@@ -220,7 +220,7 @@ automation:
         {{ battery_level() | trim != "" and not is_state_attr('persistent_notification.lowbatteryalert', 'message', battery_level()) }}
     - service: persistent_notification.create
       data_template:
-        title: "Low Battery levels"
+        title: "Livello batteria basso"
         notification_id: low-battery-alert
         message: >
           {% macro battery_level() %}

@@ -1,6 +1,6 @@
-2018-05-02 21:54:51 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=351 from 2018-05-02 19:48:35.653889)
-2018-05-02 21:55:12 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
-2018-05-02 21:55:31 ERROR (MainThread) [homeassistant.components.sensor] Error while setting up platform netatmo
+2018-05-03 11:38:40 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform gearbest is taking over 10 seconds.
+2018-05-03 11:39:03 WARNING (MainThread) [homeassistant.setup] Setup of config is taking over 10 seconds.
+2018-05-03 11:39:04 ERROR (MainThread) [homeassistant.components.sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -19,7 +19,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/WeatherStation.py", line 24, in __init__
     self.rawData = resp['body']['devices']
 TypeError: 'NoneType' object is not subscriptable
-2018-05-02 21:55:32 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+2018-05-03 11:39:04 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -38,9 +38,7 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-05-02 21:55:35 WARNING (MainThread) [homeassistant.setup] Setup of config is taking over 10 seconds.
-2018-05-02 21:55:38 WARNING (MainThread) [homeassistant.setup] Setup of xiaomi_aqara is taking over 10 seconds.
-2018-05-02 21:55:51 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-05-03 11:39:20 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -59,10 +57,91 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-05-02 21:56:18 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
-2018-05-02 21:56:23 ERROR (SyncWorker_10) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
-2018-05-02 21:56:26 WARNING (SyncWorker_16) [netdisco.ssdp] Error fetching description at http://192.168.0.1:1990/WFADevice.xml
-2018-05-02 21:56:31 WARNING (SyncWorker_16) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
-2018-05-02 21:56:32 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-02 21:56:32 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-02 21:56:32 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
+2018-05-03 11:39:44 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-05-03 11:39:44 ERROR (SyncWorker_18) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-05-03 11:39:55 WARNING (SyncWorker_5) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-05-03 12:06:22 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e514df is taking over 10 seconds
+2018-05-03 12:06:22 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:06:22 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:10:30 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:10:30 ERROR (SyncWorker_18) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:10:30 ERROR (SyncWorker_18) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:28:35 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:28:35 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:28:35 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:37:52 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:37:52 ERROR (SyncWorker_8) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:37:52 ERROR (SyncWorker_8) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:46:08 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e5413e is taking over 10 seconds
+2018-05-03 12:46:08 ERROR (SyncWorker_2) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:46:08 ERROR (SyncWorker_2) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:46:18 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:46:18 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:46:18 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:46:39 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:46:39 ERROR (SyncWorker_11) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:46:39 ERROR (SyncWorker_11) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:47:10 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:47:10 ERROR (SyncWorker_2) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:47:10 ERROR (SyncWorker_2) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:47:41 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:47:41 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:47:41 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:51:49 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:51:49 ERROR (SyncWorker_12) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:51:49 ERROR (SyncWorker_12) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:52:51 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-05-03 12:52:51 ERROR (SyncWorker_14) [xiaomi_gateway] Cannot connect to Gateway
+2018-05-03 12:52:51 ERROR (SyncWorker_14) [xiaomi_gateway] No data in response from hub None
+2018-05-03 12:55:02 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-05-03 12:58:13 ERROR (SyncWorker_14) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-05-03 12:58:18 WARNING (MainThread) [homeassistant.helpers.entity] Update of sensor.transmission_active_torrents is taking over 10 seconds
+2018-05-03 12:58:34 WARNING (MainThread) [homeassistant.helpers.entity] Update of light.comodino_andrea is taking over 10 seconds
+2018-05-03 12:58:34 WARNING (SyncWorker_4) [lightify] lost connection to lightify gateway.
+2018-05-03 12:58:34 WARNING (SyncWorker_4) [lightify] socketError: timed out
+2018-05-03 12:58:34 WARNING (SyncWorker_4) [lightify] Trying to reconnect.
+2018-05-03 12:58:40 ERROR (SyncWorker_4) [homeassistant.components.light.osramlightify] OSError during updating of lights
+2018-05-03 12:58:44 ERROR (SyncWorker_16) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-05-03 12:58:55 WARNING (SyncWorker_0) [lightify] lost connection to lightify gateway.
+2018-05-03 12:58:55 WARNING (SyncWorker_0) [lightify] socketError: [Errno 32] Broken pipe
+2018-05-03 12:58:55 WARNING (SyncWorker_0) [lightify] Trying to reconnect.
+2018-05-03 12:58:56 ERROR (SyncWorker_0) [homeassistant.components.light.osramlightify] OSError during updating of lights
+2018-05-03 12:59:05 ERROR (MainThread) [homeassistant.core] Error doing job: Future exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/sensor/speedtest.py", line 171, in update
+    speed = speedtest.Speedtest()
+  File "/usr/lib/python3.6/site-packages/speedtest.py", line 1009, in __init__
+    self.get_config()
+  File "/usr/lib/python3.6/site-packages/speedtest.py", line 1044, in get_config
+    raise ConfigRetrievalError(e)
+speedtest.ConfigRetrievalError: <urlopen error [Errno -3] Try again>
+2018-05-03 12:59:15 ERROR (SyncWorker_6) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-05-03 12:59:15 ERROR (SyncWorker_17) [homeassistant.components.sensor.darksky] Unable to connect to Dark Sky. HTTPSConnectionPool(host='api.darksky.net', port=443): Max retries exceeded with url: /forecast/92a61eb52935946cae00a8467c1403f7/37.5475,15.0813?units=si&lang=en (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x6f1e4d30>: Failed to establish a new connection: [Errno -3] Try again',))
+2018-05-03 12:59:26 WARNING (SyncWorker_4) [lightify] lost connection to lightify gateway.
+2018-05-03 12:59:26 WARNING (SyncWorker_4) [lightify] socketError: [Errno 32] Broken pipe
+2018-05-03 12:59:26 WARNING (SyncWorker_4) [lightify] Trying to reconnect.
+2018-05-03 12:59:29 ERROR (SyncWorker_4) [homeassistant.components.light.osramlightify] OSError during updating of lights
+2018-05-03 12:59:32 ERROR (SyncWorker_19) [yahooweather] Fetch no weather data Yahoo!
+2018-05-03 12:59:32 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 215, in async_update_ha_state
+    state = self.state
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/weather/__init__.py", line 156, in state
+    return self.condition
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/weather/yweather.py", line 111, in condition
+    self._data.yahoo.Now['code'])]
+TypeError: 'NoneType' object is not subscriptable
+2018-05-03 12:59:46 ERROR (SyncWorker_11) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-05-03 12:59:57 WARNING (SyncWorker_9) [lightify] lost connection to lightify gateway.
+2018-05-03 12:59:57 WARNING (SyncWorker_9) [lightify] socketError: [Errno 32] Broken pipe
+2018-05-03 12:59:57 WARNING (SyncWorker_9) [lightify] Trying to reconnect.
+2018-05-03 13:00:00 ERROR (SyncWorker_9) [homeassistant.components.light.osramlightify] OSError during updating of lights
+2018-05-03 13:00:17 ERROR (SyncWorker_14) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
+2018-05-03 13:00:28 WARNING (SyncWorker_18) [lightify] lost connection to lightify gateway.
+2018-05-03 13:00:28 WARNING (SyncWorker_18) [lightify] socketError: [Errno 32] Broken pipe
+2018-05-03 13:00:28 WARNING (SyncWorker_18) [lightify] Trying to reconnect.
+2018-05-03 13:00:31 WARNING (MainThread) [homeassistant.helpers.entity] Update of climate.termostato is taking over 10 seconds
+2018-05-03 13:14:19 ERROR (MainThread) [homeassistant.core] Error doing job: Fatal error on transport TCPTransport (error status in uv_stream_t.read callback)
+TimeoutError: [Errno 110] Operation timed out

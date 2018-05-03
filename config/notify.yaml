@@ -2,3 +2,4 @@
   host: 192.168.0.20
   name: lg_webos_smart_tv
   filename: webostv.conf
+  icon: "/config/www/icons/hassio.png"

@@ -40,9 +40,5 @@ scene: !include config/scene.yaml
 recorder: !include config/recorder.yaml
 cloud: !include config/cloud.yaml
 notify: !include config/notify.yaml
+customizer: !include config/customizer.yaml
 zwave: !include config/zwave.yaml
-customizer:
-  custom_ui: local
-  hide_attributes:
-    - node_id
-    - value_index
