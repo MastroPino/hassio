@@ -101,7 +101,7 @@ homeassistant:
 
     group.battery_alert:
       <<: *customize
-      friendly_name: "Allarme Batterie"
+      friendly_name: "Alert batterie"
       icon: mdi:steam
 
     ################################################
@@ -110,32 +110,32 @@ homeassistant:
 
     automation.battery_notification:
       <<: *customize
-      friendly_name: "Notifica batterie"
+      friendly_name: "Notifica Batteria"
       icon: mdi:comment-alert-outline
 
     automation.battery_notification_clear:
       <<: *customize
-      friendly_name: "Pulisci notifica batterie"
+      friendly_name: "Rimuovi Notifica Batteria"
       icon: mdi:comment-remove-outline
 
     automation.battery_alert_slack:
       <<: *customize
-      friendly_name: "Notifica batterie Slack"
+      friendly_name: "Notifica Batteria su Slack"
       icon: mdi:comment-alert-outline
 
     automation.battery_sensor_from_battery_level_attribute:
       <<: *customize
-      friendly_name: "Sensore batteria dal attributo battery_level"
+      friendly_name: "Sensore Batteria da attributo battery_level"
       icon: mdi:battery-alert
 
     automation.battery_sensor_from_battery_attribute:
       <<: *customize
-      friendly_name: "Sensore batteria dal attributo battery"
+      friendly_name: "Sensore Batteria da attributo battery"
       icon: mdi:battery-alert
 
     automation.battery_sensor_from_battery_numeric_attribute:
       <<: *customize
-      friendly_name: "Sensore batteria dal attributo battery numeric"
+      friendly_name: "Sensore Batteria da attributo battery numeric"
       icon: mdi:battery-alert
 
 ################################################
@@ -161,7 +161,7 @@ group:
 
 input_number:
   battery_alert_threshold_max:
-    name: "Soglia allarme max"
+    name: "Soglia massima alert"
     icon: mdi:arrow-collapse-up
     mode: slider
     min: -1
@@ -169,7 +169,7 @@ input_number:
     # initial: 40
 
   battery_alert_threshold_min:
-    name: "Soglia allarme min"
+    name: "Soglia minima alert"
     icon: mdi:arrow-collapse-down
     mode: slider
     min: -1
@@ -324,35 +324,39 @@ automation:
           {%- endfor -%}
         {% endmacro %}
         {{ battery_level() | trim != "" }}
-    - service: notify.ios_ilendrius
+    - service: notify.slack_notify
       data_template:
-        title: "These devices have low battery levels"
-        message: >
-          {% macro battery_level() %}
-            {%- for item in states.sensor if (
-              "battery" in item.name | lower
-              and not "voltage" in item.name | lower
-              and not "runtime" in item.name | lower
-              and not "setpoint" in item.name | lower
-              and not "charge" in item.name | lower
-              and not is_state_attr(item.entity_id, 'battery_alert_disabled', true)
-            ) and (
-              (
-                (
-                  item.state is number
-                  or item.state | length == item.state | int | string | length
-                  or item.state | length == item.state | float | string | length
-                )
-                and item.state | int < states.input_number.battery_alert_threshold_max.state | int
-                and item.state | int > states.input_number.battery_alert_threshold_min.state | int
-              )
-              or item.state | lower == "low"
-              or item.state | lower == "unknown"
-            ) -%}
-            {{ item.name }} ({{ item.state }}){% if not loop.last %}, {% endif %}
-            {%- endfor -%}
-          {% endmacro %}
-          {{ battery_level() }}
+        message: "Livello batteria basso"
+        data:
+          attachments:
+          - color: '#52c0f2'
+            title: "These devices have low battery levels"
+            text: >
+              {% macro battery_level() %}
+                {%- for item in states.sensor if (
+                  "battery" in item.name | lower
+                  and not "voltage" in item.name | lower
+                  and not "runtime" in item.name | lower
+                  and not "setpoint" in item.name | lower
+                  and not "charge" in item.name | lower
+                  and not is_state_attr(item.entity_id, 'battery_alert_disabled', true)
+                ) and (
+                  (
+                    (
+                      item.state is number
+                      or item.state | length == item.state | int | string | length
+                      or item.state | length == item.state | float | string | length
+                    )
+                    and item.state | int < states.input_number.battery_alert_threshold_max.state | int
+                    and item.state | int > states.input_number.battery_alert_threshold_min.state | int
+                  )
+                  or item.state | lower == "low"
+                  or item.state | lower == "unknown"
+                ) -%}
+                {{ item.name }} ({{ item.state }}){% if not loop.last %}, {% endif %}
+                {%- endfor -%}
+              {% endmacro %}
+              {{ battery_level() }}
 
 - alias: battery_sensor_from_battery_level_attribute
   trigger:

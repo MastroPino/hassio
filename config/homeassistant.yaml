@@ -5,5 +5,5 @@ elevation: !secret home_elevation
 unit_system: metric
 time_zone: Europe/Rome
 customize: !include customize.yaml
-packages: !include_dir_named packages
+packages: !include_dir_named ../packages
 customize_glob: !include customize_glob.yaml

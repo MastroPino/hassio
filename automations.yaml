@@ -146,52 +146,45 @@
 
         '
 - id: accendi_neon_vespa_garage_auto
-  alias: '[Garage] Neon Vespa On Movimento'
-  initial_state: 'on'
+  alias: '[Garage] Neon Vespa On Saracinesca aperta'
   trigger:
-  - entity_id: binary_sensor.motion_sensor_158d00010f7fda
-    from: 'off'
+  - entity_id: cover.saracinesca
+    from: closed
     platform: state
-    to: 'on'
+    to: open
+  condition:
+  - after: '18:00'
+    before: '12:00'
+    condition: time
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
   action:
   - data:
       entity_id: switch.sonoff_garage_3
     service: switch.turn_on
+  initial_state: 'on'
+- id: accendi_neon_interni_garage_auto
+  alias: '[Garage] Neon Interni On Saracinesca aperta'
+  trigger:
+  - entity_id: cover.saracinesca
+    from: closed
+    platform: state
+    to: open
   condition:
-  - condition: state
-    entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-    state: 'on'
   - after: '18:00'
     before: '12:00'
     condition: time
   - condition: state
-    entity_id: 'binary_sensor.workday_sensor'
-    state: 'on'
-- id: accendi_neon_interni_garage_auto
-  alias: '[Garage] Neon Interni On Movimento'
-  initial_state: 'on'
-  trigger:
-  - entity_id: binary_sensor.motion_sensor_158d00010f7fda
-    from: 'off'
-    platform: state
-    to: 'on'
+    entity_id: binary_sensor.workday_sensor
+    state: 'off'
   action:
   - data:
       entity_id: switch.sonoff_garage_1
     service: switch.turn_on
-  condition:
-  - condition: state
-    entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-    state: 'on'
-  - after: '18:00'
-    before: '12:00'
-    condition: time
-  - condition: state
-    entity_id: 'binary_sensor.workday_sensor'
-    state: 'off'
+  initial_state: 'on'
 - id: spegni_garage_auto
   alias: '[Garage] Timer Off (1 minuto)'
-  initial_state: 'on'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d00010f7fda
     for:
@@ -199,6 +192,10 @@
     from: 'on'
     platform: state
     to: 'off'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.door_window_sensor_158d0001fd6296
+    state: 'off'
   action:
   - data:
       entity_id: switch.sonoff_garage_1
@@ -206,10 +203,10 @@
   - data:
       entity_id: switch.sonoff_garage_2
     service: switch.turn_off
-  condition:
-  - condition: state
-    entity_id: binary_sensor.door_window_sensor_158d0001fd6296
-    state: 'off'
+  - data:
+      entity_id: switch.sonoff_garage_3
+    service: switch.turn_off
+  initial_state: 'on'
 - id: notifica_garage
   alias: '[Notifica] Notifica Movimento Garage'
   initial_state: 'on'
@@ -330,30 +327,6 @@
       gw_mac: F0B429CBEF3F
       ringtone_id: 2
       ringtone_vol: 100
-# - id: trigger-away
-#   alias: '[Allarme] Scatta allarme quando Attivo'
-#   trigger:
-#   - platform: state
-#     entity_id: binary_sensor.door_window_sensor_158d000112031b, binary_sensor.door_window_sensor_158d0001b95954,
-#       binary_sensor.door_window_sensor_158d000201980a, binary_sensor.door_window_sensor_158d0001de6e16,
-#       binary_sensor.door_window_sensor_158d0001e44493, binary_sensor.door_window_sensor_158d0001b95bf4
-#     to: 'on'
-#   - platform: state
-#     entity_id: binary_sensor.motion_sensor_158d0001e5764c, binary_sensor.motion_sensor_158d0001e5413e,
-#       binary_sensor.motion_sensor_158d0001e514df, binary_sensor.motion_sensor_158d0001e51489,
-#       binary_sensor.motion_sensor_158d0001e513a8, binary_sensor.motion_sensor_158d0001e515b8,
-#       binary_sensor.motion_sensor_158d0001e5156a
-#     to: 'on'
-#   condition:
-#   - condition: state
-#     entity_id: alarm_control_panel.house
-#     state: armed_away
-#   action:
-#   - service: xiaomi_aqara.play_ringtone
-#     data:
-#       gw_mac: F0B429CBEF3F
-#       ringtone_id: 2
-#       ringtone_vol: 8
 - id: alarm_armed_away
   alias: '[Notifica] Modalità Assente attivata'
   initial_state: 'on'
@@ -394,11 +367,6 @@
       title: Allarme
       message: Sto attivando allarme di casa, assicurati che le porte e le finestre
         siano chiuse
-#   - service: xiaomi_aqara.play_ringtone
-#     data:
-#       gw_mac: F0B429CBEF3F
-#       ringtone_id: 2
-#       ringtone_vol: 2
 - id: alarm_disarmed
   alias: '[Notifica] Disarmato'
   initial_state: 'on'
@@ -598,79 +566,34 @@
       entity_id: light.abatjour_bianca
       kelvin: '2600'
     service: light.turn_on
-# - id: '1523470520212'
-#   alias: '[Allarme] Attiva se assenti'
-#   trigger:
-#   - entity_id: device_tracker.ilendrius
-#     from: home
-#     platform: state
-#     to: not_home
-#   - entity_id: device_tracker.64bc0c807396
-#     from: home
-#     platform: state
-#     to: not_home
-#   condition: []
-#   action:
-#   - data:
-#       entity_id: alarm_control_panel.house
-#     service: alarm_control_panel.alarm_arm_away
-# - id: '1523472579965'
-#   alias: '[Allarme] Disattiva se rientra Andrea'
-#   trigger:
-#   - entity_id: device_tracker.ilendrius
-#     from: not_home
-#     platform: state
-#     to: home
-#   condition: []
-#   action:
-#   - data:
-#       code: '12345'
-#       entity_id: alarm_control_panel.house
-#     service: alarm_control_panel.alarm_disarm
-# - id: '1523472678780'
-#   alias: '[Allarme] Disattiva se torna Eleonora'
-#   trigger:
-#   - entity_id: device_tracker.64bc0c807396
-#     from: not_home
-#     platform: state
-#     to: home
-#   condition: []
-#   action:
-#   - data:
-#       code: '!secret alarm_code'
-#       entity_id: alarm_control_panel.house
-#     service: alarm_control_panel.alarm_disarm
-
 - id: '1523472678789'
-  alias: "Media player paused/stopped"
+  alias: Media player paused/stopped
   trigger:
-    - platform: state
-      entity_id: media_player.lg_webos_smart_tv
-      from: 'playing'
-      to: 'paused'
+  - platform: state
+    entity_id: media_player.lg_webos_smart_tv
+    from: playing
+    to: paused
   condition:
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
   action:
-      service: scene.turn_on
-      entity_id: scene.sala_da_pranzo_normale
-
+    service: scene.turn_on
+    entity_id: scene.sala_da_pranzo_normale
 - id: '1523472678599'
-  alias: "Media player playing"
+  alias: Media player playing
   trigger:
-    - platform: state
-      entity_id: media_player.lg_webos_smart_tv
-      to: 'playing'
-      from: 'paused'
+  - platform: state
+    entity_id: media_player.lg_webos_smart_tv
+    to: playing
+    from: paused
   condition:
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
   action:
-      service: scene.turn_on
-      entity_id: scene.sala_da_pranzo_dim
-      
+    service: scene.turn_on
+    entity_id: scene.sala_da_pranzo_dim
 - id: notify_lg_garage_chiusura
   alias: '[Notifica LG] Notifica Garage Aperto'
   initial_state: 'on'
@@ -684,8 +607,6 @@
   - service: notify.lg_webos_smart_tv
     data:
       message: La saracinesca è aperta
-        
-
 - id: notify_lg_garage_apertura
   alias: '[Notifica LG] Notifica Garage Chiuso'
   initial_state: 'on'
@@ -699,5 +620,3 @@
   - service: notify.lg_webos_smart_tv
     data:
       message: La saracinesca è chiusa
-#       data:
-#         icon: "/config/www/icons/hassio.png"
