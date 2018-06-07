@@ -1,3 +1,13 @@
+- id: '6875643534975'
+  alias: Start HomeKit
+  initial_state: 'on'
+  hide_entity: true
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+  - delay: 00:01
+  - service: homekit.start
 - id: fix-sonoff
   alias: Power state on HA start-up
   initial_state: 'on'
@@ -24,32 +34,40 @@
       payload: ''
 - id: notify_ingresso_apertura
   alias: '[Notifica] Notifica Apertura Ingresso'
-  initial_state: 'on'
-  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000112031b
     from: 'off'
     platform: state
     to: 'on'
+  condition:
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: not_home
   action:
   - data:
-      title: Ingresso
       message: Porta aperta
+      title: Ingresso
     service: notify.ios_ilendrius
-- id: notify_ingresso_chiusura
-  alias: '[Notifica] Notifica Chiusura Ingresso'
   initial_state: 'on'
   hide_entity: true
+- id: notify_ingresso_chiusura
+  alias: '[Notifica] Notifica Chiusura Ingresso'
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d000112031b
     from: 'on'
     platform: state
     to: 'off'
+  condition:
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: not_home
   action:
   - data:
-      title: Ingresso
       message: Porta chiusa
+      title: Ingresso
     service: notify.ios_ilendrius
+  initial_state: 'on'
+  hide_entity: true
 - id: comodino_andrea_on_off
   alias: '[Stanza da letto] Comodino Andrea On/Off'
   initial_state: 'on'
@@ -216,12 +234,15 @@
     from: 'off'
     platform: state
     to: 'on'
+  condition:
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: not_home
   action:
   - data:
       title: Garage
       message: Movimento rilevato in garage
     service: notify.ios_ilendrius
-  condition:
 - id: notify_garage_chiusura
   alias: '[Notifica] Notifica Chiusura Garage'
   initial_state: 'on'
@@ -231,6 +252,10 @@
     from: 'on'
     platform: state
     to: 'off'
+  condition:
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: not_home
   action:
   - data:
       title: Garage
@@ -481,8 +506,19 @@
   condition: []
   action:
   - data:
-      message: Una nuova versione di Home Assistant è disponibile.
+      message: 'Una nuova versione di Home Assistant è disponibile.'
     service: notify.ios_ilendrius
+- id: 'home_assistant.startup'
+  alias: 'HA: startup notification'
+  hide_entity: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: notify.ios_ilendrius
+    data:
+      message: 'Home Assistant è stato riavviato, ora è di nuovo funzionante!'
+
 - id: '1523184478168'
   trigger:
   - entity_id: binary_sensor.motion_sensor_158d0001e515b8
@@ -597,7 +633,7 @@
 - id: notify_lg_garage_chiusura
   alias: '[Notifica LG] Notifica Garage Aperto'
   initial_state: 'on'
-  hide_entity: false
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     from: 'on'
@@ -610,7 +646,7 @@
 - id: notify_lg_garage_apertura
   alias: '[Notifica LG] Notifica Garage Chiuso'
   initial_state: 'on'
-  hide_entity: false
+  hide_entity: true
   trigger:
   - entity_id: binary_sensor.door_window_sensor_158d0001fd6296
     from: 'off'
@@ -620,3 +656,102 @@
   - service: notify.lg_webos_smart_tv
     data:
       message: La saracinesca è chiusa
+
+
+- alias: '[Notifica] Spazzatura Organico'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+  - condition: time
+    weekday:
+      - tue
+      - thu
+      - sun
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: home
+  action:
+  - data:
+      title: Spazzatura
+      message: Oggi deve essere buttato l'organico.
+      data:
+          attachment:
+            url: "http://via.placeholder.com/350x150/A65D4B?text=Organico"
+            content-type: png
+            hide-thumbnail: false
+    service: notify.ios_ilendrius
+- alias: '[Notifica] Spazzatura Plastica, Vetro e Alluminio'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+  - condition: time
+    weekday:
+      - mon
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: home
+  action:
+  - data:
+      title: Spazzatura
+      message: Oggi devono essere buttati plastica, vetro e alluminio.
+      data:
+          attachment:
+            url: "http://via.placeholder.com/350x150/00814A?text=Plastica, vetro e alluminio"
+            content-type: png
+            hide-thumbnail: false
+    service: notify.ios_ilendrius
+- alias: '[Notifica] Spazzatura Carta'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+  - condition: time
+    weekday:
+      - wed
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: home
+  action:
+  - data:
+      title: Spazzatura
+      message: Oggi devo essere buttata la carta.
+      data:
+          attachment:
+            url: "http://via.placeholder.com/350x150/FED230?text=Carta"
+            content-type: png
+            hide-thumbnail: false
+    service: notify.ios_ilendrius
+- alias: '[Notifica] Spazzatura Indifferenziato'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+  - condition: time
+    weekday:
+      - wed
+  - condition: state
+    entity_id: device_tracker.ilendrius
+    state: home
+  action:
+  - data:
+      title: Spazzatura
+      message: Oggi devo essere buttato l'indifferenziato.
+      data:
+          attachment:
+            url: "http://via.placeholder.com/350x150/000000?text=Indifferenziato"
+            content-type: png
+            hide-thumbnail: false
+    service: notify.ios_ilendrius
+    
+- alias: 'Spegni balcone interno'
+  trigger:
+    platform: state
+    entity_id: light.lampione
+    to: 'on'
+    for:
+      minutes: 10
+  action:
+    - service: light.turn_off
+      entity_id: light.lampione

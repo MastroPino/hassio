@@ -1,12 +1,12 @@
-  - platform: darksky
-    api_key: !secret dark_sky_key
-    monitored_conditions:
-#      - icon 
-      - summary
-#      - precip_intensity
-      - temperature
-#      - apparent_temperature
-      - humidity
-#      - wind_speed
-#       - temperature_max
-#       - temperature_min
+#   - platform: darksky
+#     api_key: !secret dark_sky_key
+#     monitored_conditions:
+# #      - icon 
+#       - summary
+# #      - precip_intensity
+#       - temperature
+# #      - apparent_temperature
+#       - humidity
+# #      - wind_speed
+# #       - temperature_max
+# #       - temperature_min

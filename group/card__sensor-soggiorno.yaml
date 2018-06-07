@@ -1,6 +1,8 @@
 sensor_soggiorno:
   name: Soggiorno
   entities:
+    # Finestra Soggiorno
+    - binary_sensor.door_window_sensor_158d0001e44446
     # Movimento Soggiorno
     - binary_sensor.motion_sensor_158d0001e513a8
     # Luminosità Soggiorno

@@ -9,5 +9,6 @@ lights:
   - group.light_soggiorno
   - group.light_cucina
   - group.light_camera_da_letto
+  - group.light_bagno
   - group.light_dispensa
   - group.light_balcone_interno

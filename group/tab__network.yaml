@@ -9,6 +9,6 @@ network:
     - group.sensor_raspberry
     - group.sensor_synology_dsm
     - group.sensor_speedtest
-    - group.sonoff_upgrade
-    - group.sensor_gearbest
+#     - group.sonoff_upgrade
+#     - group.sensor_gearbest
 #     - group.sensor_batterie

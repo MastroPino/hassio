@@ -1,0 +1,4 @@
+light_bagno:
+  name: Bagno
+  entities:
+    - switch.switch

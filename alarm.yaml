@@ -27,16 +27,18 @@ trigger_time: 300
 armed_perimeter: 
   ##[OPTIONAL however either an immediate or delayed group must exist] Sensors in this group tigger the alarm immediately 
   immediate:
-    # Sensore Finestra Stanza Armadio
+    # Finestra Stanza Armadio
     - binary_sensor.door_window_sensor_158d0001b95954
     # Finestra Cucina
     - binary_sensor.door_window_sensor_158d000201980a
-    # Sensore Finestra Camera da Letto
+    # Finestra Camera da Letto
     - binary_sensor.door_window_sensor_158d0001de6e16
-    # Sensore Finestra a Ribalta Bagno
+    # Finestra a Ribalta Bagno
     - binary_sensor.door_window_sensor_158d0001e44493
-    # Sensore Finestra a ribalta Bagnetto
+    # Finestra a ribalta Bagnetto
     - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Finestra Soggiorno
+    - binary_sensor.door_window_sensor_158d0001e44446
 #[REQUIRED]
 armed_home: 
   #[OPTIONAL] State specific overrides default time above
@@ -57,6 +59,8 @@ armed_home:
     - binary_sensor.door_window_sensor_158d0001e44493
     # Sensore Finestra a ribalta Bagnetto
     - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Finestra Soggiorno
+    - binary_sensor.door_window_sensor_158d0001e44446
   ##[OPTIONAL] Sensors in this group start the clock (pending_time) when tripped before the alarm is triggered 
   delayed:
     # Porta Ingresso
@@ -78,6 +82,8 @@ armed_away:
     - binary_sensor.door_window_sensor_158d0001e44493
     # Sensore Finestra a ribalta Bagnetto
     - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Finestra Soggiorno
+    - binary_sensor.door_window_sensor_158d0001e44446
     # Movimento Ingresso
     - binary_sensor.motion_sensor_158d0001e5764c
     # Movimento Sala da Pranzo

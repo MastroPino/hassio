@@ -1,6 +1,7 @@
 homeassistant: !include config/homeassistant.yaml
 frontend: !include config/frontend.yaml
 http: !include config/http.yaml
+panel_iframe: !include config/panel_iframe.yaml
 updater:
 discovery:
 conversation:
@@ -31,7 +32,7 @@ panel_custom: !include panel_custom.yaml
 script: !include_dir_merge_named script
 switch: !include_dir_merge_list switch
 cover: !include config/cover.yaml
-input_boolean: !include config/input_boolean.yaml
+# input_boolean: !include config/input_boolean.yaml
 input_number: !include config/input_number.yaml
 input_select: !include config/input_select.yaml
 weather: !include config/weather.yaml
@@ -40,5 +41,5 @@ scene: !include config/scene.yaml
 recorder: !include config/recorder.yaml
 cloud: !include config/cloud.yaml
 notify: !include config/notify.yaml
-customizer: !include config/customizer.yaml
+# customizer: !include config/customizer.yaml
 zwave: !include config/zwave.yaml

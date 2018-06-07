@@ -16,6 +16,12 @@ group.light_balcone_interno:
 group.light_cucina:
   icon: mdi:pot-mix
   order: '1'
+group.stanze_home:
+  order: '2'
+group.weather:
+  order: '5'
+group.family:
+  order: '1'
 group.light_soggiorno:
   icon: mdi:sofa
 group.light_dispensa:
@@ -30,12 +36,6 @@ group.light_bagno:
   icon: mdi:water-pump
 group.light_bagnetto:
   icon: mdi:water-pump
-group.stanze_home:
-  order: '2'
-group.weather:
-  order: '5'
-group.family:
-  order: '1'
 device_tracker.64bc0c807396:
   friendly_name: Ele
 sun.sun:
@@ -162,3 +162,5 @@ sensor.sonoff_4ch_pro_garage:
   icon: mdi:power-socket-eu
 variable.last_motion:
   friendly_name: Stanza
+weather.yweather:
+  friendly_name: Meteo

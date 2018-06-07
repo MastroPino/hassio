@@ -6,3 +6,4 @@ sonoff_upgrade:
     - script.check_sonoffs_version
     - script.update_sonoffs
     - sensor.sonoff_4ch_pro_garage
+    - sensor.sonoff_basic_cucina

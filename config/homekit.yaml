@@ -1,4 +1,4 @@
-port: 51827
+auto_start: False
 entity_config:
   alarm_control_panel.house:
     code: !secret alarm_code
@@ -13,6 +13,8 @@ filter:
     - switch.tepee
     - light.comodino_ele
     - light.comodino_andrea
+    # Z-wave Specchio Bagno
+    - switch.switch
     - sensor.temperature_158d0001e549e0
     - sensor.temperature_158d00015b2df4
     - sensor.illumination_158d0001e515b8
@@ -56,4 +58,5 @@ filter:
     - binary_sensor.door_window_sensor_158d0001b95bf4
     # Sensore Porta Dispensa
     - binary_sensor.door_window_sensor_158d00013fede0
-    - media_player.lg_webos_smart_tv
+    # Finestra Soggiorno
+    - binary_sensor.door_window_sensor_158d0001e44446

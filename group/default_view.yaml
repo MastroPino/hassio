@@ -4,10 +4,9 @@ default_view:
   icon: mdi:home-assistant
   name: Casa
   entities:
-#     - group.ilendrius_tracker
     - device_tracker.ilendrius
     - device_tracker.64bc0c807396
-    - group.weather
+    - weather.yweather
     - cover.saracinesca
     - group.stanze_home
 #     - group.window_sensors

@@ -1,0 +1,4 @@
+sonweb:
+  title: SonWEB
+  icon: mdi:lightbulb-on
+  url: !secret home_sonweb

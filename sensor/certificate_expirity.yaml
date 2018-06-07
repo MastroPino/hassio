@@ -1,0 +1,4 @@
+- platform: cert_expiry
+  name: "Scadenza del certificato"
+  host: mastropino.homepc.it
+  port: 8123

@@ -7,5 +7,5 @@ push:
           title: 'Chiudi saracinesca'
           activationMode: 'background'
           authenticationRequired: yes
-          destructive: yes
+          destructive: no
           behavior: 'default'

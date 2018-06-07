@@ -10,3 +10,7 @@
     name: Sonoff 4Ch Pro Garage
     state_topic: "stat/garage/STATUS2"
     value_template: "{{ value_json['StatusFWR'].Version }}"
+  - platform: mqtt
+    name: Sonoff Basic Cucina
+    state_topic: "stat/cucina/STATUS2"
+    value_template: "{{ value_json['StatusFWR'].Version }}"

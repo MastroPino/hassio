@@ -1,5 +1,4 @@
-2018-05-08 16:42:07 WARNING (Recorder) [homeassistant.components.recorder] Ended unfinished session (id=362 from 2018-05-08 14:37:08.520358)
-2018-05-08 16:42:34 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
+2018-06-06 22:37:09 ERROR (MainThread) [homeassistant.components.camera] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -7,7 +6,7 @@ Traceback (most recent call last):
     return fut.result()
   File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
     result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/camera/netatmo.py", line 42, in setup_platform
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/camera/netatmo.py", line 41, in setup_platform
     for camera_name in data.get_camera_names():
   File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
     self.update()
@@ -18,8 +17,8 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-05-08 16:42:40 WARNING (MainThread) [homeassistant.setup] Setup of config is taking over 10 seconds.
-2018-05-08 16:42:52 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
+2018-06-06 22:37:16 WARNING (MainThread) [homeassistant.setup] Setup of config is taking over 10 seconds.
+2018-06-06 22:37:34 ERROR (MainThread) [homeassistant.components.binary_sensor] Error while setting up platform netatmo
 Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity_platform.py", line 129, in _async_setup_platform
     SLOW_SETUP_MAX_WAIT, loop=hass.loop)
@@ -27,7 +26,7 @@ Traceback (most recent call last):
     return fut.result()
   File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
     result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/binary_sensor/netatmo.py", line 75, in setup_platform
+  File "/usr/lib/python3.6/site-packages/homeassistant/components/binary_sensor/netatmo.py", line 74, in setup_platform
     if not data.get_camera_names():
   File "/usr/lib/python3.6/site-packages/homeassistant/components/netatmo.py", line 84, in get_camera_names
     self.update()
@@ -38,163 +37,169 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/site-packages/smart_home/Camera.py", line 78, in __init__
     self.default_camera = list(self.cameras[self.default_home].values())[0]
 IndexError: list index out of range
-2018-05-08 16:43:22 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
-2018-05-08 16:43:27 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
-2018-05-08 16:43:28 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
-2018-05-08 16:43:33 WARNING (SyncWorker_7) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
-2018-05-08 18:56:06 ERROR (MainThread) [homeassistant.core] Error doing job: Fatal error on transport TCPTransport (error status in uv_stream_t.read callback)
-TimeoutError: [Errno 110] Operation timed out
-2018-05-08 20:02:04 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:02:04 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:02:05 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:02:52 WARNING (SyncWorker_17) [netdisco.ssdp] Found malformed XML at http://192.168.0.20:9080: status=ok
-2018-05-08 20:03:06 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95954 is taking over 10 seconds
-2018-05-08 20:03:06 ERROR (SyncWorker_15) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:03:06 ERROR (SyncWorker_15) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:03:17 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:03:17 ERROR (SyncWorker_11) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:03:17 ERROR (SyncWorker_11) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:05:10 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95954 is taking over 10 seconds
-2018-05-08 20:05:10 ERROR (SyncWorker_11) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:05:10 ERROR (SyncWorker_11) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:05:21 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 20:05:21 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:05:21 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:08:16 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95954 is taking over 10 seconds
-2018-05-08 20:08:16 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:08:17 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:08:27 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:08:27 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:08:27 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:10:21 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
-2018-05-08 20:10:21 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:10:21 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:11:22 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
-2018-05-08 20:11:22 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:11:22 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:11:33 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 20:11:33 ERROR (SyncWorker_10) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:11:33 ERROR (SyncWorker_10) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:13:56 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
-2018-05-08 20:13:56 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:13:57 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:21:41 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:21:41 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:21:41 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:29:57 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:29:57 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:29:57 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:30:08 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 20:30:08 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:30:08 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:30:28 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:30:28 ERROR (SyncWorker_12) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:30:28 ERROR (SyncWorker_12) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:32:33 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95954 is taking over 10 seconds
-2018-05-08 20:32:33 ERROR (SyncWorker_10) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:32:33 ERROR (SyncWorker_10) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:36:09 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 20:36:09 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:36:09 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:38:45 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e513a8 is taking over 10 seconds
-2018-05-08 20:38:45 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:38:45 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:42:52 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 20:42:52 ERROR (SyncWorker_10) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:42:52 ERROR (SyncWorker_10) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:43:03 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95954 is taking over 10 seconds
-2018-05-08 20:43:03 ERROR (SyncWorker_15) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:43:03 ERROR (SyncWorker_15) [xiaomi_gateway] No data in response from hub None
-2018-05-08 20:57:20 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 20:57:20 ERROR (SyncWorker_12) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 20:57:20 ERROR (SyncWorker_12) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:14:53 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 21:14:53 ERROR (SyncWorker_11) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:14:53 ERROR (SyncWorker_11) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:16:26 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 21:16:26 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:16:26 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:21:04 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 21:21:04 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:21:05 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:25:43 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 21:25:43 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:25:43 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:40:42 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95954 is taking over 10 seconds
-2018-05-08 21:40:42 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:40:42 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:48:58 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
-2018-05-08 21:48:58 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:48:58 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:52:36 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e5413e is taking over 10 seconds
-2018-05-08 21:52:36 ERROR (SyncWorker_19) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:52:36 ERROR (SyncWorker_19) [xiaomi_gateway] No data in response from hub None
-2018-05-08 21:58:47 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 21:58:47 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 21:58:47 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
-2018-05-08 22:05:30 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 22:05:30 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 22:05:31 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
-2018-05-08 22:06:01 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 22:06:01 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 22:06:01 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
-2018-05-08 22:07:04 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 22:07:04 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 22:07:04 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-05-08 22:08:36 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 22:08:36 ERROR (SyncWorker_4) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 22:08:36 ERROR (SyncWorker_4) [xiaomi_gateway] No data in response from hub None
-2018-05-08 22:10:40 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
-2018-05-08 22:10:41 ERROR (SyncWorker_12) [xiaomi_gateway] Cannot connect to Gateway
-2018-05-08 22:10:41 ERROR (SyncWorker_12) [xiaomi_gateway] No data in response from hub None
-2018-05-09 04:37:46 ERROR (SyncWorker_6) [urllib3.connection] Certificate did not match expected hostname: api.github.com. Certificate: {'subject': ((('commonName', 'mastropino.homepc.it'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', "Let's Encrypt Authority X3"),)), 'version': 3, 'serialNumber': '03F82C703DE357690D4A4D31FCB5B14A1F6B', 'notBefore': 'Feb 27 19:21:49 2018 GMT', 'notAfter': 'May 28 19:21:49 2018 GMT', 'subjectAltName': (('DNS', 'mastropino.homepc.it'),), 'OCSP': ('http://ocsp.int-x3.letsencrypt.org',), 'caIssuers': ('http://cert.int-x3.letsencrypt.org/',)}
-2018-05-09 04:37:46 ERROR (SyncWorker_6) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
-2018-05-09 05:30:03 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
-2018-05-09 07:14:49 ERROR (SyncWorker_10) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
-2018-05-09 07:15:13 WARNING (SyncWorker_19) [lightify] lost connection to lightify gateway.
-2018-05-09 07:15:13 WARNING (MainThread) [homeassistant.helpers.entity] Update of light.tepee is taking over 10 seconds
-2018-05-09 07:15:13 WARNING (SyncWorker_19) [lightify] socketError: timed out
-2018-05-09 07:15:13 WARNING (SyncWorker_19) [lightify] Trying to reconnect.
-2018-05-09 07:15:17 ERROR (SyncWorker_19) [homeassistant.components.light.osramlightify] OSError during updating of lights
-2018-05-09 07:15:20 ERROR (SyncWorker_13) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
-2018-05-09 07:15:34 WARNING (SyncWorker_7) [lightify] lost connection to lightify gateway.
-2018-05-09 07:15:34 WARNING (SyncWorker_7) [lightify] socketError: [Errno 32] Broken pipe
-2018-05-09 07:15:34 WARNING (SyncWorker_7) [lightify] Trying to reconnect.
-2018-05-09 07:15:37 ERROR (SyncWorker_7) [homeassistant.components.light.osramlightify] OSError during updating of lights
-2018-05-09 07:15:51 ERROR (SyncWorker_14) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
-2018-05-09 07:15:55 ERROR (SyncWorker_7) [homeassistant.components.sensor.darksky] Unable to connect to Dark Sky. HTTPSConnectionPool(host='api.darksky.net', port=443): Max retries exceeded with url: /forecast/92a61eb52935946cae00a8467c1403f7/37.5475,15.0813?units=si&lang=en (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x6e730f10>: Failed to establish a new connection: [Errno -3] Try again',))
-2018-05-09 07:16:05 WARNING (SyncWorker_13) [lightify] lost connection to lightify gateway.
-2018-05-09 07:16:05 WARNING (SyncWorker_13) [lightify] socketError: [Errno 32] Broken pipe
-2018-05-09 07:16:05 WARNING (SyncWorker_13) [lightify] Trying to reconnect.
-2018-05-09 07:16:08 ERROR (SyncWorker_13) [homeassistant.components.light.osramlightify] OSError during updating of lights
-2018-05-09 07:16:22 ERROR (SyncWorker_0) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
-2018-05-09 07:16:36 WARNING (SyncWorker_7) [lightify] lost connection to lightify gateway.
-2018-05-09 07:16:36 WARNING (SyncWorker_7) [lightify] socketError: [Errno 32] Broken pipe
-2018-05-09 07:16:36 WARNING (SyncWorker_7) [lightify] Trying to reconnect.
-2018-05-09 07:16:38 ERROR (MainThread) [homeassistant.helpers.entity] Update for climate.termostato fails
-Traceback (most recent call last):
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 204, in async_update_ha_state
-    yield from self.async_device_update()
-  File "/usr/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 327, in async_device_update
-    yield from self.hass.async_add_job(self.update)
-  File "/usr/lib/python3.6/concurrent/futures/thread.py", line 56, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 319, in wrapper
-    result = method(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/climate/netatmo.py", line 139, in update
-    self._data.update()
-  File "/usr/lib/python3.6/site-packages/homeassistant/util/__init__.py", line 319, in wrapper
-    result = method(*args, **kwargs)
-  File "/usr/lib/python3.6/site-packages/homeassistant/components/climate/netatmo.py", line 173, in update
-    self.thermostatdata = lnetatmo.ThermostatData(self.auth)
-  File "/usr/lib/python3.6/site-packages/smart_home/Thermostat.py", line 25, in __init__
-    self.rawData = resp['body']
-TypeError: 'NoneType' object is not subscriptable
-2018-05-09 07:16:58 WARNING (MainThread) [homeassistant.helpers.entity] Update of sensor.ultima_release is taking over 10 seconds
-2018-05-09 07:17:50 ERROR (SyncWorker_15) [urllib3.connection] Certificate did not match expected hostname: api.github.com. Certificate: {'subject': ((('commonName', 'mastropino.homepc.it'),),), 'issuer': ((('countryName', 'US'),), (('organizationName', "Let's Encrypt"),), (('commonName', "Let's Encrypt Authority X3"),)), 'version': 3, 'serialNumber': '03F82C703DE357690D4A4D31FCB5B14A1F6B', 'notBefore': 'Feb 27 19:21:49 2018 GMT', 'notAfter': 'May 28 19:21:49 2018 GMT', 'subjectAltName': (('DNS', 'mastropino.homepc.it'),), 'OCSP': ('http://ocsp.int-x3.letsencrypt.org',), 'caIssuers': ('http://cert.int-x3.letsencrypt.org/',)}
-2018-05-09 07:17:50 ERROR (SyncWorker_15) [homeassistant.components.sensor.rest] Error fetching data: <PreparedRequest [GET]>
-2018-05-09 07:31:28 ERROR (MainThread) [homeassistant.core] Error doing job: Fatal error on transport TCPTransport (error status in uv_stream_t.read callback)
-OSError: [Errno 101] Network unreachable
-2018-05-09 08:00:47 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1908467216: Client exceeded max pending messages [2]: 512
-2018-05-09 08:00:47 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1860013584: Client exceeded max pending messages [2]: 512
-2018-05-09 08:00:47 ERROR (MainThread) [homeassistant.components.websocket_api] WS 1860013008: Client exceeded max pending messages [2]: 512
+2018-06-06 22:37:57 ERROR (SyncWorker_15) [homeassistant.components.sensor.cert_expiry] Cannot connect to mastropino.homepc.it
+2018-06-06 22:38:00 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
+2018-06-06 22:38:04 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-06-06 22:38:08 WARNING (SyncWorker_19) [netdisco.ssdp] Error fetching description at http://192.168.0.1:1990/WFADevice.xml
+2018-06-06 22:38:14 WARNING (SyncWorker_19) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-06-06 22:39:16 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-06 22:39:16 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-06 22:39:17 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-06 22:39:47 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-06 22:39:47 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-06-06 22:39:47 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
+2018-06-06 22:44:26 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-06 22:44:26 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-06 22:44:26 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-06 22:50:19 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-06-06 23:00:20 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-06-06 23:37:37 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-06 23:37:37 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-06 23:37:37 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-07 01:43:07 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 01:43:07 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 01:43:07 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
+2018-06-07 02:17:45 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 02:17:45 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 02:17:45 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-07 02:47:42 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 02:47:42 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 02:47:42 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
+2018-06-07 02:59:04 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 02:59:04 ERROR (SyncWorker_5) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 02:59:04 ERROR (SyncWorker_5) [xiaomi_gateway] No data in response from hub None
+2018-06-07 03:13:01 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 03:13:01 ERROR (SyncWorker_15) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 03:13:01 ERROR (SyncWorker_15) [xiaomi_gateway] No data in response from hub None
+2018-06-07 03:37:48 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 03:37:48 ERROR (SyncWorker_3) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 03:37:48 ERROR (SyncWorker_3) [xiaomi_gateway] No data in response from hub None
+2018-06-07 03:40:24 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 03:40:24 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 03:40:24 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:50:39 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:50:39 ERROR (SyncWorker_10) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:50:39 ERROR (SyncWorker_10) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:51:10 ERROR (SyncWorker_8) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:51:10 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:51:10 ERROR (SyncWorker_8) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:51:40 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:51:41 ERROR (SyncWorker_19) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:51:41 ERROR (SyncWorker_19) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:51:51 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 04:51:51 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:51:51 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:52:01 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 04:52:01 ERROR (SyncWorker_14) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:52:01 ERROR (SyncWorker_14) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:52:11 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:52:11 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:52:11 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:52:42 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:52:42 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:52:42 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:53:13 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:53:13 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 04:53:13 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:54:15 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 04:54:15 ERROR (SyncWorker_9) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:54:15 ERROR (SyncWorker_9) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:54:25 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 04:54:26 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:54:26 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:54:47 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:54:47 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:54:47 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:56:19 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 04:56:19 ERROR (SyncWorker_18) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:56:19 ERROR (SyncWorker_18) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:56:50 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 04:56:50 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:56:51 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:59:25 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 04:59:25 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:59:25 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:59:35 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 04:59:35 ERROR (SyncWorker_5) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:59:36 ERROR (SyncWorker_5) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:59:46 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 04:59:46 ERROR (SyncWorker_14) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:59:46 ERROR (SyncWorker_14) [xiaomi_gateway] No data in response from hub None
+2018-06-07 04:59:56 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 04:59:56 ERROR (SyncWorker_5) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 04:59:56 ERROR (SyncWorker_5) [xiaomi_gateway] No data in response from hub None
+2018-06-07 05:00:07 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 05:00:07 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 05:00:07 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None
+2018-06-07 06:29:15 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 06:29:15 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 06:29:15 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-07 06:54:33 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 06:54:33 ERROR (SyncWorker_19) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 06:54:33 ERROR (SyncWorker_19) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:02:49 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:02:49 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:02:49 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:04:54 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 07:04:54 ERROR (SyncWorker_17) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:04:54 ERROR (SyncWorker_17) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:12:38 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:12:38 ERROR (SyncWorker_8) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:12:38 ERROR (SyncWorker_8) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:13:41 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:13:41 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:13:41 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:15:44 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 07:15:44 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:15:44 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:15:54 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:15:55 ERROR (SyncWorker_6) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:15:55 ERROR (SyncWorker_6) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:18:50 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 07:18:50 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:18:50 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:21:25 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:21:25 ERROR (SyncWorker_9) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:21:26 ERROR (SyncWorker_9) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:27:06 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 07:27:06 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:27:06 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:38:57 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:38:57 ERROR (SyncWorker_7) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:38:57 ERROR (SyncWorker_7) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:39:28 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 07:39:28 ERROR (SyncWorker_19) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:39:28 ERROR (SyncWorker_19) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:39:59 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 07:39:59 ERROR (SyncWorker_11) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:39:59 ERROR (SyncWorker_11) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:48:15 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 07:48:15 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:48:15 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:48:25 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 07:48:25 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:48:25 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:48:47 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-06-07 07:48:47 ERROR (SyncWorker_13) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:48:47 ERROR (SyncWorker_13) [xiaomi_gateway] No data in response from hub None
+2018-06-07 07:49:17 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 07:49:17 ERROR (SyncWorker_2) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 07:49:17 ERROR (SyncWorker_2) [xiaomi_gateway] No data in response from hub None
+2018-06-07 08:16:08 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 08:16:08 ERROR (SyncWorker_0) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 08:16:08 ERROR (SyncWorker_0) [xiaomi_gateway] No data in response from hub None
+2018-06-07 08:16:19 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001b95bf4 is taking over 10 seconds
+2018-06-07 08:16:19 ERROR (SyncWorker_16) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 08:16:19 ERROR (SyncWorker_16) [xiaomi_gateway] No data in response from hub None
+2018-06-07 08:28:01 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.motion_sensor_158d0001e513a8 is taking over 10 seconds
+2018-06-07 08:28:01 ERROR (SyncWorker_15) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 08:28:01 ERROR (SyncWorker_15) [xiaomi_gateway] No data in response from hub None
+2018-06-07 09:21:12 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001de6e16 is taking over 10 seconds
+2018-06-07 09:21:12 ERROR (SyncWorker_12) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 09:21:12 ERROR (SyncWorker_12) [xiaomi_gateway] No data in response from hub None
+2018-06-07 13:13:01 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44493 is taking over 10 seconds
+2018-06-07 13:13:01 ERROR (SyncWorker_14) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 13:13:01 ERROR (SyncWorker_14) [xiaomi_gateway] No data in response from hub None
+2018-06-07 13:13:11 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d0001e44446 is taking over 10 seconds
+2018-06-07 13:13:11 ERROR (SyncWorker_18) [xiaomi_gateway] Cannot connect to Gateway
+2018-06-07 13:13:11 ERROR (SyncWorker_18) [xiaomi_gateway] No data in response from hub None

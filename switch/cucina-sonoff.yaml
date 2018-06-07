@@ -1,8 +1,8 @@
 - platform: mqtt
   name: "Sonoff Cucina"
-  command_topic: "cmnd/cucina/lampadario/power"
-  state_topic: "stat/cucina/lampadario/POWER"
-  availability_topic: "tele/cucina/lampadario/LWT"
+  command_topic: "cmnd/cucina/power"
+  state_topic: "stat/cucina/POWER"
+  availability_topic: "tele/cucina/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
