@@ -804,7 +804,7 @@
   condition:
   - condition: time
     weekday:
-      - wed
+      - fri
   - condition: state
     entity_id: device_tracker.ilendrius
     state: home

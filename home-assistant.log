@@ -42,3 +42,7 @@ KeyError: 'events'
 2018-07-02 20:47:48 ERROR (SyncWorker_3) [homeassistant.components.sensor.cert_expiry] Cannot connect to mastropino.homepc.it
 2018-07-02 20:47:51 ERROR (MainThread) [homeassistant.core] Timer got out of sync. Resetting
 2018-07-02 20:48:03 WARNING (SyncWorker_2) [netdisco.ssdp] Error fetching description at http://192.168.0.50:45555/wps_device.xml
+2018-07-02 20:49:21 ERROR (MainThread) [homeassistant.core] Error doing job: Task was destroyed but it is pending!
+2018-07-02 20:49:37 WARNING (MainThread) [homeassistant.helpers.entity] Update of binary_sensor.door_window_sensor_158d000201980a is taking over 10 seconds
+2018-07-02 20:49:37 ERROR (SyncWorker_1) [xiaomi_gateway] Cannot connect to Gateway
+2018-07-02 20:49:37 ERROR (SyncWorker_1) [xiaomi_gateway] No data in response from hub None

@@ -680,3 +680,117 @@
 2018-07-02 20:48:02.262 Info,          Node query processing complete.
 2018-07-02 20:48:02.262 Detail, Node002, Notification: NodeQueriesComplete
 2018-07-02 20:48:02.266 Detail, contrlr, Notification: AllNodesQueried
+2018-07-02 21:00:40.746 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0xff, 0x2a
+2018-07-02 21:00:40.746 Detail, 
+2018-07-02 21:00:40.746 Info, Node002, Received SwitchBinary report from node 2: level=On
+2018-07-02 21:00:40.746 Detail, Node002, Refreshed Value: old value=false, new value=true, type=bool
+2018-07-02 21:00:40.747 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:00:40.747 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:00:43.297 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x41, 0x00, 0x00, 0x9d
+2018-07-02 21:00:43.297 Detail, 
+2018-07-02 21:00:43.297 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:00:43.297 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:00:43.297 Info, Node002, Received Meter report from node 2: Power=6.5W
+2018-07-02 21:00:43.297 Detail, Node002, Refreshed Value: old value=0.0, new value=6.5, type=decimal
+2018-07-02 21:00:43.297 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:00:43.298 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:00:43.309 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:02:42.516 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0x00, 0xd5
+2018-07-02 21:02:42.516 Detail, 
+2018-07-02 21:02:42.517 Info, Node002, Received SwitchBinary report from node 2: level=Off
+2018-07-02 21:02:42.517 Detail, Node002, Refreshed Value: old value=true, new value=false, type=bool
+2018-07-02 21:02:42.517 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:02:42.517 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:02:43.298 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x00, 0x00, 0x00, 0xdc
+2018-07-02 21:02:43.298 Detail, 
+2018-07-02 21:02:43.298 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:02:43.298 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:02:43.298 Info, Node002, Received Meter report from node 2: Power=0.0W
+2018-07-02 21:02:43.298 Detail, Node002, Refreshed Value: old value=6.5, new value=0.0, type=decimal
+2018-07-02 21:02:43.298 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:02:43.299 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:02:43.310 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:16:45.010 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0xff, 0x2a
+2018-07-02 21:16:45.011 Detail, 
+2018-07-02 21:16:45.011 Info, Node002, Received SwitchBinary report from node 2: level=On
+2018-07-02 21:16:45.011 Detail, Node002, Refreshed Value: old value=false, new value=true, type=bool
+2018-07-02 21:16:45.011 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:16:45.011 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:16:47.302 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x41, 0x00, 0x00, 0x9d
+2018-07-02 21:16:47.303 Detail, 
+2018-07-02 21:16:47.303 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:16:47.303 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:16:47.303 Info, Node002, Received Meter report from node 2: Power=6.5W
+2018-07-02 21:16:47.303 Detail, Node002, Refreshed Value: old value=0.0, new value=6.5, type=decimal
+2018-07-02 21:16:47.303 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:16:47.303 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:16:47.316 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:18:37.941 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0x00, 0xd5
+2018-07-02 21:19:41.329 Detail, 
+2018-07-02 21:19:41.329 Info, Node002, Received SwitchBinary report from node 2: level=Off
+2018-07-02 21:19:41.329 Detail, Node002, Refreshed Value: old value=true, new value=false, type=bool
+2018-07-02 21:19:41.329 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.330 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.337 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0x00, 0xd5
+2018-07-02 21:19:41.338 Detail, 
+2018-07-02 21:19:41.338 Info, Node002, Received SwitchBinary report from node 2: level=Off
+2018-07-02 21:19:41.338 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.338 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.338 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.344 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0x00, 0xd5
+2018-07-02 21:19:41.344 Detail, 
+2018-07-02 21:19:41.344 Info, Node002, Received SwitchBinary report from node 2: level=Off
+2018-07-02 21:19:41.344 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.344 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.344 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.350 Detail, Node002,   Received: 0x01, 0x09, 0x00, 0x04, 0x00, 0x02, 0x03, 0x25, 0x03, 0x00, 0xd5
+2018-07-02 21:19:41.351 Detail, 
+2018-07-02 21:19:41.351 Info, Node002, Received SwitchBinary report from node 2: level=Off
+2018-07-02 21:19:41.351 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.351 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.351 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.358 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x00, 0x00, 0x00, 0xdc
+2018-07-02 21:19:41.358 Detail, 
+2018-07-02 21:19:41.358 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.359 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.359 Info, Node002, Received Meter report from node 2: Power=0.0W
+2018-07-02 21:19:41.359 Detail, Node002, Refreshed Value: old value=6.5, new value=0.0, type=decimal
+2018-07-02 21:19:41.359 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.359 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.365 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.373 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x00, 0x00, 0x00, 0xdc
+2018-07-02 21:19:41.373 Detail, 
+2018-07-02 21:19:41.373 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.373 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.373 Info, Node002, Received Meter report from node 2: Power=0.0W
+2018-07-02 21:19:41.374 Detail, Node002, Refreshed Value: old value=0.0, new value=0.0, type=decimal
+2018-07-02 21:19:41.374 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.374 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.380 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.388 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x00, 0x00, 0x00, 0xdc
+2018-07-02 21:19:41.388 Detail, 
+2018-07-02 21:19:41.388 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.388 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.388 Info, Node002, Received Meter report from node 2: Power=0.0W
+2018-07-02 21:19:41.388 Detail, Node002, Refreshed Value: old value=0.0, new value=0.0, type=decimal
+2018-07-02 21:19:41.388 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.388 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.394 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.402 Detail, Node002,   Received: 0x01, 0x0e, 0x00, 0x04, 0x00, 0x02, 0x08, 0x32, 0x02, 0x21, 0x32, 0x00, 0x00, 0x00, 0x00, 0xdc
+2018-07-02 21:19:41.402 Detail, 
+2018-07-02 21:19:41.402 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:19:41.402 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.402 Info, Node002, Received Meter report from node 2: Power=0.0W
+2018-07-02 21:19:41.402 Detail, Node002, Refreshed Value: old value=0.0, new value=0.0, type=decimal
+2018-07-02 21:19:41.402 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:19:41.403 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:19:41.408 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:23:54.334 Detail, Node002,   Received: 0x01, 0x10, 0x00, 0x04, 0x00, 0x02, 0x0a, 0x32, 0x02, 0x21, 0x44, 0x00, 0x00, 0x00, 0x0e, 0x00, 0x00, 0xb8
+2018-07-02 21:23:54.334 Detail, 
+2018-07-02 21:23:54.334 Detail, Node002, Refreshed Value: old value=false, new value=false, type=bool
+2018-07-02 21:23:54.334 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:23:54.334 Info, Node002, Received Meter report from node 2: Energy=0.14kWh
+2018-07-02 21:23:54.334 Detail, Node002, Refreshed Value: old value=0.14, new value=0.14, type=decimal
+2018-07-02 21:23:54.334 Detail, Node002, Changes to this value are not verified
+2018-07-02 21:23:54.335 Detail, Node002, Notification: ValueChanged
+2018-07-02 21:23:54.348 Detail, Node002, Notification: ValueChanged
