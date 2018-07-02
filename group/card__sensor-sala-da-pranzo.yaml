@@ -1,6 +1,10 @@
 sensor_sala_da_pranzo:
   name: Sala da Pranzo
   entities:
+    # Sensore Finestra 1 Sala da Pranzo
+    - binary_sensor.door_window_sensor_158d0001b97da6
+    # Sensore Finestra 2 Sala da Pranzo
+    - binary_sensor.door_window_sensor_158d0001b7bce7
     - binary_sensor.motion_sensor_158d0001e5413e
     - sensor.temperature_158d00015b2df4
     - sensor.humidity_158d00015b2df4

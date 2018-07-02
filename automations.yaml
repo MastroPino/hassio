@@ -1,3 +1,15 @@
+- id: letsencrypt-renewal
+  alias: "Let's Encrypt Renewal"
+  initial_state: 'on'
+  hide_entity: true
+  trigger:
+  - platform: time
+    at: '00:00:00'
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_letsencrypt
+
 - id: '6875643534975'
   alias: Start HomeKit
   initial_state: 'on'
@@ -334,31 +346,93 @@
   - data:
       entity_id: light.balcone_interno
     service: light.turn_off
+
+- id: trigger-away
+  alias: '[Allarme] Scatta allarme quando attivo A Casa'
+  trigger:
+  - platform: state
+    entity_id: 
+    # Movimento Ingresso
+    - binary_sensor.motion_sensor_158d0001e5764c
+    # Movimento Sala da Pranzo
+    - binary_sensor.motion_sensor_158d0001e5413e
+    # Movimento Corridoio
+    - binary_sensor.motion_sensor_158d0001e514df
+    # Movimento Camera Armadi
+    - binary_sensor.motion_sensor_158d0001e51489
+    # Movimento Soggiorno
+    - binary_sensor.motion_sensor_158d0001e513a8
+    # Movimento Cucina
+    - binary_sensor.motion_sensor_158d0001e515b8
+    # Movimento Camera da Letto
+    - binary_sensor.motion_sensor_158d0001e5156a
+    # Movimento Garage
+    - binary_sensor.motion_sensor_158d00010f7fda
+    # Sensore Porta Ingresso
+    - binary_sensor.door_window_sensor_158d000112031b
+    # Sensore Finestra 1 Sala da Pranzo
+    - binary_sensor.door_window_sensor_158d0001b97da6
+    # Sensore Finestra 2 Sala da Pranzo
+    - binary_sensor.door_window_sensor_158d0001b7bce7
+    # Sensore Finestra Stanza Armadio
+    - binary_sensor.door_window_sensor_158d0001b95954
+    # Finestra Cucina
+    - binary_sensor.door_window_sensor_158d000201980a
+    # Sensore Finestra Camera da Letto
+    - binary_sensor.door_window_sensor_158d0001de6e16
+    # Sensore Finestra a Ribalta Bagno
+    - binary_sensor.door_window_sensor_158d0001e44493
+    # Sensore Finestra a ribalta Bagnetto
+    - binary_sensor.door_window_sensor_158d0001b95bf4
+    # Sensore Porta Dispensa
+    - binary_sensor.door_window_sensor_158d00013fede0
+    # Finestra Soggiorno
+    - binary_sensor.door_window_sensor_158d0001e44446
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.allarme
+    state: armed_away
+  action:
+    service: notify.ios_ilendrius
+    data_template:
+      title: Allarme
+      message: Scattato!
 - id: trigger-home
   alias: '[Allarme] Scatta allarme quando attivo A Casa'
   trigger:
   - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d000112031b, binary_sensor.door_window_sensor_158d0001b95954,
-      binary_sensor.door_window_sensor_158d000201980a, binary_sensor.door_window_sensor_158d0001de6e16,
-      binary_sensor.door_window_sensor_158d0001e44493, binary_sensor.door_window_sensor_158d0001b95bf4
+    entity_id: 
+    # Sensore Porta Ingresso
+    - binary_sensor.door_window_sensor_158d000112031b
+    # Sensore Finestra Stanza Armadio
+    - binary_sensor.door_window_sensor_158d0001b95954
+    # Finestra Cucina
+    - binary_sensor.door_window_sensor_158d000201980a
+    # Sensore Finestra a ribalta Bagnetto
+    - binary_sensor.door_window_sensor_158d0001b95bf4
     to: 'on'
   condition:
   - condition: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     state: armed_home
   action:
-    service: xiaomi_aqara.play_ringtone
-    data:
-      gw_mac: F0B429CBEF3F
-      ringtone_id: 2
-      ringtone_vol: 100
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: F0B429CBEF3F
+        ringtone_id: 2
+        ringtone_vol: 100
+    - service: notify.ios_ilendrius
+      data_template:
+        title: Allarme
+        message: Scattato!
 - id: alarm_armed_away
   alias: '[Notifica] Modalità Assente attivata'
   initial_state: 'on'
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     to: armed_away
   action:
     data_template:
@@ -371,7 +445,7 @@
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     to: armed_home
   action:
     data_template:
@@ -384,7 +458,7 @@
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     to: pending
   action:
   - service: notify.ios_ilendrius
@@ -398,7 +472,7 @@
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     to: disarmed
   action:
   - data_template:
@@ -411,32 +485,32 @@
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     to: triggered
   action:
-  - service: switch.turn_on
-    entity_id: switch.siren_switch
+#   - service: switch.turn_on
+#     entity_id: switch.siren_switch
   - service: notify.ios_ilendrius
     data_template:
       title: Allarme
-      message: Scattato! {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
-        states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
-        }}
+      message: Scattato! # {{ states[states.alarm_control_panel.allarme.attributes.changed_by.split(".")[0]][
+#         states.alarm_control_panel.allarme.attributes.changed_by.split(".")[1]].name
+#         }}
 - id: alarm_warning
   alias: '[Notifica] Attenzione'
   initial_state: 'on'
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: alarm_control_panel.house
+    entity_id: alarm_control_panel.allarme
     to: warning
   action:
   - service: notify.ios_ilendrius
     data:
       title: Allarme
-      message: Attenzione {{ states[states.alarm_control_panel.house.attributes.changed_by.split(".")[0]][
-        states.alarm_control_panel.house.attributes.changed_by.split(".")[1]].name
-        }}
+      message: Attenzione #  {{ states[states.alarm_control_panel.allarme.attributes.changed_by.split(".")[0]][
+#         states.alarm_control_panel.allarme.attributes.changed_by.split(".")[1]].name
+#         }}
 - id: Soggiorno-brightness-slider
   alias: Soggiorno Light - Adjust Brightness
   trigger:

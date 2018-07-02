@@ -27,8 +27,7 @@ ios: !include config/ios.yaml
 ifttt: !include config/ifttt.yaml
 automation: !include automations.yaml
 automation old: !include automations_old.yaml
-alarm_control_panel: !include alarm.yaml
-panel_custom: !include panel_custom.yaml
+alarm_control_panel: !include config/alarm.yaml
 script: !include_dir_merge_named script
 switch: !include_dir_merge_list switch
 cover: !include config/cover.yaml

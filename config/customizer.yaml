@@ -1,4 +1,0 @@
-  custom_ui: local
-  hide_attributes:
-    - node_id
-    - value_index

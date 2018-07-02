@@ -10,7 +10,7 @@ sensors:
   - group.sensor_corridoio
   - group.sensor_soggiorno
   - group.sensor_cucina
-  - group.sensor_camera_da_letto
+  - group.sensor_stanza_da_letto
   - group.sensor_camera_armadi
   - group.sensor_dispensa
   - group.sensor_bagno

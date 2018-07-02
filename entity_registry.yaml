@@ -1,432 +1,560 @@
 light.lampadario_1:
+  config_entry_id:
   name: Lampadario 1
   platform: hue
   unique_id: 00:17:88:01:10:29:57:aa-0b
 light.abatjour_verde:
+  config_entry_id:
   name: Abatjour Verde
   platform: hue
   unique_id: 00:17:88:01:10:44:40:d2-0b
 light.lampadario:
+  config_entry_id:
   name: Lampadario
   platform: hue
   unique_id: 00:17:88:01:02:6e:de:ca-0b
 light.fiore:
+  config_entry_id:
   name: Fiore
   platform: hue
   unique_id: 00:17:88:01:10:4b:bb:29-0b
 light.lampadario_2:
+  config_entry_id:
   name: Lampadario 2
   platform: hue
   unique_id: 00:17:88:01:10:46:c2:b3-0b
 light.lampadario_3:
+  config_entry_id:
   name: Lampadario 3
   platform: hue
   unique_id: 00:17:88:01:10:46:be:01-0b
 light.lampione:
+  config_entry_id:
   name: Lampione
   platform: hue
   unique_id: 00:17:88:01:10:2c:b3:d0-0b
 light.abatjour_bianca:
+  config_entry_id:
   name: Abatjour Bianca
   platform: hue
   unique_id: 00:17:88:01:10:41:f0:dc-0b
 light.piantana:
+  config_entry_id:
   name: Piantana
   platform: hue
   unique_id: 00:17:88:01:10:26:b3:11-0b
 light.hue_go:
+  config_entry_id:
   name: HUE Go
   platform: hue
   unique_id: 00:17:88:01:01:14:db:b4-0b
 light.lampadario_dispensa:
+  config_entry_id:
   name: Plafoniera Dispensa
   platform: hue
   unique_id: 00:17:88:01:10:2b:01:3e-0b
 sensor.ilendrius_pro_battery_level:
+  config_entry_id:
   name: iLendrius Pro
   platform: ios
   unique_id: level_ilendrius_pro
 sensor.ilendrius_pro_battery_state:
+  config_entry_id:
   name: Stato Batteria iLendrius Pro
   platform: ios
   unique_id: state_ilendrius_pro
 sensor.ilendrius_battery_level:
+  config_entry_id:
   name: iLendrius
   platform: ios
   unique_id: level_ilendrius
 sensor.ilendrius_battery_state:
+  config_entry_id:
   name: Stato Batteria iLendrius
   platform: ios
   unique_id: state_ilendrius
 media_player.apple_tv:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: f5bec2d3c85bceee10995c4bc372393f423c3c5b330ee1949937659d02e2f3ed
 remote.apple_tv:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: f5bec2d3c85bceee10995c4bc372393f423c3c5b330ee1949937659d02e2f3ed
 media_player.apple_tv_2:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: 044e947934923861ea0ff49132f616008818c4107dbf90b63046cfd0d2127227
 remote.apple_tv_2:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: 044e947934923861ea0ff49132f616008818c4107dbf90b63046cfd0d2127227
 binary_sensor.switch_158d00012641b4:
+  config_entry_id:
   name: Bottone Andrea
   platform: xiaomi_aqara
   unique_id: status158d00012641b4
 binary_sensor.door_window_sensor_158d00013ed2c1:
+  config_entry_id:
   name: Interruttore Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: status158d00013ed2c1
 binary_sensor.door_window_sensor_158d000201980a:
+  config_entry_id:
   name: Finestra Cucina
   platform: xiaomi_aqara
   unique_id: status158d000201980a
 binary_sensor.motion_sensor_158d0001e5764c:
+  config_entry_id:
   name: Movimento Ingresso
   platform: xiaomi_aqara
   unique_id: status158d0001e5764c
 binary_sensor.motion_sensor_158d0001e5413e:
+  config_entry_id:
   name: Movimento Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: status158d0001e5413e
 binary_sensor.door_window_sensor_158d0001fd6296:
+  config_entry_id:
   name: Saracinesca
   platform: xiaomi_aqara
   unique_id: status158d0001fd6296
 binary_sensor.door_window_sensor_158d00013fede0:
+  config_entry_id:
   name: Porta Dispenza
   platform: xiaomi_aqara
   unique_id: status158d00013fede0
 binary_sensor.door_window_sensor_158d0001b95bf4:
+  config_entry_id:
   name: Finestra a Ribalta Bagnetto
   platform: xiaomi_aqara
   unique_id: status158d0001b95bf4
 binary_sensor.door_window_sensor_158d000112031b:
+  config_entry_id:
   name: Porta Ingresso
   platform: xiaomi_aqara
   unique_id: status158d000112031b
 binary_sensor.switch_158d00013ecb24:
+  config_entry_id:
   name: Bottone Eleonora
   platform: xiaomi_aqara
   unique_id: status158d00013ecb24
 binary_sensor.cube_158d0001051007:
+  config_entry_id:
   name: Cube
   platform: xiaomi_aqara
   unique_id: cube158d0001051007
 binary_sensor.motion_sensor_158d00010f7fda:
+  config_entry_id:
   name: Movimento Garage
   platform: xiaomi_aqara
   unique_id: status158d00010f7fda
 binary_sensor.switch_158d00013f84db:
+  config_entry_id:
   name: Bottone Dispenza
   platform: xiaomi_aqara
   unique_id: status158d00013f84db
 sensor.illumination_f0b429cbef3f:
+  config_entry_id:
   name: Illuminazione Cucina
   platform: xiaomi_aqara
   unique_id: illuminationf0b429cbef3f
 sensor.humidity_158d00015b2df4:
+  config_entry_id:
   name: Umidità Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: humidity158d00015b2df4
 sensor.pressure_158d0001e549e0:
+  config_entry_id:
   name: Pressione Bagno
   platform: xiaomi_aqara
   unique_id: pressure158d0001e549e0
 sensor.temperature_158d0001e549e0:
+  config_entry_id:
   name: Temperatura Bagno
   platform: xiaomi_aqara
   unique_id: temperature158d0001e549e0
 sensor.humidity_158d0001e549e0:
+  config_entry_id:
   name: Umidità Bagno
   platform: xiaomi_aqara
   unique_id: humidity158d0001e549e0
 sensor.illumination_158d0001e5413e:
+  config_entry_id:
   name: Luminosità Sala da Pranzo
   platform: xiaomi_aqara
   unique_id: lux158d0001e5413e
 sensor.illumination_158d0001e5764c:
+  config_entry_id:
   name: Illuminazione Ingresso
   platform: xiaomi_aqara
   unique_id: lux158d0001e5764c
 sensor.temperature_158d00015b2df4:
+  config_entry_id:
   name: Temperatura sala da pranzo
   platform: xiaomi_aqara
   unique_id: temperature158d00015b2df4
 light.gateway_light_f0b429cbef3f:
+  config_entry_id:
   name: Luce Gateway
   platform: xiaomi_aqara
   unique_id: rgbf0b429cbef3f
 binary_sensor.door_window_sensor_158d0001de6e16:
+  config_entry_id:
   name: Finestra Camera da Letto
   platform: xiaomi_aqara
   unique_id: status158d0001de6e16
 binary_sensor.door_window_sensor_158d0001b95954:
+  config_entry_id:
   name: Finestra Camera Armadio
   platform: xiaomi_aqara
   unique_id: status158d0001b95954
 binary_sensor.door_window_sensor_158d0001e44493:
+  config_entry_id:
   name: Finestra a Ribalta Bagno
   platform: xiaomi_aqara
   unique_id: status158d0001e44493
 binary_sensor.motion_sensor_158d0001e514df:
+  config_entry_id:
   name: Movimento Corridoio
   platform: xiaomi_aqara
   unique_id: status158d0001e514df
 sensor.illumination_158d0001e514df:
+  config_entry_id:
   name: Illuminazione Corridoio
   platform: xiaomi_aqara
   unique_id: lux158d0001e514df
 binary_sensor.motion_sensor_158d0001e515b8:
+  config_entry_id:
   name: Movimento Cucina
   platform: xiaomi_aqara
   unique_id: status158d0001e515b8
 sensor.illumination_158d0001e515b8:
+  config_entry_id:
   name: Illuminazione Cucina
   platform: xiaomi_aqara
   unique_id: lux158d0001e515b8
 binary_sensor.motion_sensor_158d0001e513a8:
+  config_entry_id:
   name: Movimento Soggiorno
   platform: xiaomi_aqara
   unique_id: status158d0001e513a8
 sensor.illumination_158d0001e513a8:
+  config_entry_id:
   name: Illuminazione Soggiorno
   platform: xiaomi_aqara
   unique_id: lux158d0001e513a8
 binary_sensor.motion_sensor_158d0001e5156a:
+  config_entry_id:
   name: Movimento Camera da Letto
   platform: xiaomi_aqara
   unique_id: status158d0001e5156a
 sensor.illumination_158d0001e5156a:
+  config_entry_id:
   name: Illuminazione Camera da Letto
   platform: xiaomi_aqara
   unique_id: lux158d0001e5156a
 binary_sensor.motion_sensor_158d0001e51489:
+  config_entry_id:
   name: Movimento Camera Armadi
   platform: xiaomi_aqara
   unique_id: status158d0001e51489
 sensor.illumination_158d0001e51489:
+  config_entry_id:
   name: Illuminazione Camera Armadi
   platform: xiaomi_aqara
   unique_id: lux158d0001e51489
 media_player.apple_tv_3:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: 4a8bb3ec2bbec6799d82c89772053bb29b237399feac0828529409dd944b8d11
 remote.apple_tv_3:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: 4a8bb3ec2bbec6799d82c89772053bb29b237399feac0828529409dd944b8d11
 media_player.apple_tv_4:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: 0f25616b7f931a430cfa3d12407ba4c3564322d3837207ff7c01484d06ae3201
 remote.apple_tv_4:
+  config_entry_id:
   name:
   platform: apple_tv
   unique_id: 0f25616b7f931a430cfa3d12407ba4c3564322d3837207ff7c01484d06ae3201
 binary_sensor.door_window_sensor_158d0001e44446:
+  config_entry_id:
   name: Finestra Soggiorno
   platform: xiaomi_aqara
   unique_id: status158d0001e44446
 zwave.aeotec_zw090_zstick_gen5_eu:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-1
 switch.switch:
+  config_entry_id:
   name: Specchio
   platform: zwave
   unique_id: 2-72057594076282880
 zwave.fibaro_system_fgs223_double_relay:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-2
 sensor.unknown:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076495874
 sensor.alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528065
 sensor.alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528081
 switch.fibaro_system_fgs223_double_relay_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-144115188114210816
 sensor.fibaro_system_fgs223_double_relay_unknown:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-144115188114423810
 sensor.fibaro_system_fgs223_double_relay_power:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076496002
 sensor.fibaro_system_fgs223_double_relay_exporting:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076496384
 sensor.fibaro_system_fgs223_double_relay_power_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-144115188114423938
 sensor.fibaro_system_fgs223_double_relay_exporting_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-144115188114424320
 sensor.fibaro_system_fgs223_double_relay_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528097
 sensor.fibaro_system_fgs223_double_relay_heat:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528177
 sensor.fibaro_system_fgs223_double_relay_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528241
 sensor.movimento_camera_armadi_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e51489_battery
 sensor.illuminazione_camera_da_letto_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e5156a_battery
 sensor.movimento_camera_da_letto_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e5156a_battery
 sensor.movimento_cucina_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e515b8_battery
 sensor.movimento_corridoio_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e514df_battery
 sensor.luminosita_ingresso_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e5764c_battery
 sensor.movimento_ingresso_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e5764c_battery
 sensor.luminosita_sala_da_pranzo_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e5413e_battery
 sensor.illuminazione_camera_armadi_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e51489_battery
 sensor.umidita_bagno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: humidity_158d0001e549e0_battery
 sensor.andrea_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: ilendrius_battery
 sensor.pressione_bagno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: pressure_158d0001e549e0_battery
 sensor.movimento_sala_da_pranzo_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e5413e_battery
 sensor.illuminazione_cucina_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e515b8_battery
 sensor.saracinesca_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d0001fd6296_battery
 sensor.umidita_sala_da_pranzo_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: humidity_158d00015b2df4_battery
 sensor.illuminazione_corridoio_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e514df_battery
 sensor.illuminazione_soggiorno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: illumination_158d0001e513a8_battery
 sensor.movimento_soggiorno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d0001e513a8_battery
 sensor.finestra_a_ribalta_bagno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d0001e44493_battery
 sensor.finestra_cucina_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d000201980a_battery
 sensor.temperatura_bagno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: temperature_158d0001e549e0_battery
 sensor.finestra_camera_da_letto_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d0001de6e16_battery
 sensor.porta_dispenza_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d00013fede0_battery
 sensor.finestra_a_ribalta_bagnetto_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d0001b95bf4_battery
 sensor.porta_ingresso_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d000112031b_battery
 sensor.movimento_garage_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: motion_sensor_158d00010f7fda_battery
 sensor.temperatura_sala_da_pranzo_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: temperature_158d00015b2df4_battery
 sensor.finestra_camera_armadio_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d0001b95954_battery
 sensor.bottone_andrea_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: switch_158d00012641b4_battery
 sensor.bottone_eleonora_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: switch_158d00013ecb24_battery
 sensor.bottone_dispenza_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: switch_158d00013f84db_battery
 sensor.cube_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: cube_158d0001051007_battery
 sensor.finestra_soggiorno_battery:
+  config_entry_id:
   name:
   platform: mqtt
   unique_id: door_window_sensor_158d0001e44446_battery
+binary_sensor.door_window_sensor_158d0001b7bce7:
+  config_entry_id:
+  name: Finestra 2 Sala da Pranzo
+  platform: xiaomi_aqara
+  unique_id: status158d0001b7bce7
+sensor.door_window_sensor_158d0001b7bce7_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: door_window_sensor_158d0001b7bce7_battery
+binary_sensor.door_window_sensor_158d0001b97da6:
+  config_entry_id:
+  name: Finestra 1 Sala da Pranzo
+  platform: xiaomi_aqara
+  unique_id: status158d0001b97da6
+sensor.door_window_sensor_158d0001b97da6_battery:
+  config_entry_id:
+  name:
+  platform: mqtt
+  unique_id: door_window_sensor_158d0001b97da6_battery

@@ -4,6 +4,10 @@ window_sensors:
   entities:
     # Sensore Porta Ingresso
     - binary_sensor.door_window_sensor_158d000112031b
+    # Sensore Finestra 1 Sala da Pranzo
+    - binary_sensor.door_window_sensor_158d0001b97da6
+    # Sensore Finestra 2 Sala da Pranzo
+    - binary_sensor.door_window_sensor_158d0001b7bce7
     # Sensore Finestra Stanza Armadio
     - binary_sensor.door_window_sensor_158d0001b95954
     # Finestra Cucina

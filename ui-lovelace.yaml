@@ -1,0 +1,67 @@
+name: My Awesome Home
+views:
+    # The name of a view will be used as tab title.
+    # Might be used for other things in the future.
+  - name: Example
+    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    theme: dark-mode
+    # The cards to show on this view.
+    cards:
+        # The entities card will take a list of entities and show their state.
+      - type: entities
+        # Title of the entities card
+        title: Example
+        # The entities here will be shown in the same order as specified.
+        entities:
+          - input_select.sala_da_pranzo_preset
+          - light.lampadario_tv
+          - light.fiore
+          - light.hue_go
+          - switch.tepee
+      - type: glance
+        title: Finestre
+        entities:
+          # Sensore Porta Ingresso
+          - binary_sensor.door_window_sensor_158d000112031b
+          # Sensore Finestra 1 Sala da Pranzo
+          - binary_sensor.door_window_sensor_158d0001b97da6
+          # Sensore Finestra 2 Sala da Pranzo
+          - binary_sensor.door_window_sensor_158d0001b7bce7
+          # Sensore Finestra Stanza Armadio
+          - binary_sensor.door_window_sensor_158d0001b95954
+          # Finestra Cucina
+          - binary_sensor.door_window_sensor_158d000201980a
+          # Sensore Finestra Camera da Letto
+          - binary_sensor.door_window_sensor_158d0001de6e16
+          # Sensore Finestra a Ribalta Bagno
+          - binary_sensor.door_window_sensor_158d0001e44493
+          # Sensore Finestra a ribalta Bagnetto
+          - binary_sensor.door_window_sensor_158d0001b95bf4
+          # Sensore Saracinesca
+          - binary_sensor.door_window_sensor_158d0001fd6296
+          
+      - type: picture-glance
+        image: https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=240&w=495
+        title: Living
+        entities:
+          - switch.tepee
+          - light.lampadario_tv
+          # Sensore Finestra 1 Sala da Pranzo
+          - binary_sensor.door_window_sensor_158d0001b97da6
+          # Sensore Finestra 2 Sala da Pranzo
+          - binary_sensor.door_window_sensor_158d0001b7bce7
+          - binary_sensor.motion_sensor_158d0001e5413e
+
+
+    # Specify a tab_icon if you want the view tab to be an icon.
+  - tab_icon: mdi:home-assistant
+    # Name of the view. Will be used as the tooltip for tab icon
+    name: Second view
+    cards:
+      - type: entities
+        title: Garage
+        entities:
+            # It is totally possible to render duplicates.
+          - cover.saracinesca
+          # Movimento Garage 
+          - binary_sensor.motion_sensor_158d00010f7fda

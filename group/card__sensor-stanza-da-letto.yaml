@@ -1,5 +1,5 @@
-sensor_camera_da_letto:
-  name: Camera da letto
+sensor_stanza_da_letto:
+  name: Stanza da letto
   entities:
     # Sensore Finestra Camera da Letto
     - binary_sensor.door_window_sensor_158d0001de6e16

@@ -30,7 +30,7 @@ group.light_sala_da_pranzo:
   icon: mdi:silverware-variant
 group.light_garage:
   icon: mdi:garage
-group.light_camera_da_letto:
+group.light_stanza_da_letto:
   icon: mdi:hotel
 group.light_bagno:
   icon: mdi:water-pump
@@ -152,14 +152,14 @@ sensor.transmission_up_speed:
 sensor.processor_use:
   friendly_name: Utilizzo Processore
   icon: mdi:chip
-script.check_sonoffs_version:
-  friendly_name: Cerca aggiornamenti...
-  icon: mdi:checkbox-multiple-marked-outline
-script.update_sonoffs:
-  friendly_name: Aggiorna Sonoffs
-  icon: mdi:download-network
-sensor.sonoff_4ch_pro_garage:
-  icon: mdi:power-socket-eu
+# script.check_sonoffs_version:
+#   friendly_name: Cerca aggiornamenti...
+#   icon: mdi:checkbox-multiple-marked-outline
+# script.update_sonoffs:
+#   friendly_name: Aggiorna Sonoffs
+#   icon: mdi:download-network
+# sensor.sonoff_4ch_pro_garage:
+#   icon: mdi:power-socket-eu
 variable.last_motion:
   friendly_name: Stanza
 weather.yweather:
